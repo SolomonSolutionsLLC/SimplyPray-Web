@@ -566,18 +566,17 @@
     <section class="cta">
         <h2>Coming to iOS soon</h2>
         <p>Be the first to know when SimplyPray launches.</p>
-        <form id="notify-form" class="notify-form" action="https://formsubmit.co/ajax/joshua@solomonsolutions.tech" method="POST">
+        <form id="notify-form" class="notify-form" action="#" method="POST" target="notify-target">
             <label class="notify-label" for="notify-email">Email address</label>
             <div class="notify-row">
                 <input id="notify-email" class="notify-input" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
                 <button type="submit" class="cta-btn">Notify Me</button>
             </div>
-            <input type="hidden" name="_subject" value="SimplyPray waitlist signup">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="source" value="simplypray-web">
             <p id="notify-status" class="notify-status" aria-live="polite"></p>
             <p class="notify-note">By signing up, you agree to receive launch updates from SimplyPray.</p>
         </form>
+        <iframe id="notify-target" name="notify-target" title="Signup Response" style="display:none;"></iframe>
         <div class="church-badge">
             ⛪ Church licensing available — bring SimplyPray to your congregation
         </div>
@@ -591,44 +590,83 @@
 
     <script>
         (function () {
+            var GOOGLE_SHEETS_SIGNUP_ENDPOINT = "REPLACE_WITH_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
             var form = document.getElementById("notify-form");
             var status = document.getElementById("notify-status");
+            var emailInput = document.getElementById("notify-email");
             if (!form || !status) return;
 
-            form.addEventListener("submit", async function (event) {
-                event.preventDefault();
+            var submitButton = form.querySelector("button[type='submit']");
+            var submitLabel = submitButton ? submitButton.textContent : "Notify Me";
+            var pendingTimer = null;
+            var awaitingResponse = false;
 
-                var button = form.querySelector("button[type='submit']");
-                var originalLabel = button ? button.textContent : "Notify Me";
-                if (button) {
-                    button.disabled = true;
-                    button.textContent = "Submitting...";
-                }
+            function setPending(isPending) {
+                if (!submitButton) return;
+                submitButton.disabled = isPending;
+                submitButton.textContent = isPending ? "Submitting..." : (submitLabel || "Notify Me");
+            }
 
-                status.textContent = "";
+            function setStatus(message, type) {
+                status.textContent = message;
                 status.className = "notify-status";
+                if (type) status.classList.add(type);
+            }
 
-                try {
-                    var response = await fetch(form.action, {
-                        method: "POST",
-                        body: new FormData(form),
-                        headers: { "Accept": "application/json" }
-                    });
-
-                    if (!response.ok) throw new Error("Signup failed");
-
-                    form.reset();
-                    status.textContent = "Thanks. You are on the launch notification list.";
-                    status.classList.add("success");
-                } catch (error) {
-                    status.textContent = "Signup failed. Please email joshua@solomonsolutions.tech.";
-                    status.classList.add("error");
-                } finally {
-                    if (button) {
-                        button.disabled = false;
-                        button.textContent = originalLabel || "Notify Me";
-                    }
+            function resetPending() {
+                awaitingResponse = false;
+                if (pendingTimer) {
+                    clearTimeout(pendingTimer);
+                    pendingTimer = null;
                 }
+                setPending(false);
+            }
+
+            function endpointConfigured() {
+                return GOOGLE_SHEETS_SIGNUP_ENDPOINT &&
+                    GOOGLE_SHEETS_SIGNUP_ENDPOINT.indexOf("REPLACE_WITH_") === -1;
+            }
+
+            window.addEventListener("message", function (event) {
+                if (!awaitingResponse) return;
+                if (!event || !event.data || event.data.type !== "simplypray-signup") return;
+
+                var origin = event.origin || "";
+                var trustedOrigin = origin.indexOf("script.google.com") !== -1 ||
+                    origin.indexOf("googleusercontent.com") !== -1;
+                if (!trustedOrigin) return;
+
+                resetPending();
+                if (event.data.ok) {
+                    form.reset();
+                    setStatus(event.data.message || "Thanks. You are on the launch notification list.", "success");
+                } else {
+                    setStatus(event.data.message || "Signup failed. Please try again.", "error");
+                }
+            });
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                if (!endpointConfigured()) {
+                    setStatus("Signup is not configured yet. Add the Apps Script Web App URL first.", "error");
+                    return;
+                }
+                if (!emailInput || !emailInput.value) {
+                    setStatus("Enter a valid email address.", "error");
+                    return;
+                }
+
+                setStatus("", null);
+                awaitingResponse = true;
+                setPending(true);
+                form.action = GOOGLE_SHEETS_SIGNUP_ENDPOINT;
+                form.submit();
+
+                pendingTimer = setTimeout(function () {
+                    if (!awaitingResponse) return;
+                    resetPending();
+                    setStatus("Signup timed out. Please try again.", "error");
+                }, 12000);
             });
         })();
     </script>

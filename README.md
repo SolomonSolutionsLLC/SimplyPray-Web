@@ -14,3 +14,9 @@ Static marketing site for SimplyPray.
 ```bash
 python3 -m http.server 8090
 ```
+
+## Waitlist Email Capture (Google Sheets)
+
+Setup docs:
+
+- [`docs/google-sheets-signup.md`](./docs/google-sheets-signup.md)
