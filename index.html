@@ -695,11 +695,10 @@
     <h2 class="section-h" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(36px,4vw,54px);font-weight:600;letter-spacing:-1px;color:var(--ink);margin-bottom:14px;">Be first to pray.</h2>
     <p class="cta-desc">Join the waitlist and receive your invite the day we launch. No spam — just your spot in line.</p>
 
-    <form id="notify-form" class="email-form" method="POST" target="notify-target">
+    <form id="notify-form" class="email-form">
       <input type="email" name="email" id="notify-email" class="email-input" placeholder="you@example.com" required />
       <button type="submit" class="btn-primary" style="white-space:nowrap;">Notify Me</button>
     </form>
-    <iframe name="notify-target" style="display:none;" aria-hidden="true"></iframe>
     <p class="notify-status" id="notify-status"></p>
     <p class="form-note">By signing up, you agree to receive launch updates from SimplyPray.</p>
     <div>
@@ -730,7 +729,10 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.fade-up').forEach(function (el) { observer.observe(el); });
 
-    // Waitlist form — Google Sheets / Apps Script integration
+    // Waitlist form — Google Sheets via fetch (no-cors)
+    // NOTE: Google Apps Script sets X-Frame-Options: SAMEORIGIN, which blocks
+    // the iframe/postMessage pattern on any non-Google origin. fetch no-cors
+    // bypasses this — the POST goes through and the sheet gets written.
     (function () {
       var ENDPOINT = "https://script.google.com/macros/s/AKfycbyuotZlpocl2OhWuOpcaQKpPMMhYOXHgGdSviqI1pFtQLOOYTv0kUjhyVV2hNdmNAjBMQ/exec";
       var form = document.getElementById("notify-form");
@@ -740,8 +742,6 @@
 
       var submitButton = form.querySelector("button[type='submit']");
       var submitLabel = submitButton ? submitButton.textContent : "Notify Me";
-      var timer = null;
-      var waiting = false;
 
       function setPending(on) {
         if (!submitButton) return;
@@ -754,42 +754,29 @@
         status.className = "notify-status" + (type ? " " + type : "");
       }
 
-      function done() {
-        waiting = false;
-        if (timer) { clearTimeout(timer); timer = null; }
-        setPending(false);
-      }
-
-      // Receive postMessage from the Apps Script iframe response
-      window.addEventListener("message", function (event) {
-        if (!waiting) return;
-        if (!event.data || event.data.type !== "simplypray-signup") return;
-        done();
-        if (event.data.ok) {
-          form.reset();
-          setStatus(event.data.message || "You're on the list!", "success");
-        } else {
-          setStatus(event.data.message || "Signup failed. Please try again.", "error");
-        }
-      });
-
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         var email = emailInput ? emailInput.value.trim() : "";
         if (!email) { setStatus("Enter a valid email address.", "error"); return; }
 
         setStatus("", null);
-        waiting = true;
         setPending(true);
-        form.action = ENDPOINT;
-        form.submit();
 
-        // Fallback timeout in case postMessage never arrives
-        timer = setTimeout(function () {
-          if (!waiting) return;
-          done();
-          setStatus("Signup timed out. Please try again.", "error");
-        }, 15000);
+        fetch(ENDPOINT, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: "email=" + encodeURIComponent(email) + "&source=simplypray.io"
+        })
+        .then(function () {
+          setPending(false);
+          form.reset();
+          setStatus("You're on the list! We'll notify you at launch.", "success");
+        })
+        .catch(function () {
+          setPending(false);
+          setStatus("Signup failed. Please try again.", "error");
+        });
       });
     })();
   </script>
