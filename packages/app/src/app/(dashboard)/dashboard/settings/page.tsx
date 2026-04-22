@@ -13,6 +13,8 @@ interface ChurchSettings {
   landing_page_message: string | null;
   primary_color: string | null;
   logo_url: string | null;
+  default_list_write_mode: string;
+  public_lists_enabled: boolean;
 }
 
 export default function SettingsPage() {
@@ -32,6 +34,10 @@ export default function SettingsPage() {
   const [message, setMessage] = useState("");
   const [primaryColor, setPrimaryColor] = useState("#3A6F63");
   const [logoUrl, setLogoUrl] = useState("");
+  const [defaultWriteMode, setDefaultWriteMode] = useState<"admin_only" | "member_submit">(
+    "admin_only"
+  );
+  const [publicListsEnabled, setPublicListsEnabled] = useState(false);
 
   useEffect(() => {
     async function loadChurch() {
@@ -60,7 +66,9 @@ export default function SettingsPage() {
 
       const { data: churchData } = await supabase
         .from("churches")
-        .select("id, name, landing_page_message, primary_color, logo_url")
+        .select(
+          "id, name, landing_page_message, primary_color, logo_url, default_list_write_mode, public_lists_enabled"
+        )
         .eq("id", membership.church_id)
         .single();
 
@@ -70,6 +78,12 @@ export default function SettingsPage() {
         setMessage(churchData.landing_page_message ?? "");
         setPrimaryColor(churchData.primary_color ?? "#3A6F63");
         setLogoUrl(churchData.logo_url ?? "");
+        setDefaultWriteMode(
+          churchData.default_list_write_mode === "member_submit"
+            ? "member_submit"
+            : "admin_only"
+        );
+        setPublicListsEnabled(Boolean(churchData.public_lists_enabled));
       }
 
       setLoading(false);
@@ -94,6 +108,8 @@ export default function SettingsPage() {
         landing_page_message: message || null,
         primary_color: primaryColor || null,
         logo_url: logoUrl || null,
+        default_list_write_mode: defaultWriteMode,
+        public_lists_enabled: publicListsEnabled,
       })
       .eq("id", church.id);
 
@@ -205,6 +221,41 @@ export default function SettingsPage() {
             placeholder="https://example.com/logo.png"
             type="url"
           />
+
+          <div className="pt-4 border-t border-sanctuary-hairline space-y-4">
+            <h3 className="font-serif text-xl text-ink">Shared list defaults</h3>
+            <fieldset className="space-y-2">
+              <legend className="font-mono text-[10px] uppercase tracking-wider text-ink-soft">
+                Who can add requests by default?
+              </legend>
+              <label className="flex items-center gap-2 text-sm">
+                <input
+                  type="radio"
+                  name="default_write"
+                  checked={defaultWriteMode === "admin_only"}
+                  onChange={() => setDefaultWriteMode("admin_only")}
+                />{" "}
+                Admins only
+              </label>
+              <label className="flex items-center gap-2 text-sm">
+                <input
+                  type="radio"
+                  name="default_write"
+                  checked={defaultWriteMode === "member_submit"}
+                  onChange={() => setDefaultWriteMode("member_submit")}
+                />{" "}
+                Members can submit (admins moderate)
+              </label>
+            </fieldset>
+            <label className="flex items-center gap-2 text-sm">
+              <input
+                type="checkbox"
+                checked={publicListsEnabled}
+                onChange={(e) => setPublicListsEnabled(e.target.checked)}
+              />
+              Enable public church page (lists marked public show to anonymous visitors)
+            </label>
+          </div>
 
           <div className="flex justify-end pt-2">
             <Button type="submit" disabled={saving}>
