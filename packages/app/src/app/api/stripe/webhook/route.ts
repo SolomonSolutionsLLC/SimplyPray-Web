@@ -64,8 +64,10 @@ async function handleCheckoutCompleted(
 
   // Retrieve the full subscription to get price/tier info
   const subscription = await stripe.subscriptions.retrieve(subscriptionId);
-  const priceId = subscription.items.data[0]?.price.id ?? "";
+  const item = subscription.items.data[0];
+  const priceId = item?.price.id ?? "";
   const tier = getTierFromPriceId(priceId);
+  const periodEnd = item?.current_period_end;
 
   const { error } = await supabaseAdmin.from("subscriptions").upsert(
     {
@@ -74,9 +76,9 @@ async function handleCheckoutCompleted(
       stripe_subscription_id: subscriptionId,
       tier,
       status: "active",
-      current_period_end: new Date(
-        subscription.current_period_end * 1000
-      ).toISOString(),
+      current_period_end: periodEnd
+        ? new Date(periodEnd * 1000).toISOString()
+        : null,
     },
     { onConflict: "user_id" }
   );
@@ -94,18 +96,20 @@ async function handleCheckoutCompleted(
 async function handleSubscriptionUpdated(
   subscription: Stripe.Subscription
 ): Promise<void> {
-  const priceId = subscription.items.data[0]?.price.id ?? "";
+  const item = subscription.items.data[0];
+  const priceId = item?.price.id ?? "";
   const tier = getTierFromPriceId(priceId);
   const status = mapSubscriptionStatus(subscription.status);
+  const periodEnd = item?.current_period_end;
 
   const { error } = await supabaseAdmin
     .from("subscriptions")
     .update({
       tier,
       status,
-      current_period_end: new Date(
-        subscription.current_period_end * 1000
-      ).toISOString(),
+      current_period_end: periodEnd
+        ? new Date(periodEnd * 1000).toISOString()
+        : null,
     })
     .eq("stripe_subscription_id", subscription.id);
 
@@ -140,7 +144,10 @@ async function handleSubscriptionDeleted(
 async function handleInvoicePaymentFailed(
   invoice: Stripe.Invoice
 ): Promise<void> {
-  const subscriptionId = invoice.subscription as string | null;
+  const subscriptionId =
+    (invoice.parent?.subscription_details?.subscription as string | null) ??
+    (invoice.lines.data[0]?.subscription as string | null) ??
+    null;
 
   if (!subscriptionId) {
     console.warn("[webhook] invoice.payment_failed — no subscription ID");
