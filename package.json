@@ -1,12 +1,5 @@
 {
   "name": "simplypray-web",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "dev": "npm run dev --workspace=packages/app",
-    "build": "npm run build --workspace=packages/app",
-    "lint": "npm run lint --workspace=packages/app"
-  }
+  "description": "SimplyPray marketing site — static HTML served at simplypray.io"
 }
