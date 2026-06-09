@@ -1,0 +1,69 @@
+name: ioc-gate
+# Blocks builds/merges that contain the Shai-Hulud / BeaverTail postcss-loader
+# worm markers. Fails ONLY on near-zero-false-positive signatures so it is safe
+# to run unmodified across all repos (incl. non-Node projects).
+# Source incident: HopeStack-Admin b03e595d (2026-05).
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  ioc-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (no submodules, no creds persisted)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+          submodules: false
+
+      - name: Scan for worm markers
+        shell: bash
+        run: |
+          set -euo pipefail
+          fail=0
+
+          # 1) Unique obfuscation/dropper markers — essentially never legitimate.
+          #    Fixed-string (-F) grep across the whole tree, excluding .git.
+          if grep -RInF --exclude-dir=.git --exclude='ioc-gate.yml' \
+               -e "global['!']" \
+               -e "global['_V']" \
+               -e '_$_1e42' \
+               -e 'tmp7A863DD1' \
+               -e 'setup_bun.js' \
+               -e 'bun_environment.js' \
+               . ; then
+            echo "::error::Worm obfuscation/dropper marker found above."
+            fail=1
+          fi
+
+          # 2) createRequire() inside a build/lint config has no legit reason and
+          #    is the postcss-loader's bootstrap. Scope to config files only.
+          while IFS= read -r -d '' f; do
+            if grep -Inq 'createRequire' "$f"; then
+              echo "::error file=$f::createRequire() in a build config — postcss-loader bootstrap signature."
+              grep -InH 'createRequire' "$f" || true
+              fail=1
+            fi
+          done < <(find . -path ./.git -prune -o \
+                     \( -name 'postcss.config.*' -o -name 'next.config.*' \
+                        -o -name 'vite.config.*' -o -name 'tailwind.config.*' \
+                        -o -name 'eslint.config.*' \) -print0)
+
+          # 3) .vscode/tasks.json auto-run-on-folderOpen (persistence trick).
+          if [ -f .vscode/tasks.json ] && grep -Inq 'folderOpen' .vscode/tasks.json; then
+            echo "::error file=.vscode/tasks.json::runOn folderOpen auto-exec task."
+            fail=1
+          fi
+
+          if [ "$fail" -ne 0 ]; then
+            echo "IOC gate FAILED — do not deploy. See errors above."
+            exit 1
+          fi
+          echo "IOC gate passed — no known worm markers."
