@@ -394,57 +394,7 @@
     }
     .cta .eyebrow { background: var(--green-pale); border-color: var(--green-light); color: var(--green-deep); margin-bottom: 20px; }
     .cta .section-h { color: var(--ink); margin-bottom: 14px; }
-    .cta-desc { font-size: 18px; color: var(--ink-mid); max-width: 420px; margin: 0 auto 48px; line-height: 1.65; font-weight: 300; }
-    .email-form {
-      display: flex; gap: 10px;
-      max-width: 460px; margin: 0 auto 14px;
-    }
-    .email-input {
-      flex: 1; padding: 15px 20px;
-      border-radius: 999px;
-      border: 1.5px solid var(--bg-dark);
-      background: white; font-family: inherit;
-      font-size: 15px; color: var(--ink); outline: none;
-      transition: border-color .2s;
-    }
-    .email-input:focus { border-color: var(--green-mid); }
-    .email-input::placeholder { color: var(--ink-soft); }
-    .notify-status { font-size: 14px; min-height: 20px; margin-top: 10px; }
-    .notify-status.error { color: #b94a3b; font-weight: 500; }
-
-    /* ── Success state (replaces form on signup) ──── */
-    .signup-success {
-      display: none;
-      flex-direction: column; align-items: center; gap: 12px;
-      animation: successIn .5s cubic-bezier(.22,1,.36,1) forwards;
-    }
-    .signup-success.visible { display: flex; }
-    @keyframes successIn {
-      from { opacity: 0; transform: translateY(16px) scale(.97); }
-      to   { opacity: 1; transform: none; }
-    }
-    .success-check {
-      width: 56px; height: 56px; border-radius: 50%;
-      background: var(--green-deep);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 4px;
-    }
-    .success-check svg { width: 26px; height: 26px; stroke: white; stroke-width: 2.5; fill: none; }
-    .success-heading {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(30px, 4vw, 42px); font-weight: 600;
-      color: var(--ink); letter-spacing: -.5px; line-height: 1.1;
-    }
-    .success-sub {
-      font-size: 16px; color: var(--ink-mid); font-weight: 300; max-width: 340px;
-    }
-    .form-note { font-size: 13px; color: var(--ink-soft); margin-top: 10px; }
-    .church-note {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--green-pale); border: 1px solid var(--green-light);
-      color: var(--green-deep); font-size: 14px; font-weight: 500;
-      padding: 10px 20px; border-radius: 999px; margin-top: 32px;
-    }
+    .cta-desc { font-size: 18px; color: var(--ink-mid); max-width: 480px; margin: 0 auto 40px; line-height: 1.65; font-weight: 300; }
 
     /* ── Footer ───────────────────────────────────── */
     footer {
@@ -495,7 +445,7 @@
   <!-- Nav -->
   <nav id="navbar">
     <div class="nav-logo">SimplyPray</div>
-    <a href="#waitlist" class="nav-cta">Join the Waitlist</a>
+    <a href="https://apps.apple.com/app/id6772402646" class="nav-cta">Get the App</a>
   </nav>
 
   <!-- Hero -->
@@ -505,15 +455,15 @@
     <div class="hero-content">
       <div class="eyebrow">
         <span class="live-dot"></span>
-        Coming to iOS — Be First
+        Now on the App Store
       </div>
       <h1>Prayer that goes <em>deeper.</em></h1>
       <p class="hero-desc">
         SimplyPray guides you through Adoration, Confession, Thanksgiving, and Supplication — a time-tested framework for real devotion, built into a distraction-free iOS app.
       </p>
       <div class="hero-actions">
-        <a href="#waitlist" class="btn-primary">
-          Get Early Access
+        <a href="https://apps.apple.com/app/id6772402646" class="btn-primary">
+          Download on the App Store
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="#how-it-works" class="btn-ghost">
@@ -681,6 +631,10 @@
           </div>
         </div>
       </div>
+      <a href="https://app.simplypray.io/church/new" class="btn-primary" style="margin-top:32px;display:inline-flex;">
+        Set up your congregation
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
 
     <div class="prayer-panel">
@@ -715,35 +669,21 @@
     </div>
   </section>
 
-  <!-- CTA / Waitlist -->
+  <!-- Launch CTA (id="waitlist" kept so existing anchor links still resolve) -->
   <section class="cta" id="waitlist">
-    <div class="eyebrow">Coming to iOS Soon</div>
-    <h2 class="section-h" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(36px,4vw,54px);font-weight:600;letter-spacing:-1px;color:var(--ink);margin-bottom:14px;">Be first to pray.</h2>
-    <p class="cta-desc">Join the waitlist and receive your invite the day we launch. No spam — just your spot in line.</p>
+    <div class="eyebrow">Available Now</div>
+    <h2 class="section-h" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(36px,4vw,54px);font-weight:600;letter-spacing:-1px;color:var(--ink);margin-bottom:14px;">SimplyPray is live.</h2>
+    <p class="cta-desc">Download the app and start praying with depth and structure — or set up SimplyPray for your entire congregation.</p>
 
-    <div id="form-wrap">
-      <form id="notify-form" class="email-form">
-        <input type="email" name="email" id="notify-email" class="email-input" placeholder="you@example.com" required />
-        <button type="submit" class="btn-primary" style="white-space:nowrap;">Notify Me</button>
-      </form>
-      <p class="notify-status" id="notify-status"></p>
-      <p class="form-note">By signing up, you agree to receive launch updates from SimplyPray.</p>
-    </div>
-
-    <div class="signup-success" id="signup-success">
-      <div class="success-check">
-        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>
-      </div>
-      <p class="success-heading">You're on the list.</p>
-      <p class="success-sub">We'll send your invite the day SimplyPray launches. See you then.</p>
-    </div>
-    <div>
-      <span class="church-note">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        Church licensing available — bring SimplyPray to your congregation
-      </span>
+    <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;">
+      <a href="https://apps.apple.com/app/id6772402646" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Download the App
+      </a>
+      <a href="https://app.simplypray.io/church/new" class="btn-ghost">
+        Set up your church
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </section>
 
@@ -767,72 +707,6 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.fade-up').forEach(function (el) { observer.observe(el); });
 
-    // Waitlist form — Google Sheets via fetch (no-cors)
-    (function () {
-      var ENDPOINT = "https://script.google.com/macros/s/AKfycby6kUQiSF50xacRzcSZxEcYn3UMNBWv3E1BH82NZs8oTidONuqjqgNUjadJxcFuMOH6gw/exec";
-      var formWrap = document.getElementById("form-wrap");
-      var form = document.getElementById("notify-form");
-      var status = document.getElementById("notify-status");
-      var emailInput = document.getElementById("notify-email");
-      var successEl = document.getElementById("signup-success");
-      if (!form || !status) return;
-
-      var submitButton = form.querySelector("button[type='submit']");
-      var submitLabel = submitButton ? submitButton.textContent : "Notify Me";
-
-      function setPending(on) {
-        if (!submitButton) return;
-        submitButton.disabled = on;
-        submitButton.textContent = on ? "Submitting…" : submitLabel;
-      }
-
-      function setStatus(msg, type) {
-        status.textContent = msg;
-        status.className = "notify-status" + (type ? " " + type : "");
-      }
-
-      function showSuccess() {
-        if (formWrap) formWrap.style.display = "none";
-        if (successEl) successEl.classList.add("visible");
-      }
-
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        var email = emailInput ? emailInput.value.trim() : "";
-        if (!email) { setStatus("Enter a valid email address.", "error"); return; }
-
-        setStatus("", null);
-        setPending(true);
-
-        // Use GET redirect trick: Google Apps Script returns 302 → googleusercontent.com
-        // which has proper CORS headers. GET with query params avoids no-cors opacity.
-        var url = ENDPOINT + "?email=" + encodeURIComponent(email) + "&source=simplypray.io";
-        fetch(url, { redirect: "follow" })
-        .then(function (r) { return r.json(); })
-        .then(function (data) {
-          if (data && data.ok) {
-            showSuccess();
-          } else {
-            setPending(false);
-            setStatus(data && data.message ? data.message : "Signup failed. Please try again.", "error");
-          }
-        })
-        .catch(function () {
-          // Fallback: if CORS still blocks, try no-cors POST as last resort
-          fetch(ENDPOINT, {
-            method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: "email=" + encodeURIComponent(email) + "&source=simplypray.io"
-          })
-          .then(function () { showSuccess(); })
-          .catch(function () {
-            setPending(false);
-            setStatus("Signup failed. Please try again.", "error");
-          });
-        });
-      });
-    })();
   </script>
 
 </body>
