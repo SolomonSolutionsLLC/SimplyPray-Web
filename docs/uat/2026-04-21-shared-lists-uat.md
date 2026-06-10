@@ -40,3 +40,37 @@ Supabase project: `SimplyPray` (`wkptusgzngfzoucocije`).
 ## Run log
 
 _Not yet executed end-to-end. Run with a real church + two test users and update this section with pass/fail per step._
+
+---
+
+## Addendum — Permissions matrix + invites (added 2026-06-10, plan 05)
+
+Covers the per-list permission policies (`post_policy`, `answer_policy`) and the invite lifecycle shipped in SimplyPray-App PR audit-2026-06/05. Pre-reqs as above (admin + non-admin member, both signed up), plus a third email address that has NO account yet.
+
+11. **Permissions card.** Admin opens `/dashboard/shared-lists/<id>`. Expect a "Permissions" card with "Who can post requests?" (Moderators only / All members) and "Who can mark answered?" (Moderators only / Requester / All members). Change post policy to "All members", answer policy to "Requester", save.
+    - Verify SQL: `select post_policy, answer_policy from shared_lists where id='<id>';` → `members, submitter`.
+
+12. **Member-post per policy.** As the non-admin member (impersonated JWT), `insert into shared_requests (list_id,title,submitted_by) values ('<id>','From a member','<non-admin-uid>');` → succeeds while `post_policy='members'`. Flip the policy back to "Moderators only" in the UI, repeat the insert → expect RLS denial (error, not silent success).
+
+13. **Submitter-mark-answered per policy.** With `answer_policy='submitter'`: as the non-admin who submitted "From a member", `update shared_requests set status='answered' where id='<req-id>';` → succeeds and `answered_at` is set by trigger. As a different non-moderator member, the same update on someone else's request → RLS denial. Set policy to "Moderators only" → submitter update now denied too.
+
+14. **Create open invite.** Admin on the list page uses the Invites panel: expiry 7 days, max uses 1, no email. Expect the new invite URL `https://app.simplypray.io/invite/<token>` shown with a Copy button and listed as `active`, uses `0/1`.
+    - Verify SQL: `select target_type, list_id, max_uses, use_count from invites where token='<token>';` → `list, <id>, 1, 0`.
+
+15. **Open-link join (logged out → signup).** Open the invite URL in incognito. Expect "You're invited to join <list name>" + signup form. Sign up with the third (fresh) email, confirm via the email link → should land back on `/invite/<token>` signed in → click "Accept invite" → success card with App Store + dashboard CTAs.
+    - Verify SQL: `select user_id from list_subscriptions where list_id='<id>'` includes the new user; `use_count`=1.
+
+16. **Exhausted invite.** Open the same URL again (any session). Expect "This invite has already been used." (max_uses 1 reached).
+
+17. **Locked-email invite + mismatch rejected.** Admin creates an invite locked to `victor@example.com` (any address you do NOT control a session for) — expect "email sent" notice if SES succeeds or the copy-link fallback notice. Open the URL signed in as the non-admin member (different email) and accept → expect friendly "This invite is for a different email address" error, no membership change.
+
+18. **Revoke.** Admin revokes an active invite in the panel. Status pill flips to `revoked`; opening its URL shows "This invite has been revoked."
+    - Verify SQL: `revoked_at is not null`.
+
+19. **Expiry.** SQL: `update invites set expires_at=now()-interval '1 day' where token='<token>';` → URL shows "This invite has expired"; panel pill shows `expired`.
+
+20. **Defaults from church settings.** In Settings set the church default post policy (if exposed) / `default_post_policy='members'` via SQL, then `/dashboard/shared-lists/new` → the "Who can post requests?" select should default to "All members".
+
+## Addendum run log
+
+_Not yet executed. Run on a preview deploy with the three accounts and record pass/fail per step here._
