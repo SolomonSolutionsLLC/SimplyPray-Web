@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — SimplyPray</title>
+  <meta name="description" content="Get help with SimplyPray. Contact us, learn how to manage your account, or send TestFlight beta feedback." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:          #F8F4EF;
+      --bg-dark:     #EDE8DF;
+      --green-deep:  #2F5C51;
+      --green-mid:   #3A6F63;
+      --green-light: #CFE7DD;
+      --green-pale:  #EBF5F1;
+      --gold:        #B8935A;
+      --gold-light:  #F2E8D6;
+      --ink:         #1D2B27;
+      --ink-mid:     #4A5C57;
+      --ink-soft:    #7A8C87;
+      --white:       #FFFFFF;
+      --shadow-xs:   0 2px 10px rgba(47,92,81,.07);
+      --shadow-sm:   0 4px 20px rgba(47,92,81,.10);
+      --r-sm: 12px;
+      --r-md: 20px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Nav ──────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 20px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(248,244,239,.88);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 rgba(47,92,81,.08);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 22px; font-weight: 700; color: var(--green-deep);
+    }
+    .nav-cta {
+      background: var(--green-deep); color: white;
+      padding: 10px 24px; border-radius: 999px;
+      font-size: 14px; font-weight: 500;
+      transition: background .2s, transform .15s;
+    }
+    .nav-cta:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+    /* ── Page layout ──────────────────────────────── */
+    .page-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 120px 48px 80px;
+    }
+
+    /* ── Header ───────────────────────────────────── */
+    .page-header {
+      margin-bottom: 52px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--bg-dark);
+    }
+    .page-label {
+      display: inline-block;
+      font-size: 12px; font-weight: 600; letter-spacing: 1.4px;
+      text-transform: uppercase; color: var(--green-mid);
+      margin-bottom: 16px;
+    }
+    .page-header h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(38px, 5vw, 56px);
+      font-weight: 600; line-height: 1.06; letter-spacing: -1.5px;
+      color: var(--ink); margin-bottom: 16px;
+    }
+    .page-header p {
+      font-size: 16px; color: var(--ink-mid);
+      font-weight: 300; line-height: 1.7; max-width: 560px;
+    }
+
+    /* ── Contact card ─────────────────────────────── */
+    .contact-card {
+      background: var(--green-deep);
+      border-radius: var(--r-md);
+      padding: 32px 36px;
+      margin-bottom: 56px;
+      display: flex; align-items: flex-start; gap: 20px;
+    }
+    .contact-icon {
+      width: 48px; height: 48px; border-radius: 14px;
+      background: rgba(255,255,255,.12);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-icon svg { width: 22px; height: 22px; stroke: white; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .contact-card h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 24px; font-weight: 700; color: white;
+      margin-bottom: 6px;
+    }
+    .contact-card p {
+      font-size: 14px; color: rgba(255,255,255,.7);
+      font-weight: 300; line-height: 1.6; margin-bottom: 16px;
+    }
+    .contact-email {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.2);
+      color: white; font-size: 14px; font-weight: 500;
+      padding: 9px 18px; border-radius: 999px;
+      transition: background .2s;
+    }
+    .contact-email:hover { background: rgba(255,255,255,.22); }
+
+    /* ── FAQ sections ─────────────────────────────── */
+    .section { margin-bottom: 48px; }
+    .section h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 26px; font-weight: 700; color: var(--ink);
+      margin-bottom: 20px; letter-spacing: -.3px;
+    }
+
+    .faq-list { display: flex; flex-direction: column; gap: 2px; }
+    .faq-item {
+      background: var(--white);
+      border: 1px solid rgba(47,92,81,.07);
+      border-radius: var(--r-sm);
+      overflow: hidden;
+    }
+    .faq-item + .faq-item { margin-top: 2px; }
+
+    .faq-q {
+      width: 100%; background: none; border: none; cursor: pointer;
+      padding: 18px 22px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      text-align: left; font-family: inherit;
+    }
+    .faq-q-text {
+      font-size: 15px; font-weight: 500; color: var(--ink); line-height: 1.4;
+    }
+    .faq-chevron {
+      width: 18px; height: 18px; flex-shrink: 0;
+      stroke: var(--ink-soft); fill: none; stroke-width: 2.2;
+      stroke-linecap: round; stroke-linejoin: round;
+      transition: transform .2s;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+
+    .faq-a {
+      display: none;
+      padding: 0 22px 18px;
+    }
+    .faq-item.open .faq-a { display: block; }
+    .faq-a p {
+      font-size: 14.5px; line-height: 1.75; color: var(--ink-mid); font-weight: 300;
+      margin-bottom: 8px;
+    }
+    .faq-a p:last-child { margin-bottom: 0; }
+    .faq-a ol, .faq-a ul {
+      padding-left: 18px; margin-bottom: 8px;
+    }
+    .faq-a li {
+      font-size: 14.5px; line-height: 1.75; color: var(--ink-mid); font-weight: 300; margin-bottom: 4px;
+    }
+    .faq-a a {
+      color: var(--green-mid); font-weight: 500;
+      text-decoration: underline; text-decoration-color: rgba(58,111,99,.3);
+    }
+    .faq-a a:hover { color: var(--green-deep); }
+
+    /* ── Beta feedback section ────────────────────── */
+    .beta-card {
+      background: var(--gold-light);
+      border: 1px solid rgba(184,147,90,.25);
+      border-left: 3px solid var(--gold);
+      border-radius: var(--r-sm);
+      padding: 24px 28px;
+      margin-top: 32px;
+    }
+    .beta-card h3 {
+      font-size: 15px; font-weight: 600; color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .beta-card p {
+      font-size: 14.5px; line-height: 1.7; color: var(--ink-mid);
+      font-weight: 300; margin-bottom: 10px;
+    }
+    .beta-card p:last-child { margin-bottom: 0; }
+    .beta-card ol {
+      padding-left: 18px; margin-bottom: 10px;
+    }
+    .beta-card li {
+      font-size: 14.5px; line-height: 1.7; color: var(--ink-mid);
+      font-weight: 300; margin-bottom: 4px;
+    }
+
+    /* ── Footer ───────────────────────────────────── */
+    footer {
+      padding: 28px 48px;
+      border-top: 1px solid var(--bg-dark);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; font-weight: 700; color: var(--green-deep); }
+    .footer-mid { font-size: 13px; color: var(--ink-soft); text-align: center; }
+    .footer-mid a { color: var(--green-mid); font-weight: 500; }
+    .footer-right { font-size: 13px; color: var(--ink-soft); }
+
+    /* ── Responsive ───────────────────────────────── */
+    @media (max-width: 960px) {
+      nav { padding: 16px 24px; }
+      .page-wrap { padding: 100px 32px 60px; }
+      .contact-card { flex-direction: column; padding: 24px; }
+      footer { flex-direction: column; gap: 10px; text-align: center; padding: 24px; }
+    }
+    @media (max-width: 600px) {
+      .page-wrap { padding: 90px 20px 52px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="/" class="nav-logo">SimplyPray</a>
+    <a href="https://apps.apple.com/app/id6772402646" class="nav-cta">Get the App</a>
+  </nav>
+
+  <div class="page-wrap">
+
+    <!-- Header -->
+    <div class="page-header">
+      <div class="page-label">Help</div>
+      <h1>Support</h1>
+      <p>Have a question, found a bug, or want to share feedback? We are happy to hear from you.</p>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-card">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div>
+        <h2>Email support</h2>
+        <p>Send us a message and we will get back to you as soon as we can. Please include your iOS version and a brief description of the issue.</p>
+        <a href="mailto:joshua@solomonsolutions.tech" class="contact-email">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          joshua@solomonsolutions.tech
+        </a>
+      </div>
+    </div>
+
+    <!-- FAQ: Account -->
+    <div class="section">
+      <h2>Account &amp; data</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-q-text">How do I delete my account?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Open the app, tap the <strong>account icon</strong> (person symbol), then <strong>Delete Account</strong>. This permanently deletes your account and all server-side data. It cannot be undone.</p>
+            <p>Your on-device prayer data (prayers, journal, tags) is stored locally and is not affected by account deletion — it is removed only when you delete the app.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-q-text">Where is my prayer data stored?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Your prayers, journal entries, answered-prayer log, and tags are stored entirely on your iPhone using SwiftData. They are never uploaded to our servers.</p>
+            <p>The app works fully offline. No iCloud sync is active at launch — your data lives on the device you installed the app on.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-q-text">I forgot my password. How do I reset it?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>On the sign-in screen, tap <strong>Forgot password?</strong> and enter your email address. You will receive a reset link by email. Check your spam folder if it does not arrive within a couple of minutes.</p>
+            <p>If you are still stuck, email us at <a href="mailto:joshua@solomonsolutions.tech">joshua@solomonsolutions.tech</a>.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FAQ: Subscriptions -->
+    <div class="section">
+      <h2>Subscriptions</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-q-text">How do I manage or cancel my subscription on iPhone?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>If you subscribed through the App Store, your subscription is managed by Apple:</p>
+            <ol>
+              <li>Open <strong>Settings</strong> on your iPhone.</li>
+              <li>Tap your name at the top, then <strong>Subscriptions</strong>.</li>
+              <li>Tap <strong>SimplyPray</strong> and choose to cancel or modify.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-q-text">How do I manage my subscription on the web?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>If you subscribed through the web app at <a href="https://app.simplypray.io">app.simplypray.io</a>, you can manage your subscription via the Stripe customer portal. Sign in, open <strong>Billing</strong> from the dashboard, and follow the link to the billing portal.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-q-text">I was charged but the app is not unlocked. What do I do?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Sign out of the app and sign back in — this refreshes your subscription status. If the issue persists after a few minutes, email us at <a href="mailto:joshua@solomonsolutions.tech">joshua@solomonsolutions.tech</a> with your account email and we will sort it out promptly.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FAQ: App -->
+    <div class="section">
+      <h2>Using the app</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-q-text">How do I mark a prayer as answered?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>On any prayer row in Supplication or Thanksgiving, tap the <strong>sparkle-hands icon</strong> (labelled "Answered") to move the prayer to your answered-prayer archive. It becomes part of your permanent thanksgiving record.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-q-text">Does the app work offline?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Yes. Your private prayer data is stored on your device. You can add, edit, and pray through all your requests without an internet connection. An internet connection is only required to sign in, manage your subscription, or use shared group lists.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Beta feedback -->
+    <div class="section">
+      <h2>TestFlight beta testers</h2>
+      <p style="font-size:15px;line-height:1.75;color:var(--ink-mid);font-weight:300;margin-bottom:16px;">If you are testing SimplyPray through TestFlight, thank you. Here is how to send feedback:</p>
+
+      <div class="beta-card">
+        <h3>Sending feedback on iOS 18+</h3>
+        <p>Apple moved the "Send Beta Feedback" option in iOS 18. The two reliable paths:</p>
+        <ol>
+          <li><strong>Inside the TestFlight app</strong> &rarr; tap SimplyPray &rarr; <strong>Send Beta Feedback</strong>. You can attach screenshots from your library or write a comment. This is the recommended path.</li>
+          <li><strong>Settings &rarr; TestFlight &rarr; Send Beta Feedback</strong> &mdash; if this toggle is off, the share-screenshot prompt will not appear. Flip it on.</li>
+        </ol>
+        <p>Nothing in SimplyPray itself blocks feedback — this is a change Apple made in iOS 18.</p>
+        <p>You can also email feedback directly to <a href="mailto:joshua@solomonsolutions.tech" style="color:var(--gold);font-weight:500;">joshua@solomonsolutions.tech</a> with screenshots attached.</p>
+      </div>
+    </div>
+
+  </div><!-- /.page-wrap -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">SimplyPray</div>
+    <p class="footer-mid">A <a href="https://solomonsolutions.tech">Solomon Solutions</a> product. &nbsp;<a href="/privacy">Privacy</a> &nbsp;&middot;&nbsp; <a href="/support">Support</a></p>
+    <p class="footer-right">&copy; 2026 Solomon Solutions LLC</p>
+  </footer>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        // close all
+        document.querySelectorAll('.faq-item.open').forEach(function(el) {
+          el.classList.remove('open');
+          el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+        // open clicked if it was closed
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
