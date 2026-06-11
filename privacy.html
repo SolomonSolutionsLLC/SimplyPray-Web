@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — SimplyPray</title>
+  <meta name="description" content="SimplyPray privacy policy. Your prayers stay on your device. Plain-English explanation of what we collect and why." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:          #F8F4EF;
+      --bg-dark:     #EDE8DF;
+      --green-deep:  #2F5C51;
+      --green-mid:   #3A6F63;
+      --green-light: #CFE7DD;
+      --green-pale:  #EBF5F1;
+      --gold:        #B8935A;
+      --gold-light:  #F2E8D6;
+      --ink:         #1D2B27;
+      --ink-mid:     #4A5C57;
+      --ink-soft:    #7A8C87;
+      --white:       #FFFFFF;
+      --shadow-xs:   0 2px 10px rgba(47,92,81,.07);
+      --shadow-sm:   0 4px 20px rgba(47,92,81,.10);
+      --r-sm: 12px;
+      --r-md: 20px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Nav ──────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 20px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(248,244,239,.88);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 rgba(47,92,81,.08);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 22px; font-weight: 700; color: var(--green-deep);
+    }
+    .nav-cta {
+      background: var(--green-deep); color: white;
+      padding: 10px 24px; border-radius: 999px;
+      font-size: 14px; font-weight: 500;
+      transition: background .2s, transform .15s;
+    }
+    .nav-cta:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+    /* ── Page layout ──────────────────────────────── */
+    .page-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 120px 48px 80px;
+    }
+
+    /* ── Header ───────────────────────────────────── */
+    .page-header {
+      margin-bottom: 52px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--bg-dark);
+    }
+    .page-label {
+      display: inline-block;
+      font-size: 12px; font-weight: 600; letter-spacing: 1.4px;
+      text-transform: uppercase; color: var(--green-mid);
+      margin-bottom: 16px;
+    }
+    .page-header h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(38px, 5vw, 56px);
+      font-weight: 600; line-height: 1.06; letter-spacing: -1.5px;
+      color: var(--ink); margin-bottom: 16px;
+    }
+    .page-header p {
+      font-size: 16px; color: var(--ink-mid);
+      font-weight: 300; line-height: 1.7; max-width: 560px;
+    }
+    .effective-date {
+      margin-top: 16px;
+      font-size: 13px; color: var(--ink-soft);
+    }
+
+    /* ── Highlight box ────────────────────────────── */
+    .highlight-box {
+      background: var(--green-pale);
+      border: 1px solid var(--green-light);
+      border-left: 3px solid var(--green-deep);
+      border-radius: var(--r-sm);
+      padding: 20px 24px;
+      margin-bottom: 48px;
+    }
+    .highlight-box p {
+      font-size: 15px; line-height: 1.7; color: var(--green-deep); font-weight: 400;
+    }
+
+    /* ── Content ──────────────────────────────────── */
+    .section { margin-bottom: 48px; }
+    .section h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 26px; font-weight: 700; color: var(--ink);
+      margin-bottom: 16px; letter-spacing: -.3px;
+    }
+    .section h3 {
+      font-size: 15px; font-weight: 600; color: var(--ink);
+      margin-top: 24px; margin-bottom: 8px;
+    }
+    .section p {
+      font-size: 15px; line-height: 1.75; color: var(--ink-mid);
+      font-weight: 300; margin-bottom: 12px;
+    }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul, .section ol {
+      padding-left: 20px; margin-bottom: 12px;
+    }
+    .section li {
+      font-size: 15px; line-height: 1.75; color: var(--ink-mid);
+      font-weight: 300; margin-bottom: 6px;
+    }
+    .section a {
+      color: var(--green-mid); font-weight: 500;
+      text-decoration: underline; text-decoration-color: rgba(58,111,99,.3);
+    }
+    .section a:hover { color: var(--green-deep); text-decoration-color: var(--green-deep); }
+
+    /* ── Data table ───────────────────────────────── */
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      margin: 16px 0 12px; font-size: 14px;
+    }
+    .data-table th {
+      text-align: left; padding: 10px 14px;
+      background: var(--bg-dark); color: var(--ink);
+      font-weight: 600; font-size: 12px; letter-spacing: .4px;
+      border-bottom: 1px solid rgba(47,92,81,.10);
+    }
+    .data-table th:first-child { border-radius: var(--r-sm) 0 0 0; }
+    .data-table th:last-child  { border-radius: 0 var(--r-sm) 0 0; }
+    .data-table td {
+      padding: 10px 14px; border-bottom: 1px solid rgba(47,92,81,.07);
+      color: var(--ink-mid); font-weight: 300; line-height: 1.5;
+      vertical-align: top;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* ── Divider ──────────────────────────────────── */
+    .divider { height: 1px; background: var(--bg-dark); margin: 48px 0; }
+
+    /* ── Footer ───────────────────────────────────── */
+    footer {
+      padding: 28px 48px;
+      border-top: 1px solid var(--bg-dark);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; font-weight: 700; color: var(--green-deep); }
+    .footer-mid { font-size: 13px; color: var(--ink-soft); text-align: center; }
+    .footer-mid a { color: var(--green-mid); font-weight: 500; }
+    .footer-right { font-size: 13px; color: var(--ink-soft); }
+
+    /* ── Responsive ───────────────────────────────── */
+    @media (max-width: 960px) {
+      nav { padding: 16px 24px; }
+      .page-wrap { padding: 100px 32px 60px; }
+      footer { flex-direction: column; gap: 10px; text-align: center; padding: 24px; }
+    }
+    @media (max-width: 600px) {
+      .page-wrap { padding: 90px 20px 52px; }
+      .data-table { font-size: 13px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="/" class="nav-logo">SimplyPray</a>
+    <a href="https://apps.apple.com/app/id6772402646" class="nav-cta">Get the App</a>
+  </nav>
+
+  <div class="page-wrap">
+
+    <!-- Header -->
+    <div class="page-header">
+      <div class="page-label">Legal</div>
+      <h1>Privacy Policy</h1>
+      <p>We built SimplyPray to be a private place for prayer. Here is a plain-English account of what data we collect, what we do not collect, and why.</p>
+      <p class="effective-date">Effective date: June 11, 2026 &nbsp;&middot;&nbsp; Company: Solomon Solutions LLC</p>
+    </div>
+
+    <!-- TL;DR highlight -->
+    <div class="highlight-box">
+      <p><strong>The short version:</strong> Your prayers and journal entries stay on your device — we never see them. We collect your email address to create your account, and subscription status to grant access to paid features. We do not run ads, we do not sell your data, and we do not use any third-party tracking or analytics SDK.</p>
+    </div>
+
+    <!-- 1. What we collect -->
+    <div class="section">
+      <h2>1. What we collect</h2>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Where it lives</th>
+            <th>Why we collect it</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Email address &amp; hashed password</td>
+            <td>Supabase servers</td>
+            <td>Account creation and sign-in</td>
+          </tr>
+          <tr>
+            <td>Supabase user ID</td>
+            <td>Supabase servers</td>
+            <td>Ties your account to subscription entitlements and any shared content you create</td>
+          </tr>
+          <tr>
+            <td>Subscription status</td>
+            <td>Supabase servers</td>
+            <td>Determines which features you can access</td>
+          </tr>
+          <tr>
+            <td>Shared prayer list content</td>
+            <td>Supabase servers</td>
+            <td>Only content you explicitly post to a shared group list — never your private prayers</td>
+          </tr>
+          <tr>
+            <td>Prayer requests, journal, answered-prayer log, tags, streaks</td>
+            <td><strong>Your device only</strong> (SwiftData)</td>
+            <td>Your private prayer data. It never leaves your device and is not uploaded anywhere.</td>
+          </tr>
+          <tr>
+            <td>In-app usage events (e.g. "prayer marked prayed")</td>
+            <td><strong>Your device only</strong> (SwiftData)</td>
+            <td>Local-only analytics for streak tracking and app improvement. Not transmitted off-device.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>No iCloud sync is active at launch. Your private prayer data is local to the device you installed the app on.</p>
+    </div>
+
+    <!-- 2. Prayer data — on device -->
+    <div class="section">
+      <h2>2. Your prayers stay on your device</h2>
+      <p>Prayer requests, confession prompts, thanksgiving entries, journal notes, and answered-prayer records are stored exclusively in SwiftData on your iPhone. We have no server-side copy of this content. If you delete the app, this data is deleted with it.</p>
+      <p>The app works fully offline. No background sync occurs while the app is running.</p>
+    </div>
+
+    <!-- 3. Account data -->
+    <div class="section">
+      <h2>3. Account data (Supabase)</h2>
+      <p>When you create an account, your email address and a hashed password are stored in Supabase (our authentication provider). We store the minimum needed to let you sign in and manage your subscription.</p>
+
+      <h3>Account deletion</h3>
+      <p>You can delete your account at any time from within the app (Settings &rarr; Account &rarr; Delete Account). Doing so permanently deletes your account record and any server-side data associated with it via the <code>delete_account</code> Supabase function. There is no waiting period.</p>
+    </div>
+
+    <!-- 4. Shared lists -->
+    <div class="section">
+      <h2>4. Shared lists and groups</h2>
+      <p>SimplyPray includes an opt-in shared-list feature (church groups, family prayer lists, etc.). Only content you explicitly post to a shared list is stored on our servers. This is strictly opt-in — your private prayer data is never affected. Shared-list content is protected by row-level security in Supabase so only members of your group can read it.</p>
+    </div>
+
+    <!-- 5. Subscriptions and payments -->
+    <div class="section">
+      <h2>5. Subscriptions and payments</h2>
+      <p>SimplyPray offers a paid subscription tier. Payments are processed by:</p>
+      <ul>
+        <li><strong>Apple In-App Purchase</strong> — for purchases made inside the iOS app. Apple handles all payment processing. We never see your card number or billing details. Apple notifies us of your subscription status.</li>
+        <li><strong>Stripe</strong> — for web checkout at app.simplypray.io. Stripe handles all card processing and stores payment-method data. We store only the resulting subscription status in Supabase.</li>
+      </ul>
+      <p>We store subscription status (active, cancelled, tier) to determine which features you can access. We do not store card numbers, CVVs, or full billing addresses.</p>
+    </div>
+
+    <!-- 6. No ad tracking -->
+    <div class="section">
+      <h2>6. No ad tracking</h2>
+      <p>SimplyPray does not use advertising or third-party tracking of any kind.</p>
+      <ul>
+        <li><strong>NSPrivacyTracking = false</strong> — declared in the app's privacy manifest. No cross-app or cross-site tracking occurs.</li>
+        <li>No third-party analytics SDK (e.g. Firebase Analytics, Mixpanel, Amplitude) is included in the app.</li>
+        <li>The in-app analytics service tracks events locally (streaks, usage patterns) and persists them only to your device's SwiftData store. Nothing is transmitted to us or to any third party.</li>
+        <li>We do not sell, rent, or share your personal data with data brokers or advertising networks.</li>
+      </ul>
+    </div>
+
+    <!-- 7. Email communications -->
+    <div class="section">
+      <h2>7. Email communications</h2>
+      <p>We send transactional emails to the address on your account. These include:</p>
+      <ul>
+        <li>Account creation and email verification</li>
+        <li>Password reset requests</li>
+        <li>Subscription confirmation, renewal, and cancellation notices</li>
+      </ul>
+      <p>These emails are sent from <strong>no-reply@simplypray.io</strong> via Amazon Simple Email Service (SES). We do not send marketing or promotional emails without your explicit consent.</p>
+    </div>
+
+    <!-- 8. Cookies -->
+    <div class="section">
+      <h2>8. Cookies and the web</h2>
+      <p>This marketing site (simplypray.io) is static HTML with no analytics scripts, advertising pixels, or tracking cookies. It does not set any cookies in your browser.</p>
+      <p>The web app at <strong>app.simplypray.io</strong> uses essential cookies required for authentication. Specifically, Supabase stores a session token in your browser so you stay signed in. These cookies are necessary for the app to function and are not used for advertising or tracking purposes.</p>
+    </div>
+
+    <!-- 9. Data processors -->
+    <div class="section">
+      <h2>9. Third-party data processors</h2>
+      <p>We use the following services to operate SimplyPray. Each acts as a data processor under our instructions and is bound by appropriate data-handling terms.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Processor</th>
+            <th>Purpose</th>
+            <th>Data shared</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Supabase</td>
+            <td>Authentication, database, shared-list storage</td>
+            <td>Email, user ID, subscription status, shared-list content</td>
+          </tr>
+          <tr>
+            <td>Stripe</td>
+            <td>Web payment processing</td>
+            <td>Email (for receipts), subscription status</td>
+          </tr>
+          <tr>
+            <td>Apple</td>
+            <td>iOS In-App Purchase</td>
+            <td>Subscription status notifications (Apple manages payment data)</td>
+          </tr>
+          <tr>
+            <td>Amazon SES</td>
+            <td>Transactional email delivery</td>
+            <td>Your email address and email content for delivery</td>
+          </tr>
+          <tr>
+            <td>Vercel</td>
+            <td>Hosting for this marketing site and web app</td>
+            <td>Standard web server logs (IP address, user-agent) per Vercel's privacy policy</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>We do not sell your data to any of these processors or to any other party. They are used solely to provide the service.</p>
+    </div>
+
+    <!-- 10. Retention -->
+    <div class="section">
+      <h2>10. Data retention</h2>
+      <p>We retain your account data (email, user ID, subscription status) for as long as your account is active. When you delete your account, server-side data is permanently deleted.</p>
+      <p>On-device data (prayers, journal, usage events) is deleted when you delete the app, or when you clear app data on your device.</p>
+      <p>Local usage-event records are automatically pruned after 90 days by the app.</p>
+    </div>
+
+    <!-- 11. Children -->
+    <div class="section">
+      <h2>11. Children</h2>
+      <p>SimplyPray is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that a child under 13 has provided us with personal data, we will delete it promptly. If you believe a child has provided us their information, contact us at the address below.</p>
+    </div>
+
+    <!-- 12. Your rights and choices -->
+    <div class="section">
+      <h2>12. Your rights and choices</h2>
+      <p>Regardless of where you live, you can:</p>
+      <ul>
+        <li><strong>Access</strong> the email address and subscription status we hold for your account by signing in.</li>
+        <li><strong>Delete your account</strong> at any time from inside the app (Settings &rarr; Account &rarr; Delete Account). This permanently deletes your server-side data.</li>
+        <li><strong>Export or delete on-device data</strong> by deleting the app from your iPhone.</li>
+        <li><strong>Opt out of transactional emails</strong> by deleting your account (we have no marketing list to unsubscribe from).</li>
+      </ul>
+      <p>To request information about data we hold on you, or if you have any other privacy question, contact us at <a href="mailto:joshua@solomonsolutions.tech">joshua@solomonsolutions.tech</a>.</p>
+    </div>
+
+    <!-- 13. Changes -->
+    <div class="section">
+      <h2>13. Changes to this policy</h2>
+      <p>If we make material changes to this policy, we will update the effective date at the top of this page. For significant changes, we may also notify you by email. Continued use of SimplyPray after a change takes effect constitutes your acceptance of the updated policy.</p>
+    </div>
+
+    <!-- 14. Contact -->
+    <div class="section">
+      <h2>14. Contact</h2>
+      <p>Questions about this policy or your data:</p>
+      <p>
+        Solomon Solutions LLC<br />
+        Email: <a href="mailto:joshua@solomonsolutions.tech">joshua@solomonsolutions.tech</a>
+      </p>
+    </div>
+
+  </div><!-- /.page-wrap -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">SimplyPray</div>
+    <p class="footer-mid">A <a href="https://solomonsolutions.tech">Solomon Solutions</a> product. &nbsp;<a href="/privacy">Privacy</a> &nbsp;&middot;&nbsp; <a href="/support">Support</a></p>
+    <p class="footer-right">&copy; 2026 Solomon Solutions LLC</p>
+  </footer>
+
+</body>
+</html>
