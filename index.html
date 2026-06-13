@@ -3,11 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SimplyPray — Prayer Made Simple</title>
-  <meta name="description" content="A guided prayer app built on the ACTS model — Adoration, Confession, Thanksgiving, Supplication. No distractions. Just you and God." />
+
+  <!-- ── Primary SEO ─────────────────────────────────────────── -->
+  <title>SimplyPray: Guided Prayer App on the ACTS Method | Prayer Lists & Answered-Prayer Journal</title>
+  <meta name="description" content="SimplyPray is a distraction-free, Scripture-rooted prayer app built on the ACTS method: Adoration, Confession, Thanksgiving, Supplication. Organize prayer requests, never lose one, and keep a record of every answered prayer. Built by a pastor. Free on the App Store." />
+  <meta name="keywords" content="prayer app, guided prayer, ACTS prayer method, prayer journal, prayer list app, Christian prayer app, answered prayer tracker, distraction-free prayer, church prayer app" />
+  <meta name="author" content="Solomon Solutions LLC" />
+  <link rel="canonical" href="https://simplypray.io/" />
+  <meta name="theme-color" content="#2F5C51" />
+
+  <!-- ── Open Graph ──────────────────────────────────────────── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SimplyPray" />
+  <meta property="og:title" content="SimplyPray: Pray with depth. Remember every prayer." />
+  <meta property="og:description" content="A guided, distraction-free prayer app on the ACTS method. Organize requests, never lose one, and watch God answer. Built by a pastor. Free on the App Store." />
+  <meta property="og:url" content="https://simplypray.io/" />
+  <meta property="og:image" content="https://simplypray.io/assets/brand/apple-touch-icon-180.png" />
+
+  <!-- ── Twitter ─────────────────────────────────────────────── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SimplyPray: Pray with depth. Remember every prayer." />
+  <meta name="twitter:description" content="A guided, distraction-free prayer app on the ACTS method. Built by a pastor. Free on the App Store." />
+  <meta name="twitter:image" content="https://simplypray.io/assets/brand/apple-touch-icon-180.png" />
+
+  <!-- ── Icons ───────────────────────────────────────────────── -->
+  <link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon-180.png" />
+
+  <!-- ── Fonts ───────────────────────────────────────────────── -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+
+  <!-- ── Structured data (rich results + ASO alignment) ──────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SimplyPray",
+    "operatingSystem": "iOS",
+    "applicationCategory": "LifestyleApplication",
+    "description": "A distraction-free, Scripture-rooted prayer app built on the ACTS method. Organize prayer requests, never lose one, and keep a record of every answered prayer.",
+    "url": "https://simplypray.io/",
+    "downloadUrl": "https://apps.apple.com/app/id6772402646",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Solomon Solutions LLC",
+      "url": "https://solomonsolutions.tech"
+    }
+  }
+  </script>
 
   <style>
     /* ── Variables ────────────────────────────────── */
@@ -16,13 +66,14 @@
       --bg-dark:     #EDE8DF;
       --green-deep:  #2F5C51;
       --green-mid:   #3A6F63;
+      --green-brand: #3E8B7C;   /* matches brand logo SVG */
       --green-light: #CFE7DD;
       --green-pale:  #EBF5F1;
       --gold:        #B8935A;
       --gold-light:  #F2E8D6;
       --ink:         #1D2B27;
       --ink-mid:     #4A5C57;
-      --ink-soft:    #7A8C87;
+      --ink-soft:    #607069;
       --white:       #FFFFFF;
       --shadow-xs:   0 2px 10px rgba(47,92,81,.07);
       --shadow-sm:   0 4px 20px rgba(47,92,81,.10);
@@ -31,6 +82,8 @@
       --r-sm: 12px;
       --r-md: 20px;
       --r-lg: 32px;
+      --ease-quint: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-expo:  cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     /* ── Reset ────────────────────────────────────── */
@@ -43,6 +96,7 @@
       overflow-x: hidden;
     }
     a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
 
     /* ── Grain overlay ────────────────────────────── */
     body::after {
@@ -57,7 +111,7 @@
     /* ── Nav ──────────────────────────────────────── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      padding: 20px 48px;
+      padding: 18px 48px;
       display: flex; align-items: center; justify-content: space-between;
       transition: background .3s, box-shadow .3s;
     }
@@ -66,24 +120,36 @@
       backdrop-filter: blur(16px);
       box-shadow: 0 1px 0 rgba(47,92,81,.08);
     }
-    .nav-logo {
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo img { width: 30px; height: 30px; }
+    .nav-logo span {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 22px; font-weight: 700; color: var(--green-deep);
+      font-size: 23px; font-weight: 700; color: var(--green-deep);
+      letter-spacing: -.3px;
     }
+    .nav-links { display: flex; align-items: center; gap: 26px; }
+    .nav-link { font-size: 14.5px; font-weight: 500; color: var(--ink-mid); transition: color .2s; }
+    .nav-link:hover { color: var(--green-deep); }
     .nav-cta {
       background: var(--green-deep); color: white;
-      padding: 10px 24px; border-radius: 999px;
+      padding: 10px 22px; border-radius: 999px;
       font-size: 14px; font-weight: 500;
       transition: background .2s, transform .15s;
     }
     .nav-cta:hover { background: var(--green-mid); transform: translateY(-1px); }
+    .nav-toggle { display: none; background: none; border: 0; cursor: pointer; padding: 10px; margin: -10px -10px -10px 0; color: var(--green-deep); }
+    .nav-toggle svg { width: 24px; height: 24px; display: block; }
+    nav.scrolled .nav-link { color: var(--ink); }
+
+    /* Keyboard focus visibility */
+    :focus-visible { outline: 2px solid var(--green-deep); outline-offset: 3px; border-radius: 4px; }
 
     /* ── Hero ─────────────────────────────────────── */
     .hero {
       min-height: 100vh;
-      display: grid; grid-template-columns: 1fr 1fr;
+      display: grid; grid-template-columns: 1.05fr .95fr;
       align-items: center; gap: 48px;
-      padding: 130px 80px 80px;
+      padding: 130px 80px 70px;
       max-width: 1240px; margin: 0 auto;
       position: relative;
     }
@@ -98,7 +164,7 @@
       display: inline-flex; align-items: center; gap: 8px;
       background: var(--green-pale); border: 1px solid var(--green-light);
       color: var(--green-deep); font-size: 13px; font-weight: 500;
-      padding: 6px 14px; border-radius: 999px; margin-bottom: 28px;
+      padding: 6px 14px; border-radius: 999px; margin-bottom: 26px;
     }
     .eyebrow .live-dot {
       width: 7px; height: 7px; background: #4EBE94;
@@ -110,14 +176,14 @@
     }
     .hero h1 {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(52px, 5.2vw, 80px);
-      font-weight: 600; line-height: 1.04; letter-spacing: -2px;
-      color: var(--ink); margin-bottom: 24px;
+      font-size: clamp(48px, 5vw, 76px);
+      font-weight: 600; line-height: 1.05; letter-spacing: -2px;
+      color: var(--ink); margin-bottom: 22px;
     }
     .hero h1 em { font-style: italic; color: var(--green-mid); }
     .hero-desc {
       font-size: 18px; line-height: 1.7; color: var(--ink-mid);
-      font-weight: 300; max-width: 460px; margin-bottom: 40px;
+      font-weight: 300; max-width: 480px; margin-bottom: 32px;
     }
     .hero-actions {
       display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
@@ -137,75 +203,30 @@
       transition: color .2s;
     }
     .btn-ghost:hover { color: var(--green-deep); }
+    .hero-trust {
+      margin-top: 22px; font-size: 13.5px; color: var(--ink-soft);
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .hero-trust .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--ink-soft); opacity: .5; }
 
-    /* ── Phone Mockup ─────────────────────────────── */
+    /* ── Phone Mockup (real screenshot) ───────────── */
     .hero-device { position: relative; z-index: 1; display: flex; justify-content: center; overflow: visible; }
     .phone {
-      width: 274px;
-      background: #161616;
-      border-radius: 48px; padding: 14px;
-      box-shadow: 0 0 0 1.5px rgba(255,255,255,.1), var(--shadow-lg);
+      width: 286px;
+      background: #111;
+      border-radius: 48px; padding: 12px;
+      box-shadow: 0 0 0 1.5px rgba(255,255,255,.12), var(--shadow-lg);
       position: relative;
     }
-    .phone-island {
-      width: 100px; height: 30px;
-      background: #161616; border-radius: 0 0 20px 20px;
-      margin: 0 auto 6px;
-    }
     .phone-screen {
-      border-radius: 36px; overflow: hidden;
-      background: var(--bg); min-height: 510px;
+      border-radius: 38px; overflow: hidden;
+      background: #000; position: relative;
+      aspect-ratio: 1206 / 2622;
     }
-    .ps-status {
-      padding: 10px 18px 0;
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: 11.5px; font-weight: 600; color: var(--ink);
-    }
-    .ps-icons { display: flex; gap: 5px; align-items: center; font-size: 11px; }
-    .ps-body { padding: 10px 14px 14px; }
-    .ps-progress { display: flex; gap: 5px; margin-bottom: 14px; }
-    .ps-prog-seg {
-      height: 3.5px; flex: 1; border-radius: 2px;
-      background: var(--bg-dark);
-    }
-    .ps-prog-seg.on { background: var(--green-deep); }
-    .ps-step-label {
-      font-size: 10.5px; font-weight: 600; text-transform: uppercase;
-      letter-spacing: 1.6px; color: var(--ink-soft);
-      text-align: center; margin-bottom: 4px;
-    }
-    .ps-step-title {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 24px; font-weight: 700; color: var(--green-deep);
-      text-align: center; margin-bottom: 12px;
-    }
-    .ps-attr-card {
-      background: var(--white); border-radius: 16px;
-      padding: 14px 14px 12px;
-      box-shadow: var(--shadow-xs); margin-bottom: 10px;
-    }
-    .ps-attr-name {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 20px; font-weight: 700; color: var(--green-deep);
-      text-align: center; margin-bottom: 5px;
-    }
-    .ps-attr-def {
-      font-size: 11.5px; color: var(--ink-mid); line-height: 1.55;
-      text-align: center; margin-bottom: 9px;
-    }
-    .ps-verse {
-      background: var(--green-pale);
-      border-left: 2px solid var(--green-mid);
-      border-radius: 8px; padding: 9px 11px;
-      font-size: 10.5px; color: var(--green-deep);
-      font-style: italic; line-height: 1.5;
-    }
-    .ps-btn {
-      display: block; width: 100%;
-      background: var(--green-deep); color: white;
-      text-align: center; padding: 12px;
-      border-radius: 999px; font-size: 13.5px; font-weight: 600;
-      border: none; cursor: default; margin-top: 8px;
+    .phone-screen img { width: 100%; height: 100%; object-fit: cover; }
+    .phone-notch {
+      position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+      width: 96px; height: 26px; background: #111; border-radius: 999px; z-index: 2;
     }
 
     /* Floating callout chips */
@@ -215,7 +236,7 @@
       padding: 11px 15px;
       box-shadow: var(--shadow-sm);
       display: flex; align-items: center; gap: 10px;
-      white-space: nowrap; font-size: 13px;
+      white-space: nowrap; font-size: 13px; z-index: 3;
     }
     .chip-icon {
       width: 34px; height: 34px; border-radius: 10px;
@@ -224,18 +245,58 @@
     }
     .chip-label { font-weight: 600; color: var(--ink); line-height: 1.2; }
     .chip-sub { font-size: 11px; color: var(--ink-soft); }
-    .chip-right { right: -32px; top: 28%; background: white; }
+    .chip-right { right: -36px; top: 22%; background: white; }
     .chip-left {
-      left: -80px; bottom: 26%;
+      left: -70px; bottom: 22%;
       background: var(--green-deep); color: white;
     }
     .chip-left .chip-label { color: white; }
     .chip-left .chip-sub { color: rgba(255,255,255,.65); }
 
+    /* ── Trust / reactions strip ──────────────────── */
+    .trust-strip {
+      border-top: 1px solid var(--bg-dark);
+      border-bottom: 1px solid var(--bg-dark);
+      background: rgba(255,255,255,.4);
+      padding: 26px 48px;
+    }
+    .trust-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: 14px 36px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 9px;
+      font-size: 14px; font-weight: 500; color: var(--ink-mid);
+    }
+    .trust-item svg { width: 17px; height: 17px; stroke: var(--green-mid); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+    /* ── Problem section ──────────────────────────── */
+    .problem {
+      padding: 96px 48px 40px;
+      max-width: 820px; margin: 0 auto; text-align: center;
+    }
+    .problem .eyebrow { background: var(--gold-light); border-color: rgba(184,147,90,.25); color: var(--gold); }
+    .problem h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(30px, 3.4vw, 46px); font-weight: 600;
+      line-height: 1.15; letter-spacing: -1px; color: var(--ink); margin: 14px 0 18px;
+    }
+    .problem p { font-size: 18px; line-height: 1.7; color: var(--ink-mid); font-weight: 300; }
+    .problem p em { font-style: italic; color: var(--green-mid); }
+
+    /* ── Section heading shared ───────────────────── */
+    .section-h {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(34px, 3.8vw, 54px);
+      font-weight: 600; line-height: 1.08; letter-spacing: -1px;
+      margin-bottom: 14px;
+    }
+
     /* ── ACTS Bar ─────────────────────────────────── */
     .acts-bar {
       background: var(--green-deep);
-      padding: 80px 48px;
+      padding: 96px 48px;
       position: relative; overflow: hidden;
     }
     .acts-bar::before {
@@ -243,98 +304,133 @@
       position: absolute; inset: 0;
       background: radial-gradient(ellipse at 75% 50%, rgba(207,231,221,.09) 0%, transparent 60%);
     }
-    .acts-inner {
-      max-width: 1100px; margin: 0 auto;
-      position: relative; z-index: 1;
-    }
+    .acts-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
     .acts-bar .eyebrow { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.15); color: var(--green-light); }
-    .section-h {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(34px, 3.8vw, 54px);
-      font-weight: 600; line-height: 1.08; letter-spacing: -1px;
-      margin-bottom: 14px;
-    }
     .acts-bar .section-h { color: white; }
-    .acts-bar .section-desc { font-size: 16px; color: rgba(255,255,255,.6); font-weight: 300; line-height: 1.65; max-width: 500px; margin-bottom: 56px; }
-    .acts-grid {
-      display: grid; grid-template-columns: repeat(4,1fr); gap: 18px;
-    }
+    .acts-bar .section-desc { font-size: 16px; color: rgba(255,255,255,.74); font-weight: 300; line-height: 1.65; max-width: 520px; margin-bottom: 52px; }
+    .acts-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
     .acts-card {
       background: rgba(255,255,255,.07);
       border: 1px solid rgba(255,255,255,.1);
       border-radius: var(--r-md); padding: 26px 22px;
-      position: relative; overflow: hidden;
-      transition: background .2s;
+      position: relative; overflow: hidden; transition: background .2s;
     }
     .acts-card:hover { background: rgba(255,255,255,.11); }
     .acts-bg-letter {
       position: absolute; top: 8px; right: 12px;
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 72px; font-weight: 700;
-      color: rgba(255,255,255,.07); line-height: 1;
+      font-size: 72px; font-weight: 700; color: rgba(255,255,255,.07); line-height: 1;
     }
     .acts-step { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.6px; color: var(--green-light); opacity: .75; margin-bottom: 8px; }
     .acts-title { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; font-weight: 700; color: white; margin-bottom: 8px; }
-    .acts-desc { font-size: 13.5px; color: rgba(255,255,255,.58); line-height: 1.65; font-weight: 300; }
+    .acts-desc { font-size: 13.5px; color: rgba(255,255,255,.74); line-height: 1.65; font-weight: 300; }
+
+    /* ── Showcase (real screenshots) ──────────────── */
+    .showcase { padding: 100px 48px; max-width: 1140px; margin: 0 auto; }
+    .showcase-head { text-align: center; max-width: 640px; margin: 0 auto 56px; }
+    .showcase .eyebrow { background: var(--green-pale); border-color: var(--green-light); color: var(--green-deep); }
+    .showcase .section-h { color: var(--ink); }
+    .showcase-desc { font-size: 16.5px; color: var(--ink-mid); font-weight: 300; line-height: 1.65; margin-top: 6px; }
+    .shots-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+      align-items: start;
+    }
+    .shot { text-align: center; }
+    .shot-frame {
+      background: #111; border-radius: 34px; padding: 9px;
+      box-shadow: var(--shadow-md); margin: 0 auto 18px;
+      max-width: 248px;
+    }
+    .shot-frame img { width: 100%; border-radius: 26px; aspect-ratio: 1206 / 2622; object-fit: cover; background:#000; }
+    .shot h3 { font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+    .shot p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; font-weight: 300; max-width: 280px; margin: 0 auto; }
 
     /* ── Features ─────────────────────────────────── */
-    .features {
-      padding: 100px 48px;
-      max-width: 1100px; margin: 0 auto;
-    }
+    .features { padding: 40px 48px 100px; max-width: 1100px; margin: 0 auto; }
     .features .section-h { color: var(--ink); }
     .features .eyebrow { background: var(--gold-light); border-color: rgba(184,147,90,.25); color: var(--gold); }
-    .features-grid {
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 22px;
-      margin-top: 56px;
-    }
+    .features-head { text-align: center; max-width: 620px; margin: 0 auto; }
+    .features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; margin-top: 52px; }
     .feat-card {
       background: var(--white); border-radius: var(--r-md);
-      padding: 30px 26px;
-      border: 1px solid rgba(47,92,81,.06);
-      box-shadow: var(--shadow-xs);
-      transition: transform .2s, box-shadow .2s;
+      padding: 30px 26px; border: 1px solid rgba(47,92,81,.06);
+      box-shadow: var(--shadow-xs); transition: transform .2s, box-shadow .2s;
     }
     .feat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); }
     .feat-num {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 52px; font-weight: 700;
-      color: var(--green-light); line-height: 1; margin-bottom: 14px;
+      font-size: 52px; font-weight: 700; color: var(--green-light); line-height: 1; margin-bottom: 14px;
     }
     .feat-card h3 { font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
     .feat-card p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.65; font-weight: 300; }
 
-    /* ── Scripture Quote ──────────────────────────── */
-    .quote-section {
-      padding: 100px 48px;
-      background: var(--gold-light);
-      text-align: center;
-      position: relative; overflow: hidden;
+    /* ── Reactions / testimonials ─────────────────── */
+    .reactions { padding: 100px 48px; background: var(--bg-dark); }
+    .reactions-inner { max-width: 1100px; margin: 0 auto; }
+    .reactions-head { text-align: center; max-width: 600px; margin: 0 auto 52px; }
+    .reactions .eyebrow { background: var(--green-pale); border-color: var(--green-light); color: var(--green-deep); }
+    .reactions .section-h { color: var(--ink); }
+    .founder-note { max-width: 760px; margin: 0 auto 46px; text-align: center; }
+    .founder-mark {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 116px; line-height: .55; color: var(--green-light);
+      height: 50px; user-select: none; pointer-events: none;
     }
+    .founder-note blockquote {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(23px, 2.7vw, 33px); font-weight: 500; font-style: italic;
+      line-height: 1.42; color: var(--ink); margin: 0 0 28px;
+    }
+    .founder-by { display: inline-flex; align-items: center; gap: 12px; text-align: left; }
+    .founder-by img { width: 34px; height: 34px; }
+    .founder-name { font-size: 14.5px; font-weight: 600; color: var(--ink); }
+    .founder-role { font-size: 13px; color: var(--ink-soft); }
+
+    .reaction-chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 880px; margin: 0 auto; }
+    .rchip {
+      display: flex; align-items: center; gap: 13px;
+      background: var(--white); border: 1px solid rgba(47,92,81,.07);
+      border-radius: var(--r-md); padding: 18px 20px; box-shadow: var(--shadow-xs);
+      transition: transform .2s var(--ease-quint), box-shadow .2s;
+    }
+    .rchip:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+    .rchip-ico {
+      width: 40px; height: 40px; flex-shrink: 0; border-radius: 12px;
+      background: var(--green-pale); color: var(--green-deep);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .rchip-ico svg { width: 19px; height: 19px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .rchip strong { display: block; font-size: 14.5px; font-weight: 600; color: var(--ink); }
+    .rchip span { font-size: 12.5px; color: var(--ink-soft); }
+
+    .review-invite {
+      display: block; max-width: 880px; margin: 26px auto 0; text-align: center;
+      padding: 16px; border-radius: var(--r-md);
+      border: 1px dashed var(--green-light); color: var(--ink-mid);
+      font-size: 14.5px; transition: background .2s, border-color .2s;
+    }
+    .review-invite strong { color: var(--green-deep); font-weight: 600; }
+    .review-invite:hover { background: var(--green-pale); border-color: var(--green-mid); }
+
+    /* ── Scripture Quote ──────────────────────────── */
+    .quote-section { padding: 100px 48px; background: var(--gold-light); text-align: center; position: relative; overflow: hidden; }
     .quote-mark {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 360px; font-weight: 700;
-      color: rgba(184,147,90,.12);
+      font-size: 360px; font-weight: 700; color: rgba(184,147,90,.12);
       position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
       line-height: 1; pointer-events: none; user-select: none;
     }
     .quote-text {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(26px, 3.5vw, 44px);
-      font-weight: 500; font-style: italic;
-      color: var(--ink); max-width: 820px;
-      margin: 0 auto 24px; line-height: 1.42;
+      font-size: clamp(26px, 3.5vw, 44px); font-weight: 500; font-style: italic;
+      color: var(--ink); max-width: 820px; margin: 0 auto 24px; line-height: 1.42;
       position: relative; z-index: 1;
     }
-    .quote-ref {
-      font-size: 14px; font-weight: 600; letter-spacing: .6px;
-      color: var(--gold); position: relative; z-index: 1;
-    }
+    .quote-ref { font-size: 14px; font-weight: 600; letter-spacing: .6px; color: var(--gold); position: relative; z-index: 1; }
 
     /* ── Church Section ───────────────────────────── */
     .church {
-      padding: 100px 80px;
-      max-width: 1200px; margin: 0 auto;
+      padding: 100px 80px; max-width: 1200px; margin: 0 auto;
       display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
     }
     .church .section-h { color: var(--ink); }
@@ -342,110 +438,169 @@
     .church-desc { font-size: 16px; color: var(--ink-mid); line-height: 1.7; font-weight: 300; margin: 18px 0 32px; }
     .church-items { display: flex; flex-direction: column; gap: 18px; }
     .church-item { display: flex; align-items: flex-start; gap: 14px; }
-    .church-icon {
-      width: 38px; height: 38px; border-radius: 11px;
-      background: var(--green-pale); flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-    }
+    .church-icon { width: 38px; height: 38px; border-radius: 11px; background: var(--green-pale); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
     .church-icon svg { width: 16px; height: 16px; stroke: var(--green-deep); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     .church-item h4 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
     .church-item p { font-size: 13.5px; color: var(--ink-soft); line-height: 1.55; font-weight: 300; }
+    .church-price { font-size: 13.5px; color: var(--ink-soft); margin-top: 14px; }
+    .church-price strong { color: var(--green-deep); font-weight: 600; }
 
-    /* Prayer list preview panel */
-    .prayer-panel {
-      background: var(--green-pale);
-      border-radius: var(--r-lg); padding: 28px 24px;
-      box-shadow: var(--shadow-sm);
-    }
+    .prayer-panel { background: var(--green-pale); border-radius: var(--r-lg); padding: 28px 24px; box-shadow: var(--shadow-sm); }
     .pp-header {
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 20px; font-weight: 700; color: var(--green-deep);
       margin-bottom: 18px; display: flex; align-items: center; gap: 10px;
     }
-    .pp-tag {
-      font-size: 11px; font-weight: 600; text-transform: uppercase;
-      letter-spacing: 1.2px; background: var(--green-light);
-      color: var(--green-deep); padding: 3px 10px; border-radius: 999px;
-    }
-    .pr-item {
-      background: white; border-radius: 14px;
-      padding: 13px 15px; margin-bottom: 10px;
-      box-shadow: var(--shadow-xs);
-    }
+    .pp-tag { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; background: var(--green-light); color: var(--green-deep); padding: 3px 10px; border-radius: 999px; }
+    .pr-item { background: white; border-radius: 14px; padding: 13px 15px; margin-bottom: 10px; box-shadow: var(--shadow-xs); }
     .pr-item:last-child { margin-bottom: 0; }
     .pr-name { font-size: 13.5px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
     .pr-text { font-size: 12.5px; color: var(--ink-soft); line-height: 1.45; }
     .pr-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; }
-    .pr-cat {
-      font-size: 11px; font-weight: 600;
-      background: var(--green-pale); color: var(--green-deep);
-      padding: 2px 9px; border-radius: 999px;
-    }
-    .pr-check {
-      width: 20px; height: 20px; border-radius: 6px;
-      border: 1.5px solid var(--green-light);
-    }
+    .pr-cat { font-size: 11px; font-weight: 600; background: var(--green-pale); color: var(--green-deep); padding: 2px 9px; border-radius: 999px; }
+    .pr-check { width: 20px; height: 20px; border-radius: 6px; border: 1.5px solid var(--green-light); }
 
-    /* ── CTA / Waitlist ───────────────────────────── */
-    .cta {
-      padding: 100px 48px;
-      text-align: center;
-      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-dark) 100%);
+    /* ── Pricing ──────────────────────────────────── */
+    .pricing { padding: 100px 48px; max-width: 1080px; margin: 0 auto; }
+    .pricing-head { text-align: center; max-width: 600px; margin: 0 auto 52px; }
+    .pricing .eyebrow { background: var(--green-pale); border-color: var(--green-light); color: var(--green-deep); }
+    .pricing .section-h { color: var(--ink); }
+    .pricing-desc { font-size: 16px; color: var(--ink-mid); font-weight: 300; margin-top: 6px; }
+    .price-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .price-card {
+      background: var(--white); border-radius: var(--r-md);
+      padding: 28px 24px; border: 1px solid rgba(47,92,81,.08);
+      box-shadow: var(--shadow-xs); display: flex; flex-direction: column;
     }
+    .price-card.feature { border-color: var(--green-light); box-shadow: var(--shadow-sm); }
+    .price-name { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; color: var(--green-mid); margin-bottom: 12px; }
+    .price-amt { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 40px; font-weight: 700; color: var(--ink); line-height: 1; }
+    .price-amt span { font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 400; color: var(--ink-soft); }
+    .price-sub { font-size: 12.5px; color: var(--ink-soft); margin: 8px 0 16px; min-height: 18px; }
+    .price-feats { list-style: none; margin: 0 0 20px; padding: 0; flex: 1; }
+    .price-feats li { font-size: 13.5px; color: var(--ink-mid); line-height: 1.5; padding-left: 22px; position: relative; margin-bottom: 9px; }
+    .price-feats li::before { content: '✓'; position: absolute; left: 0; color: var(--green-mid); font-weight: 700; }
+    .price-btn {
+      display: block; text-align: center; padding: 11px;
+      border-radius: 999px; font-size: 14px; font-weight: 500;
+      background: var(--green-pale); color: var(--green-deep); transition: background .2s;
+    }
+    .price-card.feature .price-btn { background: var(--green-deep); color: white; }
+    .price-btn:hover { background: var(--green-light); }
+    .price-card.feature .price-btn:hover { background: var(--green-mid); }
+    .pricing-note { text-align: center; font-size: 13px; color: var(--ink-soft); margin-top: 24px; }
+
+    /* ── CTA ──────────────────────────────────────── */
+    .cta { padding: 100px 48px; text-align: center; background: linear-gradient(180deg, var(--bg) 0%, var(--bg-dark) 100%); }
     .cta .eyebrow { background: var(--green-pale); border-color: var(--green-light); color: var(--green-deep); margin-bottom: 20px; }
     .cta .section-h { color: var(--ink); margin-bottom: 14px; }
     .cta-desc { font-size: 18px; color: var(--ink-mid); max-width: 480px; margin: 0 auto 40px; line-height: 1.65; font-weight: 300; }
 
     /* ── Footer ───────────────────────────────────── */
-    footer {
-      padding: 28px 48px;
-      border-top: 1px solid var(--bg-dark);
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .footer-logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; font-weight: 700; color: var(--green-deep); }
+    footer { padding: 30px 48px; border-top: 1px solid var(--bg-dark); display: flex; align-items: center; justify-content: space-between; }
+    .footer-logo { display: flex; align-items: center; gap: 9px; }
+    .footer-logo img { width: 24px; height: 24px; }
+    .footer-logo span { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; font-weight: 700; color: var(--green-deep); }
     .footer-mid { font-size: 13px; color: var(--ink-soft); text-align: center; }
     .footer-mid a { color: var(--green-mid); font-weight: 500; }
     .footer-right { font-size: 13px; color: var(--ink-soft); }
 
-    /* ── Scroll animations ────────────────────────── */
-    .fade-up { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+    /* ── Scroll progress bar ──────────────────────── */
+    .scroll-progress {
+      position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 1000;
+      background: linear-gradient(90deg, var(--green-mid), var(--gold));
+      transform: scaleX(0); transform-origin: 0 50%;
+      will-change: transform;
+    }
+
+    /* ── Scroll reveal ────────────────────────────── */
+    .fade-up {
+      opacity: 0; transform: translateY(26px);
+      transition: opacity .7s var(--ease-quint), transform .7s var(--ease-quint);
+      transition-delay: var(--d, 0s);
+    }
     .fade-up.in { opacity: 1; transform: none; }
-    .fade-up:nth-child(2) { transition-delay: .08s; }
-    .fade-up:nth-child(3) { transition-delay: .16s; }
-    .fade-up:nth-child(4) { transition-delay: .24s; }
-    .fade-up:nth-child(5) { transition-delay: .10s; }
-    .fade-up:nth-child(6) { transition-delay: .20s; }
+
+    /* ── Hero life: gentle float (parallax handled in JS) ── */
+    .hero-glow { will-change: transform; }
+    .phone { animation: float 7s ease-in-out infinite; }
+    .chip-right { animation: float 7s ease-in-out infinite .7s; }
+    .chip-left { animation: float 8.5s ease-in-out infinite 1.2s; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-9px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; transform: none; transition: none; }
+      .live-dot, .phone, .chip-right, .chip-left { animation: none; }
+      .scroll-progress { display: none; }
+      html { scroll-behavior: auto; }
+    }
 
     /* ── Responsive ───────────────────────────────── */
     @media (max-width: 960px) {
-      nav { padding: 16px 24px; }
-      .hero { grid-template-columns: 1fr; padding: 110px 32px 60px; text-align: center; gap: 52px; }
-      .hero-desc { margin: 0 auto 36px; }
-      .hero-actions { justify-content: center; }
+      nav { padding: 14px 22px; }
+      .nav-toggle { display: inline-flex; }
+      .nav-links {
+        position: absolute; top: calc(100% + 6px); right: 14px;
+        min-width: 220px; flex-direction: column; align-items: stretch; gap: 4px;
+        background: rgba(248,244,239,.97); backdrop-filter: blur(16px);
+        border: 1px solid var(--bg-dark); border-radius: var(--r-md);
+        padding: 12px; box-shadow: var(--shadow-md);
+        transform: translateY(-8px) scale(.98); transform-origin: top right;
+        opacity: 0; pointer-events: none;
+        transition: opacity .2s, transform .2s var(--ease-quint);
+      }
+      nav.nav-open .nav-links { opacity: 1; transform: none; pointer-events: auto; }
+      .nav-link { padding: 12px; border-radius: 10px; }
+      .nav-link:hover { background: var(--green-pale); }
+      .nav-cta { text-align: center; margin-top: 4px; }
+      .hero { grid-template-columns: 1fr; padding: 108px 32px 56px; text-align: center; gap: 48px; }
+      .hero-desc { margin: 0 auto 32px; }
+      .hero-actions, .hero-trust { justify-content: center; }
       .hero-glow { display: none; }
       .chip { display: none; }
       .acts-grid { grid-template-columns: 1fr 1fr; }
+      .shots-grid { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; }
       .features-grid { grid-template-columns: 1fr 1fr; }
-      .church { grid-template-columns: 1fr; padding: 60px 32px; gap: 48px; }
-      footer { flex-direction: column; gap: 10px; text-align: center; }
+      .reaction-chips { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+      .church { grid-template-columns: 1fr; padding: 64px 32px; gap: 48px; }
+      .price-grid { grid-template-columns: 1fr 1fr; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
     }
     @media (max-width: 600px) {
-      .hero { padding: 100px 24px 52px; }
+      .hero { padding: 100px 24px 48px; }
       .acts-grid { grid-template-columns: 1fr; }
       .features-grid { grid-template-columns: 1fr; }
-      .features, .quote-section, .cta { padding: 64px 24px; }
+      .price-grid { grid-template-columns: 1fr; }
+      .problem, .showcase, .features, .quote-section, .cta, .reactions, .pricing { padding-left: 24px; padding-right: 24px; }
       .acts-bar { padding: 64px 24px; }
-      .email-form { flex-direction: column; }
-      footer { padding: 24px; }
+      .trust-strip { padding: 22px 24px; }
+      footer { padding: 26px 24px; }
     }
   </style>
+  <noscript><style>.fade-up{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
 
+  <div class="scroll-progress" aria-hidden="true"></div>
+
   <!-- Nav -->
   <nav id="navbar">
-    <div class="nav-logo">SimplyPray</div>
-    <a href="https://apps.apple.com/app/id6772402646" class="nav-cta">Get the App</a>
+    <a href="/" class="nav-logo" aria-label="SimplyPray home">
+      <img src="/assets/brand/SimplyPray-mark.svg" alt="SimplyPray logo" width="30" height="30" />
+      <span>SimplyPray</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#how-it-works" class="nav-link">How it works</a>
+      <a href="#pricing" class="nav-link">Pricing</a>
+      <a href="#church" class="nav-link">For churches</a>
+      <a href="https://apps.apple.com/app/id6772402646" class="nav-cta">Download free</a>
+    </div>
   </nav>
 
   <!-- Hero -->
@@ -457,13 +612,13 @@
         <span class="live-dot"></span>
         Now on the App Store
       </div>
-      <h1>Prayer that goes <em>deeper.</em></h1>
+      <h1>Pray with depth.<br>Remember <em>every</em> prayer.</h1>
       <p class="hero-desc">
-        SimplyPray guides you through Adoration, Confession, Thanksgiving, and Supplication — a time-tested framework for real devotion, built into a distraction-free iOS app.
+        SimplyPray guides you through Adoration, Confession, Thanksgiving, and Supplication, then keeps every request and answered prayer in one quiet, private place. No ads. No feeds. No noise. Just you and God.
       </p>
       <div class="hero-actions">
         <a href="https://apps.apple.com/app/id6772402646" class="btn-primary">
-          Download on the App Store
+          Download free
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
         <a href="#how-it-works" class="btn-ghost">
@@ -471,6 +626,11 @@
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
         </a>
       </div>
+      <p class="hero-trust">
+        <span>Built by a pastor</span><span class="dot"></span>
+        <span>Free to start</span><span class="dot"></span>
+        <span>Private by design</span>
+      </p>
     </div>
 
     <div class="hero-device">
@@ -483,37 +643,35 @@
       </div>
       <div class="chip chip-left">
         <div>
-          <div class="chip-label">Focus Mode ready</div>
-          <div class="chip-sub">Zero distractions</div>
+          <div class="chip-label">Nothing falls through</div>
+          <div class="chip-sub">Every request, remembered</div>
         </div>
       </div>
 
       <div class="phone">
-        <div class="phone-island"></div>
+        <div class="phone-notch"></div>
         <div class="phone-screen">
-          <div class="ps-status">
-            <span>9:41</span>
-            <div class="ps-icons"><span>●●●</span> <span style="font-size:9px;">▲▲</span> <span>🔋</span></div>
-          </div>
-          <div class="ps-body">
-            <div class="ps-progress">
-              <div class="ps-prog-seg on"></div>
-              <div class="ps-prog-seg"></div>
-              <div class="ps-prog-seg"></div>
-              <div class="ps-prog-seg"></div>
-            </div>
-            <div class="ps-step-label">Adoration · 1 of 4</div>
-            <div class="ps-step-title">Who is God?</div>
-            <div class="ps-attr-card">
-              <div class="ps-attr-name">Faithfulness</div>
-              <div class="ps-attr-def">God always keeps His promises and remains true to His word through every generation.</div>
-              <div class="ps-verse">"Your faithfulness endures to all generations; you have established the earth, and it stands fast." — Ps 119:90</div>
-            </div>
-            <button class="ps-btn">Next: Confession →</button>
-          </div>
+          <img src="/assets/shots/home.webp" alt="SimplyPray home screen showing today's guided prayer session" width="720" height="1565" fetchpriority="high" />
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- Trust / reaction strip -->
+  <section class="trust-strip">
+    <div class="trust-inner">
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z"/></svg> Scripture-rooted ACTS method</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Private &amp; on-device</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg> No ads. No feeds. No tracking.</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg> Free to start on iOS</div>
+    </div>
+  </section>
+
+  <!-- Problem -->
+  <section class="problem">
+    <div class="eyebrow">Why SimplyPray</div>
+    <h2>Most prayer lives in your head, so most of it slips away.</h2>
+    <p>Requests get forgotten. Routines fizzle by Wednesday. The answers God gives go unrecorded, so you forget how faithful He's been. <em>SimplyPray gives prayer a shape you can keep:</em> a guided rhythm, organized lists, and a living record of answered prayer you'll return to for years.</p>
   </section>
 
   <!-- ACTS -->
@@ -521,19 +679,19 @@
     <div class="acts-inner">
       <div class="eyebrow">The ACTS Framework</div>
       <h2 class="section-h">A time-tested path<br>through prayer</h2>
-      <p class="acts-bar section-desc">Four movements that bring structure, Scripture, and depth to every prayer session — in 15 minutes or less.</p>
+      <p class="acts-bar section-desc">Four movements that bring structure, Scripture, and depth to every prayer session, in 15 minutes or less.</p>
       <div class="acts-grid">
         <div class="acts-card fade-up">
           <div class="acts-bg-letter">A</div>
           <div class="acts-step">Step 1</div>
           <div class="acts-title">Adoration</div>
-          <p class="acts-desc">Begin by focusing on who God is. Scripture-backed attributes guide you in praising God for His character — not just His gifts.</p>
+          <p class="acts-desc">Begin with who God is. Scripture-backed attributes guide you in praising God for His character, not just His gifts.</p>
         </div>
         <div class="acts-card fade-up">
           <div class="acts-bg-letter">C</div>
           <div class="acts-step">Step 2</div>
           <div class="acts-title">Confession</div>
-          <p class="acts-desc">Guided reflection prompts honest naming of sin, and the freedom that comes from bringing it into the light before God.</p>
+          <p class="acts-desc">Guided reflection prompts honest naming of sin, and the freedom of bringing it into the light before God.</p>
         </div>
         <div class="acts-card fade-up">
           <div class="acts-bg-letter">T</div>
@@ -545,21 +703,49 @@
           <div class="acts-bg-letter">S</div>
           <div class="acts-step">Step 4</div>
           <div class="acts-title">Supplication</div>
-          <p class="acts-desc">Organized lists for family, church, work, and more. Tag, filter, and pray through what matters most — nothing falls through.</p>
+          <p class="acts-desc">Organized lists for family, church, work, and more. Tag, filter, and pray through what matters most. Nothing falls through.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase: real screenshots -->
+  <section class="showcase">
+    <div class="showcase-head fade-up">
+      <div class="eyebrow">Inside the app</div>
+      <h2 class="section-h">Calm to look at.<br>Simple to pray with.</h2>
+      <p class="showcase-desc">No clutter, no gimmicks. A clean, reverent space designed to get out of the way so you can focus on God.</p>
+    </div>
+    <div class="shots-grid">
+      <div class="shot fade-up">
+        <div class="shot-frame"><img src="/assets/shots/lists.webp" alt="SimplyPray prayer lists organized by Personal, Family, Church, and Business categories" width="720" height="1565" loading="lazy" /></div>
+        <h3>Prayer lists that hold everything</h3>
+        <p>Organize requests by category. Tag, filter, and pray through what matters. Nothing forgotten.</p>
+      </div>
+      <div class="shot fade-up">
+        <div class="shot-frame"><img src="/assets/shots/adoration.webp" alt="SimplyPray Adoration step displaying a Scripture-rooted attribute of God" width="720" height="1565" loading="lazy" /></div>
+        <h3>Guided, Scripture-rooted steps</h3>
+        <p>Each movement is anchored in God's Word, so every session has direction and depth.</p>
+      </div>
+      <div class="shot fade-up">
+        <div class="shot-frame"><img src="/assets/shots/answered.webp" alt="SimplyPray answered prayers screen recording God's faithfulness over time" width="720" height="1565" loading="lazy" /></div>
+        <h3>A record of answered prayer</h3>
+        <p>Mark prayers answered and watch a testimony of God's faithfulness grow over months and years.</p>
       </div>
     </div>
   </section>
 
   <!-- Features -->
   <section class="features">
-    <div class="eyebrow">Built Different</div>
-    <h2 class="section-h">Everything you need.<br>Nothing you don't.</h2>
+    <div class="features-head fade-up">
+      <div class="eyebrow">Everything you need</div>
+      <h2 class="section-h">Built for devotion.<br>Not for your attention.</h2>
+    </div>
     <div class="features-grid">
       <div class="feat-card fade-up">
         <div class="feat-num">01</div>
         <h3>Prayer Lists</h3>
-        <p>Organize requests by category — family, church, work, missions. Tag and filter so nothing falls through the cracks.</p>
+        <p>Organize requests by category: family, church, work, missions. Tag and filter so nothing falls through the cracks.</p>
       </div>
       <div class="feat-card fade-up">
         <div class="feat-num">02</div>
@@ -569,7 +755,7 @@
       <div class="feat-card fade-up">
         <div class="feat-num">03</div>
         <h3>Tag &amp; Browse</h3>
-        <p>Pray by theme in any session. Browse your full prayer history by tag — health, healing, finances, missions, and more.</p>
+        <p>Pray by theme in any session. Browse your full prayer history by tag: health, healing, finances, missions, and more.</p>
       </div>
       <div class="feat-card fade-up">
         <div class="feat-num">04</div>
@@ -579,13 +765,57 @@
       <div class="feat-card fade-up">
         <div class="feat-num">05</div>
         <h3>Scripture-Rooted</h3>
-        <p>Every step is anchored to God's Word — divine attributes, biblical confessions, and promises that fuel real prayer.</p>
+        <p>Every step is anchored to God's Word: divine attributes, biblical confessions, and promises that fuel real prayer.</p>
       </div>
       <div class="feat-card fade-up">
         <div class="feat-num">06</div>
         <h3>Private by Default</h3>
-        <p>Your prayers are yours. Local-first storage, optional iCloud sync. We never see, sell, or share your prayer data.</p>
+        <p>Your prayers are yours. On-device storage, optional iCloud sync. We never see, sell, or share your prayer data.</p>
       </div>
+    </div>
+  </section>
+
+  <!--
+    REACTIONS: founder note + honest trust signals.
+    SimplyPray has no published reviews yet, so this section uses the
+    founder's own voice + verifiable signals instead of fabricated quotes.
+    FOUNDER: please review/approve the blockquote wording below.
+    Once real App Store reviews exist, they can be added here.
+  -->
+  <section class="reactions" id="reactions">
+    <div class="reactions-inner">
+      <figure class="founder-note fade-up">
+        <div class="founder-mark" aria-hidden="true">&ldquo;</div>
+        <blockquote>
+          I built SimplyPray because my own prayer life had gone shallow and scattered. I wanted a quiet, Scripture-rooted way to pray with depth, hold every request, and remember how faithfully God answers. So we made it, and made it free to start.
+        </blockquote>
+        <figcaption class="founder-by">
+          <img src="/assets/brand/SimplyPray-mark.svg" alt="" width="34" height="34" aria-hidden="true" />
+          <div>
+            <div class="founder-name">Built by a pastor</div>
+            <div class="founder-role">Solomon Solutions &middot; SimplyPray</div>
+          </div>
+        </figcaption>
+      </figure>
+
+      <div class="reaction-chips">
+        <div class="rchip fade-up">
+          <span class="rchip-ico"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4L12 17l-6.3 4.4L8 14 2 9.4h7.6z"/></svg></span>
+          <div><strong>Live on the App Store</strong><span>Free to download today</span></div>
+        </div>
+        <div class="rchip fade-up">
+          <span class="rchip-ico"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></span>
+          <div><strong>The ACTS framework</strong><span>A guided path, every session</span></div>
+        </div>
+        <div class="rchip fade-up">
+          <span class="rchip-ico"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+          <div><strong>Private by design</strong><span>Your prayers stay yours</span></div>
+        </div>
+      </div>
+
+      <a class="review-invite fade-up" href="https://apps.apple.com/app/id6772402646">
+        Praying with SimplyPray already? <strong>Be among the first to leave a review &rarr;</strong>
+      </a>
     </div>
   </section>
 
@@ -597,11 +827,11 @@
   </section>
 
   <!-- Church -->
-  <section class="church">
+  <section class="church" id="church">
     <div>
       <div class="eyebrow">For Congregations</div>
       <h2 class="section-h">Bring SimplyPray<br>to your church</h2>
-      <p class="church-desc">Church licensing turns SimplyPray into a shared prayer culture — congregation-wide requests, pastoral oversight, and unified prayer initiatives built into daily life.</p>
+      <p class="church-desc">Church licensing turns SimplyPray into a shared prayer culture: congregation-wide requests, pastoral oversight, and unified prayer initiatives built into daily life.</p>
       <div class="church-items">
         <div class="church-item">
           <div class="church-icon">
@@ -618,7 +848,7 @@
           </div>
           <div>
             <h4>Pastoral Visibility</h4>
-            <p>Pastors and leaders can see and shepherd the prayer culture — know what your people are carrying.</p>
+            <p>Pastors and leaders can see and shepherd the prayer culture, knowing what your people are carrying.</p>
           </div>
         </div>
         <div class="church-item">
@@ -627,14 +857,15 @@
           </div>
           <div>
             <h4>Prayer Initiatives</h4>
-            <p>Launch church-wide campaigns — 21-day fasts, seasonal focus, and congregation prayer movements.</p>
+            <p>Launch church-wide campaigns: 21-day fasts, seasonal focus, and congregation prayer movements.</p>
           </div>
         </div>
       </div>
-      <a href="https://app.simplypray.io/church/new" class="btn-primary" style="margin-top:32px;display:inline-flex;">
+      <a href="https://app.simplypray.io/church/new" class="btn-primary" style="margin-top:30px;display:inline-flex;">
         Set up your congregation
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
+      <p class="church-price">Church plans start at <strong>$49/mo</strong>: branded landing page, admin dashboard, and member management.</p>
     </div>
 
     <div class="prayer-panel">
@@ -645,40 +876,87 @@
       <div class="pr-item">
         <div class="pr-name">The Morrison Family</div>
         <div class="pr-text">Healing and peace as they walk through a difficult health diagnosis together.</div>
-        <div class="pr-footer">
-          <span class="pr-cat">Health</span>
-          <div class="pr-check"></div>
-        </div>
+        <div class="pr-footer"><span class="pr-cat">Health</span><div class="pr-check"></div></div>
       </div>
       <div class="pr-item">
         <div class="pr-name">Sunday's Service</div>
         <div class="pr-text">That God would prepare hearts to receive the Word and be moved to respond.</div>
-        <div class="pr-footer">
-          <span class="pr-cat">Church</span>
-          <div class="pr-check"></div>
-        </div>
+        <div class="pr-footer"><span class="pr-cat">Church</span><div class="pr-check"></div></div>
       </div>
       <div class="pr-item">
         <div class="pr-name">Youth Ministry</div>
         <div class="pr-text">Wisdom for leaders and deep hunger for God among our students this semester.</div>
-        <div class="pr-footer">
-          <span class="pr-cat">Ministry</span>
-          <div class="pr-check"></div>
-        </div>
+        <div class="pr-footer"><span class="pr-cat">Ministry</span><div class="pr-check"></div></div>
       </div>
     </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing" id="pricing">
+    <div class="pricing-head fade-up">
+      <div class="eyebrow">Simple, honest pricing</div>
+      <h2 class="section-h">Start free. Go deeper when you're ready.</h2>
+      <p class="pricing-desc">Download and pray for free. Upgrade any time, or sponsor your whole congregation.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <div class="price-name">Free</div>
+        <div class="price-amt">$0</div>
+        <div class="price-sub">Forever</div>
+        <ul class="price-feats">
+          <li>Guided ACTS prayer</li>
+          <li>Core prayer lists</li>
+          <li>Private &amp; on-device</li>
+        </ul>
+        <a href="https://apps.apple.com/app/id6772402646" class="price-btn">Download</a>
+      </div>
+      <div class="price-card feature">
+        <div class="price-name">Personal</div>
+        <div class="price-amt">$2.99<span>/mo</span></div>
+        <div class="price-sub">or $21.24/yr · save 40%</div>
+        <ul class="price-feats">
+          <li>Unlimited lists &amp; tags</li>
+          <li>Answered-prayer journal</li>
+          <li>Full prayer history</li>
+        </ul>
+        <a href="https://app.simplypray.io/pricing" class="price-btn">Start Personal</a>
+      </div>
+      <div class="price-card">
+        <div class="price-name">Community</div>
+        <div class="price-amt">$6.99<span>/mo</span></div>
+        <div class="price-sub">or $46.74/yr</div>
+        <ul class="price-feats">
+          <li>Everything in Personal</li>
+          <li>Shared prayer lists</li>
+          <li>Pray alongside others</li>
+        </ul>
+        <a href="https://app.simplypray.io/pricing" class="price-btn">Start Community</a>
+      </div>
+      <div class="price-card">
+        <div class="price-name">Church</div>
+        <div class="price-amt">$49<span>/mo</span></div>
+        <div class="price-sub">Whole congregation</div>
+        <ul class="price-feats">
+          <li>Branded landing page</li>
+          <li>Admin dashboard</li>
+          <li>Member management</li>
+        </ul>
+        <a href="https://app.simplypray.io/church/new" class="price-btn">Set up church</a>
+      </div>
+    </div>
+    <p class="pricing-note">Subscribe on the web and save 15% versus standard in-app pricing. Cancel anytime.</p>
   </section>
 
   <!-- Launch CTA (id="waitlist" kept so existing anchor links still resolve) -->
   <section class="cta" id="waitlist">
     <div class="eyebrow">Available Now</div>
-    <h2 class="section-h" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(36px,4vw,54px);font-weight:600;letter-spacing:-1px;color:var(--ink);margin-bottom:14px;">SimplyPray is live.</h2>
-    <p class="cta-desc">Download the app and start praying with depth and structure — or set up SimplyPray for your entire congregation.</p>
+    <h2 class="section-h" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(36px,4vw,54px);font-weight:600;letter-spacing:-1px;color:var(--ink);margin-bottom:14px;">Your next prayer can go deeper.</h2>
+    <p class="cta-desc">Download SimplyPray free and start praying with depth and structure today, or set up SimplyPray for your entire congregation.</p>
 
     <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;">
       <a href="https://apps.apple.com/app/id6772402646" class="btn-primary">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-        Download the App
+        Download free
       </a>
       <a href="https://app.simplypray.io/church/new" class="btn-ghost">
         Set up your church
@@ -689,24 +967,64 @@
 
   <!-- Footer -->
   <footer>
-    <div class="footer-logo">SimplyPray</div>
+    <div class="footer-logo">
+      <img src="/assets/brand/SimplyPray-mark.svg" alt="" width="24" height="24" aria-hidden="true" />
+      <span>SimplyPray</span>
+    </div>
     <p class="footer-mid">A <a href="https://solomonsolutions.tech">Solomon Solutions</a> product. Built by a pastor, for the church.<br><a href="/privacy">Privacy</a> &nbsp;&middot;&nbsp; <a href="/support">Support</a></p>
     <p class="footer-right">© 2026 Solomon Solutions LLC</p>
   </footer>
 
   <script>
-    // Sticky nav
-    var nav = document.getElementById('navbar');
-    window.addEventListener('scroll', function () {
-      nav.classList.toggle('scrolled', window.scrollY > 20);
-    });
+    var nav   = document.getElementById('navbar');
+    var bar   = document.querySelector('.scroll-progress');
+    var glow  = document.querySelector('.hero-glow');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var ticking = false;
 
-    // Scroll-reveal
+    function onScroll() {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+      nav.classList.toggle('scrolled', st > 20);
+      if (bar) {
+        var h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, st / h) : 0) + ')';
+      }
+      // Subtle hero parallax (transform only, GPU-friendly)
+      if (glow && !reduce) glow.style.transform = 'translateY(calc(-50% + ' + (st * 0.1) + 'px))';
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+    }, { passive: true });
+    onScroll();
+
+    // Staggered scroll reveals (stagger by position among fade-up siblings)
     var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) e.target.classList.add('in'); });
-    }, { threshold: 0.12 });
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var sibs = Array.prototype.filter.call(e.target.parentNode.children, function (c) {
+          return c.classList && c.classList.contains('fade-up');
+        });
+        var idx = Math.max(0, sibs.indexOf(e.target));
+        e.target.style.setProperty('--d', (idx * 0.08) + 's');
+        e.target.classList.add('in');
+        observer.unobserve(e.target);
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     document.querySelectorAll('.fade-up').forEach(function (el) { observer.observe(el); });
 
+    // Mobile menu
+    var toggle = document.getElementById('navToggle');
+    var links  = document.getElementById('navLinks');
+    if (toggle && links) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('nav-open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      links.addEventListener('click', function (e) {
+        if (e.target.closest('a')) { nav.classList.remove('nav-open'); toggle.setAttribute('aria-expanded', 'false'); }
+      });
+    }
   </script>
 
 </body>
