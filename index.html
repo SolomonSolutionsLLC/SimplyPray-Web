@@ -235,7 +235,8 @@
       padding: 11px 15px;
       box-shadow: var(--shadow-sm);
       display: flex; align-items: center; gap: 10px;
-      white-space: nowrap; font-size: 13px; z-index: 3;
+      white-space: normal; font-size: 13px; z-index: 3;
+      max-width: 200px;
     }
     .chip-icon {
       width: 34px; height: 34px; border-radius: 10px;
@@ -244,9 +245,10 @@
     }
     .chip-label { font-weight: 600; color: var(--ink); line-height: 1.2; }
     .chip-sub { font-size: 11px; color: var(--ink-soft); }
-    .chip-right { right: -36px; top: 22%; background: white; }
+    .chip-right { right: -52px; top: 9%; max-width: 208px; background: white; }
+    .chip-right .chip-label { white-space: nowrap; }
     .chip-left {
-      left: -70px; bottom: 22%;
+      left: -44px; bottom: 17%; max-width: 188px;
       background: var(--green-deep); color: white;
     }
     .chip-left .chip-label { color: white; }
@@ -340,7 +342,7 @@
       box-shadow: var(--shadow-md); margin: 0 auto 18px;
       max-width: 248px;
     }
-    .shot-frame img { width: 100%; border-radius: 26px; aspect-ratio: 1206 / 2622; object-fit: cover; background:#000; }
+    .shot-frame img { display: block; width: 100%; height: auto; border-radius: 26px; aspect-ratio: 1206 / 2622; object-fit: cover; background:#000; }
     .shot h3 { font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
     .shot p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; font-weight: 300; max-width: 280px; margin: 0 auto; }
 
