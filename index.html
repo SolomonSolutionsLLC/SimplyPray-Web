@@ -209,7 +209,7 @@
     .hero-trust .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--ink-soft); opacity: .5; }
 
     /* ── Phone Mockup (real screenshot) ───────────── */
-    .hero-device { position: relative; z-index: 1; display: flex; justify-content: center; overflow: visible; }
+    .hero-device { position: relative; z-index: 1; display: flex; justify-content: center; overflow: visible; width: max-content; margin: 0 auto; }
     .phone {
       width: 286px;
       background: #111;
@@ -231,24 +231,25 @@
     /* Floating callout chips */
     .chip {
       position: absolute;
-      background: white; border-radius: 16px;
-      padding: 11px 15px;
-      box-shadow: var(--shadow-sm);
-      display: flex; align-items: center; gap: 10px;
-      white-space: normal; font-size: 13px; z-index: 3;
-      max-width: 200px;
+      background: white; border-radius: 14px;
+      padding: 9px 12px;
+      box-shadow: 0 10px 30px -10px rgba(20,40,34,.22), 0 2px 6px rgba(20,40,34,.06);
+      border: 1px solid rgba(20,40,34,.06);
+      display: flex; align-items: center; gap: 9px;
+      white-space: normal; font-size: 12.5px; z-index: 3;
+      max-width: 172px;
     }
     .chip-icon {
-      width: 34px; height: 34px; border-radius: 10px;
+      width: 30px; height: 30px; border-radius: 9px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 16px; flex-shrink: 0;
+      font-size: 15px; flex-shrink: 0;
     }
     .chip-label { font-weight: 600; color: var(--ink); line-height: 1.2; }
-    .chip-sub { font-size: 11px; color: var(--ink-soft); }
-    .chip-right { right: -52px; top: 9%; max-width: 208px; background: white; }
+    .chip-sub { font-size: 10.5px; color: var(--ink-soft); margin-top: 1px; }
+    .chip-right { right: -128px; top: 7%; max-width: 172px; }
     .chip-right .chip-label { white-space: nowrap; }
     .chip-left {
-      left: -44px; bottom: 17%; max-width: 188px;
+      left: -120px; bottom: 12%; max-width: 164px;
       background: var(--green-deep); color: white;
     }
     .chip-left .chip-label { color: white; }
@@ -538,6 +539,11 @@
       .scroll-progress { display: none; }
       html { scroll-behavior: auto; }
     }
+
+    /* Floating chips need horizontal room beside the phone; below ~1140px they
+       would clip the viewport or crowd the device, so hide them — the phone
+       mockup reads cleanly on its own. */
+    @media (max-width: 1180px) { .chip { display: none; } }
 
     /* ── Responsive ───────────────────────────────── */
     @media (max-width: 960px) {
