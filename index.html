@@ -958,6 +958,9 @@
     #waitlist .keila-embed { max-width:480px; margin:0 auto; }
     #waitlist .keila-embed iframe { border-radius:16px; background:#fff; }
     #waitlist .church-note { display:inline-flex; align-items:center; gap:8px; margin-top:24px; font-size:14px; color:var(--ink-mid); text-decoration:none; }
+    #waitlist .hub-link { margin-top:18px; font-size:14px; }
+    #waitlist .hub-link a { color:var(--green-mid,#2F5C51); font-weight:500; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:1px; }
+    @media (max-width:560px){ #waitlist .email-form { flex-direction:column; } }
   </style>
   <section class="cta" id="waitlist">
     <div class="eyebrow">Coming soon to iOS</div>
@@ -980,6 +983,9 @@
         Church licensing available — bring SimplyPray to your congregation
       </a>
     </div>
+
+    <!-- Hub back-link (rulebook §6.3): a visitor not ready for the waitlist becomes a Wisdom Walk reader. -->
+    <p class="hub-link"><a href="https://thewisdomwalk.com">Read more from Joshua →</a></p>
   </section>
 
   <!-- Footer -->
