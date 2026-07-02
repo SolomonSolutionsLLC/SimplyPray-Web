@@ -1,0 +1,3 @@
+# Internal design docs and backend migrations — must not be served publicly
+docs/
+supabase/
