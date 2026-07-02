@@ -1,3 +1,11 @@
 # Internal design docs and backend migrations — must not be served publicly
 docs/
 supabase/
+
+# Internal root files and unused legacy assets — not part of the public site
+CLAUDE.md
+DEPLOYMENT.md
+MARKETING_README.md
+SimplyPray.code-workspace
+marketing-docs/
+screenshots/
