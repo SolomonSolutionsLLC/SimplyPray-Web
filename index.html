@@ -955,41 +955,23 @@
 
   <!-- Launch CTA / Waitlist (app is pre-launch — capture emails until iOS launch; id="waitlist" kept so anchors resolve) -->
   <style>
-    #waitlist .email-form { display:flex; gap:10px; max-width:460px; margin:0 auto 14px; }
-    #waitlist .email-input { flex:1; padding:15px 20px; border-radius:999px; border:1.5px solid var(--bg-dark,#e7e2d8); background:#fff; font-family:inherit; font-size:15px; color:var(--ink); outline:none; transition:border-color .2s; }
-    #waitlist .email-input:focus { border-color:var(--green-mid,#2F5C51); }
-    #waitlist .email-input::placeholder { color:var(--ink-soft,#9a958c); }
-    #waitlist .notify-status { font-size:14px; min-height:20px; margin-top:10px; }
-    #waitlist .notify-status.error { color:#b4453a; }
-    #waitlist .form-note { font-size:13px; color:var(--ink-soft,#9a958c); margin-top:6px; }
-    #waitlist .signup-success { display:none; max-width:460px; margin:0 auto; }
-    #waitlist .signup-success.visible { display:block; }
-    #waitlist .success-check svg { width:44px; height:44px; stroke:var(--green-mid,#2F5C51); fill:none; stroke-width:2.5; }
-    #waitlist .success-heading { font-size:20px; color:var(--ink); margin:10px 0 4px; }
-    #waitlist .success-sub { font-size:15px; color:var(--ink-mid); }
+    #waitlist .keila-embed { max-width:480px; margin:0 auto; }
+    #waitlist .keila-embed iframe { border-radius:16px; background:#fff; }
     #waitlist .church-note { display:inline-flex; align-items:center; gap:8px; margin-top:24px; font-size:14px; color:var(--ink-mid); text-decoration:none; }
-    @media (max-width:560px){ #waitlist .email-form { flex-direction:column; } }
   </style>
   <section class="cta" id="waitlist">
     <div class="eyebrow">Coming soon to iOS</div>
     <h2 class="section-h" style="font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(36px,4vw,54px);font-weight:600;letter-spacing:-1px;color:var(--ink);margin-bottom:14px;">Be first to pray.</h2>
     <p class="cta-desc">Join the waitlist and we'll send your invite the day SimplyPray launches. No spam — just your spot in line.</p>
 
-    <div id="form-wrap">
-      <form id="notify-form" class="email-form">
-        <input type="email" name="email" id="notify-email" class="email-input" placeholder="you@example.com" required />
-        <button type="submit" class="btn-primary" style="white-space:nowrap;">Notify me</button>
-      </form>
-      <p class="notify-status" id="notify-status"></p>
-      <p class="form-note">By signing up, you agree to receive launch updates from SimplyPray.</p>
-    </div>
-
-    <div class="signup-success" id="signup-success">
-      <div class="success-check">
-        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <p class="success-heading">You're on the list.</p>
-      <p class="success-sub">We'll send your invite the day SimplyPray launches. See you then.</p>
+    <!-- Keila waitlist: double opt-in + first name + "How to Pray for an Hour" magnet.
+         Keila sets frame-ancestors * + CSRF-off, so no CSP/header changes are needed. -->
+    <div class="keila-embed">
+      <iframe
+        src="https://newsletter.solomonsolutions.tech/forms/nfrm_8KZgzGz9"
+        style="width:100%;border:0;min-height:520px"
+        loading="lazy"
+        title="Join the Simply Pray waitlist"></iframe>
     </div>
 
     <div>
@@ -1062,43 +1044,9 @@
     }
   </script>
 
-  <script>
-    // Waitlist form -> Google Apps Script (Google Sheet). Restored 2026-06-13: app is pre-launch,
-    // so the homepage captures emails instead of linking to an unpublished App Store listing.
-    (function () {
-      var ENDPOINT = "https://script.google.com/macros/s/AKfycby6kUQiSF50xacRzcSZxEcYn3UMNBWv3E1BH82NZs8oTidONuqjqgNUjadJxcFuMOH6gw/exec";
-      var formWrap = document.getElementById("form-wrap");
-      var form = document.getElementById("notify-form");
-      var status = document.getElementById("notify-status");
-      var emailInput = document.getElementById("notify-email");
-      var successEl = document.getElementById("signup-success");
-      if (!form || !status) return;
-      var submitButton = form.querySelector("button[type='submit']");
-      var submitLabel = submitButton ? submitButton.textContent : "Notify me";
-      function setPending(on) { if (!submitButton) return; submitButton.disabled = on; submitButton.textContent = on ? "Submitting…" : submitLabel; }
-      function setStatus(msg, type) { status.textContent = msg; status.className = "notify-status" + (type ? " " + type : ""); }
-      function showSuccess() { if (formWrap) formWrap.style.display = "none"; if (successEl) successEl.classList.add("visible"); }
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        var email = emailInput ? emailInput.value.trim() : "";
-        if (!email) { setStatus("Enter a valid email address.", "error"); return; }
-        setStatus("", null); setPending(true);
-        // GET-redirect trick: Apps Script 302 -> googleusercontent.com which sends proper CORS headers.
-        var url = ENDPOINT + "?email=" + encodeURIComponent(email) + "&source=simplypray.io";
-        fetch(url, { redirect: "follow" })
-          .then(function (r) { return r.json(); })
-          .then(function (data) {
-            if (data && data.ok) { showSuccess(); }
-            else { setPending(false); setStatus(data && data.message ? data.message : "Signup failed. Please try again.", "error"); }
-          })
-          .catch(function () {
-            fetch(ENDPOINT, { method: "POST", mode: "no-cors", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: "email=" + encodeURIComponent(email) + "&source=simplypray.io" })
-              .then(function () { showSuccess(); })
-              .catch(function () { setPending(false); setStatus("Signup failed. Please try again.", "error"); });
-          });
-      });
-    })();
-  </script>
+  <!-- Waitlist signups now flow to Keila via the embedded iframe above
+       (double opt-in + "How to Pray for an Hour" welcome magnet).
+       The old Google Apps Script / Google Sheet handler was removed. -->
 
 </body>
 </html>
