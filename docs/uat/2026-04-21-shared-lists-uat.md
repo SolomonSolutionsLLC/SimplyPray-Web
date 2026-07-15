@@ -73,4 +73,30 @@ Covers the per-list permission policies (`post_policy`, `answer_policy`) and the
 
 ## Addendum run log
 
-_Not yet executed. Run on a preview deploy with the three accounts and record pass/fail per step here._
+**Run 2026-06-21** (PRD-13 follow-up) against **prod** Supabase `wkptusgzngfzoucocije`. Backend assertions executed via authenticated-role impersonation (`set_config('request.jwt.claims', …)` + `set local role authenticated`); browser/email steps deferred to a human on a preview deploy.
+
+Backend invite lifecycle — **PASS** (live):
+- **16 Exhausted invite** — 2nd accept past `max_uses=1` → raised `invite already used`. PASS.
+- **17 Locked-email mismatch** — accept with `invited_email` ≠ caller email → raised `invite is restricted to a different email`, no membership change. PASS.
+- **18 Revoke** — accept after `revoked_at` set → raised `invite revoked`. PASS.
+- **19 Expiry** — accept after `expires_at` in the past → raised `invite expired`. PASS.
+
+Covered by CI (`SimplyPray-App/supabase/tests/*.sql`, gated by the new required `Supabase SQL matrix` check):
+- **12 Member-post policy** / **13 Submitter-mark-answered** → `permissions_matrix.sql` (post_policy/answer_policy RLS).
+- **14 invite verify** / lifecycle → `invites.sql`. **Entitlement/groups** → `entitlement.sql`. **List RLS** → `rls_shared_lists.sql`. **church_public exposure** → `churches_public_exposure.sql`.
+
+PENDING HUMAN (browser on a preview deploy + an email inbox for SES/confirmation):
+- **11** Permissions card UI, **14** Invites-panel UI + copy-link, **15** logged-out open-link → signup → email confirm → accept, **17** SES locked-email send, **20** church-default post policy prefilled in `/dashboard/shared-lists/new`.
+- Steps **1–10** (church admin draft→publish→moderate→public-page→delete) not run this pass (require a seeded church + admin/non-admin members; prod currently has 0 churches).
+
+---
+
+## Church-independence E2E (PRD-13) — added 2026-06-21
+
+Proves Groups sharing works with **NO church anywhere** (the PRD-13 guarantee). Live against prod `wkptusgzngfzoucocije`. **PASS.**
+
+- **Entitlement.** `get_user_entitlement()` for two users with no `church_members` row and no active subscription → `{ "tier": "free", "source": "none", "groups": { "enabled": true, "can_share": true, "max_groups": 10 } }`. A user with only a `personal` Stripe sub (no church) → same `groups` block. Groups are enabled independent of church/subscription (`get_user_entitlement` sets `groups_free_for_all := true`).
+- **Full cycle.** No-church user **A** created group "PRD-13 No-Church E2E" (`church_id` NULL), shared a list into it (`scope='group'`, `church_id` NULL, published) and minted an open invite via `create_invite`. No-church user **B** accepted via `accept_invite` → joined (`already_member:false`, `scope_name:"PRD-13 No-Church E2E"`).
+- **RLS (enforced, role `authenticated` as B).** B sees own membership (1), the group (1), and the group's church-independent shared list (1). No-church members can read the shared list under RLS.
+
+_Test fixtures (the no-church E2E group + list + invites, and the throwaway memberships) were cleaned up after the run; the "PRD-13 Device Link Test" group + open invite were intentionally left live for the on-device universal-link test (Item 2)._
