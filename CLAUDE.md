@@ -15,7 +15,7 @@ The product app (dashboard, auth, Supabase, Stripe) lives in a **separate repo**
 ## Stack
 
 - Plain HTML + CSS + vanilla JS
-- Google Apps Script waitlist endpoint (see `marketing-docs/`)
+- Keila embedded signup form for the waitlist (self-hosted Keila at `newsletter.solomonsolutions.tech`), embedded directly in `index.html`. The Google Apps Script endpoint it replaced was retired in PR #18 (2026-06-15).
 - Vercel static hosting
 
 ## Repo layout
@@ -23,7 +23,7 @@ The product app (dashboard, auth, Supabase, Stripe) lives in a **separate repo**
 - `index.html` — landing page (hero + waitlist capture)
 - `confession.html`, `supplication.html`, `thanksgiving.html` — ACTS preview pages
 - `screenshots/` — marketing imagery
-- `marketing-docs/` — Apps Script source + integration notes
+- `marketing-docs/` — historical Apps Script source + integration notes. **The Apps Script waitlist is retired; this directory is history, not the live integration.**
 - `docs/plans`, `docs/uat` — historical planning docs (kept for reference)
 - `DEPLOYMENT.md` — Vercel setup
 

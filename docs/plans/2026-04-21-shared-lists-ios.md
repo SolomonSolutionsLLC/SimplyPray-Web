@@ -1,3 +1,9 @@
+<!-- historical-plan-banner -->
+> **HISTORICAL — do not execute this plan.**
+> Delivered in iOS PR #23 (`audit-2026-06/06`).
+> Any "execute this plan task-by-task" instruction below is addressed to an agent working in **April–June 2026** and is not a live instruction. Kept for history and rationale.
+> For what is actually true now, read the product-root `AGENTS.md`.
+
 # Shared Lists — iOS Supabase Client Implementation Plan
 
 > **For the executing agent (Codex):** This plan is meant to be executed inside the iOS repo `jdkirk12/simply-pray` (not this web repo). Clone it locally first. This plan and the web plan (`2026-04-21-shared-lists-web.md`) can proceed in parallel; the only hard sync point is Phase 1 — the iOS work can stub endpoints but cannot integration-test until the web plan's Phase 1 migrations are applied to the shared Supabase project.
