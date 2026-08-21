@@ -1,3 +1,9 @@
+<!-- historical-plan-banner -->
+> **HISTORICAL — do not execute this plan.**
+> Shared lists shipped across `SimplyPray-App` PRs #9–#12 and iOS PR #23.
+> Any "execute this plan task-by-task" instruction below is addressed to an agent working in **April–June 2026** and is not a live instruction. Kept for history and rationale.
+> For what is actually true now, read the product-root `AGENTS.md`.
+
 # Shared Lists — Design
 
 **Date:** 2026-04-21
