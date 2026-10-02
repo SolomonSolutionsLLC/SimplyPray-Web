@@ -9,3 +9,7 @@ MARKETING_README.md
 SimplyPray.code-workspace
 marketing-docs/
 screenshots/
+
+# Local verification tools and analytics release notes are not public assets
+tests/
+scripts/
