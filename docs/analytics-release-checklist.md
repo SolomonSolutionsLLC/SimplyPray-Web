@@ -1,6 +1,6 @@
 # SimplyPray public-website analytics: release gates
 
-Status: local implementation only. **Not published. Analytics is disabled in source.**
+Google account/tag privacy settings were verified on October 2, 2026, and the verified stream ID is G-W4MGLLC11W. The production code gate is enabled; analytics still requires each visitor’s affirmative consent. Use deployment evidence to determine whether this revision is live.
 
 ## Scope
 

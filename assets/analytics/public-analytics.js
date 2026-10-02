@@ -5,7 +5,7 @@
 (function () {
   'use strict';
   const MEASUREMENT_ID = 'G-W4MGLLC11W';
-  const PRIVACY_SETTINGS_VERIFIED = false;
+  const PRIVACY_SETTINGS_VERIFIED = true;
   const STORAGE_KEY = 'simplypray-public-analytics-consent-v1';
   const CONSENT_LIFETIME_MS = 180 * 24 * 60 * 60 * 1000;
   const CANONICAL_ORIGIN = 'https://www.simplypray.io';

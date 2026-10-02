@@ -75,11 +75,13 @@ function boot(options = {}) {
   };
 }
 
-test('checked-in code stays disabled until stream and settings are verified', () => {
-  const h = boot({ configured: false, consent: encode('accepted') });
+test('approved production stream still loads no Google tag without visitor consent', () => {
+  const h = boot({ configured: false });
   assert.equal(h.googleScripts().length, 0);
-  assert.equal(h.ui, undefined);
-  assert.match(source, /const PRIVACY_SETTINGS_VERIFIED = false/);
+  assert.equal(h.window.dataLayer, undefined);
+  assert.ok(h.ui);
+  assert.match(source, /const PRIVACY_SETTINGS_VERIFIED = true/);
+  assert.match(source, /const MEASUREMENT_ID = 'G-W4MGLLC11W'/);
 });
 
 test('unknown visitors have equal explicit choices and no Google queue or script', () => {
