@@ -151,33 +151,27 @@
 
   const root = document.createElement('div');
   root.className = 'public-analytics';
-  root.innerHTML = '<section class="public-analytics__panel" aria-labelledby="analytics-heading" tabindex="-1" hidden>' +
-    '<h2 id="analytics-heading">Optional website analytics</h2>' +
-    '<p>May we use Google Analytics cookies to understand visits to this public website? Google receives basic visit and device data. We do not send prayer content or form entries, or use analytics for advertising. You can change your choice at any time.</p>' +
-    '<a href="/privacy#website-analytics">Read about website analytics</a>' +
-    '<p class="public-analytics__signal" hidden>Your browser’s privacy preference is keeping analytics off.</p>' +
+  root.innerHTML = '<section id="cookie-preferences" class="public-analytics__panel" aria-label="Cookie preferences" tabindex="-1" hidden>' +
+    '<p class="public-analytics__signal" hidden>Your browser’s privacy preference is keeping optional cookies off.</p>' +
     '<div class="public-analytics__actions">' +
-    '<button type="button" data-choice="rejected">Reject analytics</button>' +
-    '<button type="button" data-choice="accepted">Accept analytics</button>' +
-    '<button type="button" data-close hidden>Close</button>' +
+    '<button type="button" data-choice="rejected">Reject cookies</button>' +
+    '<button type="button" data-choice="accepted">Accept cookies</button>' +
     '</div></section>' +
-    '<button type="button" class="public-analytics__settings" aria-expanded="false">Analytics settings</button>';
+    '<button type="button" class="public-analytics__settings" aria-controls="cookie-preferences" aria-expanded="false">Cookies</button>';
   document.body.appendChild(root);
   const panel = root.querySelector('section');
   const settings = root.querySelector('.public-analytics__settings');
   const accept = root.querySelector('[data-choice="accepted"]');
-  const close = root.querySelector('[data-close]');
   const signal = root.querySelector('.public-analytics__signal');
 
-  function render(record) {
+  function render() {
     const blocked = privacySignal();
-    const open = settingsOpen || (!record && !blocked);
+    const open = settingsOpen;
     panel.hidden = !open;
-    settings.hidden = open;
+    settings.hidden = false;
     settings.setAttribute('aria-expanded', String(open));
     accept.hidden = blocked;
     signal.hidden = !blocked;
-    close.hidden = !settingsOpen;
   }
 
   function refresh() {
@@ -193,7 +187,7 @@
     const record = readRecord();
     if (record && record.choice === 'accepted' && !privacySignal()) start();
     else stop();
-    render(record);
+    render();
     if (record) {
       // setTimeout overflows after ~24 days. Recheck without renewing the choice.
       expiryTimer = window.setTimeout(refresh,
@@ -227,17 +221,16 @@
   });
   settings.addEventListener('click', function () {
     previousFocus = document.activeElement;
-    settingsOpen = true;
-    render(readRecord());
-    panel.focus();
+    settingsOpen = !settingsOpen;
+    render();
+    if (settingsOpen) panel.focus();
   });
   function closePanel() {
     if (!settingsOpen) return;
     settingsOpen = false;
-    render(readRecord());
+    render();
     restoreFocus();
   }
-  close.addEventListener('click', closePanel);
   panel.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') closePanel();
   });
