@@ -21,10 +21,14 @@ const css = fs.readFileSync(path.join(root, 'assets/analytics/public-analytics.c
       const errors = [];
       page.on('pageerror', error => errors.push(error.message));
       await page.route('**/*', async route => {
+        if (route.request().resourceType() === 'document') {
+          await route.fulfill({status: 200, contentType: 'text/html', body: '<!doctype html><html><head><meta charset="UTF-8"><style>' + css + '</style></head><body><h1>SimplyPray</h1></body></html>'});
+          return;
+        }
         requests.push(route.request().url());
         await route.fulfill({ status: 200, contentType: 'application/javascript', body: '/* Offline GA stub: no tag execution or collection. */' });
       });
-      await page.setContent('<!doctype html><html><head><meta charset="UTF-8"><style>' + css + '</style></head><body><h1>SimplyPray</h1></body></html>');
+      await page.goto('https://www.simplypray.io/');
       await page.evaluate(() => {
         window.__analyticsFixtureLocation = { protocol: 'https:', hostname: 'www.simplypray.io', port: '', pathname: '/', reload() { window.__reloads = (window.__reloads || 0) + 1; } };
         const store = {};
@@ -32,7 +36,10 @@ const css = fs.readFileSync(path.join(root, 'assets/analytics/public-analytics.c
       });
       await page.addScriptTag({ content: js });
       const panel = page.locator('.public-analytics__panel');
+      assert.equal(await panel.isVisible(), false, 'Starts collapsed without consent');
+      await page.getByRole('button', { name: 'Cookies', exact: true }).click();
       await panel.waitFor({ state: 'visible' });
+      assert.equal(await page.getByRole('button', { name: 'Cookies', exact: true }).getAttribute('aria-expanded'), 'true');
       assert.equal(requests.length, 0, 'No pre-consent requests');
       const bounds = await panel.boundingBox();
       assert.ok(bounds.x >= 0 && bounds.y >= 0 && bounds.x + bounds.width <= viewport.width && bounds.y + bounds.height <= viewport.height);
@@ -45,20 +52,20 @@ const css = fs.readFileSync(path.join(root, 'assets/analytics/public-analytics.c
         fs.mkdirSync(process.env.ANALYTICS_SCREENSHOT_DIR, { recursive: true });
         await page.screenshot({ path: path.join(process.env.ANALYTICS_SCREENSHOT_DIR, 'consent-' + viewport.width + '.png') });
       }
-      await page.getByRole('button', { name: 'Reject analytics', exact: true }).click();
+      await page.getByRole('button', { name: 'Reject cookies', exact: true }).click();
       assert.equal(requests.length, 0);
-      await page.getByRole('button', { name: 'Analytics settings', exact: true }).click();
+      await page.getByRole('button', { name: 'Cookies', exact: true }).click();
       await page.keyboard.press('Escape');
       assert.equal(await panel.isVisible(), false);
-      assert.equal(await page.getByRole('button', { name: 'Analytics settings', exact: true }).evaluate(el => el === document.activeElement), true);
-      await page.getByRole('button', { name: 'Analytics settings', exact: true }).click();
-      await page.getByRole('button', { name: 'Accept analytics', exact: true }).click();
+      assert.equal(await page.getByRole('button', { name: 'Cookies', exact: true }).evaluate(el => el === document.activeElement), true);
+      await page.getByRole('button', { name: 'Cookies', exact: true }).click();
+      await page.getByRole('button', { name: 'Accept cookies', exact: true }).click();
       await page.waitForFunction(() => document.getElementById('public-site-google-analytics') !== null);
       await page.waitForTimeout(50);
       assert.equal(requests.length, 1);
       assert.equal(requests[0], 'https://www.googletagmanager.com/gtag/js?id=G-TEST123456');
-      await page.getByRole('button', { name: 'Analytics settings', exact: true }).click();
-      await page.getByRole('button', { name: 'Reject analytics', exact: true }).click();
+      await page.getByRole('button', { name: 'Cookies', exact: true }).click();
+      await page.getByRole('button', { name: 'Reject cookies', exact: true }).click();
       assert.equal(await page.evaluate(() => window['ga-disable-G-TEST123456']), true);
       assert.equal(await page.evaluate(() => window.__reloads), 1);
       assert.equal(await page.locator('#public-site-google-analytics').count(), 0);

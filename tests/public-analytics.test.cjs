@@ -84,11 +84,11 @@ test('approved production stream still loads no Google tag without visitor conse
   assert.match(source, /const MEASUREMENT_ID = 'G-W4MGLLC11W'/);
 });
 
-test('unknown visitors have equal explicit choices and no Google queue or script', () => {
+test('unknown visitors start collapsed with equal explicit choices and no Google queue or script', () => {
   const h = boot();
   assert.equal(h.googleScripts().length, 0);
   assert.equal(h.window.dataLayer, undefined);
-  assert.equal(h.ui.querySelector('section').hidden, false);
+  assert.equal(h.ui.querySelector('section').hidden, true);
   assert.equal(h.ui.querySelector('[data-choice="accepted"]').hidden, false);
   assert.equal(h.ui.querySelector('[data-choice="rejected"]').hidden, false);
 });
@@ -156,7 +156,7 @@ test('previously accepted valid consent is reused without changing its timestamp
 for (const consent of ['invalid', 'null', '{}', encode('other'), encode('accepted', NOW + 1), encode('accepted', NOW - TTL), encode('rejected', NOW - TTL), JSON.stringify({ version: 2, choice: 'accepted', savedAt: NOW }), JSON.stringify({ version: 1, choice: 'accepted', savedAt: String(NOW) })]) test('invalid or expired consent fails closed: ' + consent, () => {
   const h = boot({ consent });
   assert.equal(h.googleScripts().length, 0);
-  assert.equal(h.ui.querySelector('section').hidden, false);
+  assert.equal(h.ui.querySelector('section').hidden, true);
 });
 
 for (const navigator of [{ globalPrivacyControl: true }, { doNotTrack: '1' }]) test('browser privacy signal overrides saved or attempted acceptance: ' + JSON.stringify(navigator), () => {
@@ -215,7 +215,7 @@ test('expiration is checked at its deadline without timer overflow', () => {
   timer.callback();
   assert.equal(h.window['ga-disable-' + TEST_ID], true);
   assert.equal(h.state.reloads, 1);
-  assert.equal(h.ui.querySelector('section').hidden, false);
+  assert.equal(h.ui.querySelector('section').hidden, true);
 });
 
 test('back-forward cache restores revalidate expired consent', () => {
@@ -334,4 +334,17 @@ test('storage read-back failure prevents unsafe withdrawal reload', () => {
   h.click('rejected');
   assert.equal(h.state.reloads, 0);
   assert.equal(h.window['ga-disable-' + TEST_ID], true);
+});
+
+test('footer stays available and toggles the disclosure without choosing consent', () => {
+  const h = boot();
+  const settings = h.ui.querySelector('.public-analytics__settings');
+  const panel = h.ui.querySelector('section');
+  settings.dispatch('click');
+  assert.equal(panel.hidden, false);
+  assert.equal(settings.hidden, false);
+  settings.dispatch('click');
+  assert.equal(panel.hidden, true);
+  assert.equal(h.googleScripts().length, 0);
+  assert.equal(h.state.stored, null);
 });
