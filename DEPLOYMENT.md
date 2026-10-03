@@ -23,3 +23,4 @@ The app (dashboard, auth, Supabase, Stripe) lives in a separate repo: `SolomonSo
 - Check the project's existing Domain Redirect settings before publishing: a dashboard-level redirect can take precedence over repository routing. Any apex-to-www domain redirect should also be permanent (308), with no reverse www-to-apex rule.
 - Run `python3 scripts/check_site.py` before review. It checks page self-canonicals, sitemap/robots consistency, the apex redirect declaration, and local links.
 - After an approved deployment, verify the actual apex response is 308, the destination preserves paths and query strings, and each www page serves its self-canonical. Host-based rules are not exercised by a plain local static server.
+- Sitemap `lastmod` values are omitted until verified per-page content-update dates are available. Do not use build times or a shared stale date.
