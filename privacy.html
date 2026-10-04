@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — SimplyPray</title>
   <meta name="description" content="SimplyPray privacy policy. Your prayers stay on your device. Plain-English explanation of what we collect and why." />
+  <link rel="canonical" href="https://www.simplypray.io/privacy" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
@@ -182,6 +183,8 @@
       .data-table th, .data-table td { padding: 8px 10px; }
     }
   </style>
+  <link rel="stylesheet" href="/assets/analytics/public-analytics.css" />
+  <script defer src="/assets/analytics/public-analytics.js"></script>
 </head>
 <body>
 
@@ -198,12 +201,12 @@
       <div class="page-label">Legal</div>
       <h1>Privacy Policy</h1>
       <p>We built SimplyPray to be a private place for prayer. Here is a plain-English account of what data we collect, what we do not collect, and why.</p>
-      <p class="effective-date">Effective date: June 11, 2026 &nbsp;&middot;&nbsp; Company: Solomon Solutions LLC</p>
+      <p class="effective-date">Effective date: October 2, 2026 &nbsp;&middot;&nbsp; Company: Solomon Solutions LLC</p>
     </div>
 
     <!-- TL;DR highlight -->
     <div class="highlight-box">
-      <p><strong>The short version:</strong> Your prayers and journal entries stay on your device — we never see them. We collect your email address to create your account, and subscription status to grant access to paid features. We do not run ads, we do not sell your data, and we do not use any third-party tracking or analytics SDK.</p>
+      <p><strong>The short version:</strong> Your prayers and journal entries stay on your device — we never see them. We collect your email address to create your account, and subscription status to grant access to paid features. We do not run ads or sell your data. The SimplyPray app does not include a third-party analytics SDK. Separately, this public marketing website offers optional Google Analytics only after you choose Accept analytics; see section 8.</p>
     </div>
 
     <!-- 1. What we collect -->
@@ -291,7 +294,7 @@
     <!-- 6. No ad tracking -->
     <div class="section">
       <h2>6. No ad tracking</h2>
-      <p>SimplyPray does not use advertising or third-party tracking of any kind.</p>
+      <p>The SimplyPray app does not use advertising or third-party tracking. Optional analytics on this public marketing website is separate from the app and is not used for advertising.</p>
       <ul>
         <li><strong>NSPrivacyTracking = false</strong> — declared in the app's privacy manifest. No cross-app or cross-site tracking occurs.</li>
         <li>No third-party analytics SDK (e.g. Firebase Analytics, Mixpanel, Amplitude) is included in the app.</li>
@@ -314,8 +317,12 @@
 
     <!-- 8. Cookies -->
     <div class="section">
-      <h2>8. Cookies and the web</h2>
-      <p>This marketing site (simplypray.io) is static HTML with no analytics scripts, advertising pixels, or tracking cookies. It does not set any cookies in your browser.</p>
+      <h2 id="website-analytics">8. Cookies and the public website</h2>
+      <p>The public marketing website at <strong>www.simplypray.io</strong> offers optional Google Analytics 4 to help us understand visits to the home, privacy, and product-support pages. No Google Analytics script, analytics cookie, or analytics request is used before you choose <strong>Accept analytics</strong>. Choosing <strong>Reject analytics</strong> keeps it off. Browser Global Privacy Control and Do Not Track preferences also keep it off.</p>
+      <p>If you accept, Google receives fixed public-page names and canonical addresses, basic visit and device information, and pseudonymous identifiers stored in first-party analytics cookies. Network requests also expose your IP address to Google for processing. We do not send URL query strings, fragments, referring-page addresses, form entries, email addresses, account IDs, prayer requests, journals, shared-list content, or counseling information. ACTS preview pages and the SimplyPray app are excluded.</p>
+      <p>We do not use this analytics setup for advertising, remarketing, Google Signals, user-provided data collection, or automatic measurement of forms, links, searches, scrolling, videos, or downloads. Google Analytics may generate basic session and engagement events after you accept.</p>
+      <p>Your analytics choice is stored in this browser for up to <strong>180 days</strong>. If you accept, the <strong>_ga</strong> and stream-specific <strong>_ga_…</strong> cookies also last up to 180 days without automatic renewal. These cookies are limited to this website host and are not shared with <strong>app.simplypray.io</strong>. You can change or withdraw consent using <strong>Analytics settings</strong> on the home, privacy, or support page. Rejecting after accepting stops analytics and clears this integration’s cookies. We reload to unload the Google tag only when browser storage confirms that analytics will stay off. If your browser prevents saving or removing the old choice, analytics remains disabled on the current page; clear this site’s stored data before reloading or leaving the page to prevent that old choice from being reused. It does not delete visit data already sent to Google. If browser storage is unavailable, your choice applies only to the current page.</p>
+      <p>This site also loads Google Fonts independently of the optional analytics choice. For more about Google’s processing, see <a href="https://policies.google.com/privacy" rel="noreferrer">Google’s Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" rel="noreferrer">how Google uses information from sites that use its services</a>.</p>
       <p>The web app at <strong>app.simplypray.io</strong> uses essential cookies required for authentication. Specifically, Supabase stores a session token in your browser so you stay signed in. These cookies are necessary for the app to function and are not used for advertising or tracking purposes.</p>
     </div>
 
@@ -354,6 +361,11 @@
             <td>Your email address and email content for delivery</td>
           </tr>
           <tr>
+            <td>Google Analytics</td>
+            <td>Optional public marketing website analytics, only with consent</td>
+            <td>Fixed public-page names and canonical addresses, basic visit and device information, pseudonymous cookie identifiers; IP address exposed during network processing. No app or prayer content.</td>
+          </tr>
+          <tr>
             <td>Vercel</td>
             <td>Hosting for this marketing site and web app</td>
             <td>Standard web server logs (IP address, user-agent) per Vercel's privacy policy</td>
@@ -385,6 +397,7 @@
       <ul>
         <li><strong>Access</strong> the email address and subscription status we hold for your account by signing in.</li>
         <li><strong>Delete your account</strong> at any time from inside the app (tap the account icon &rarr; Delete Account). This permanently deletes your server-side data.</li>
+        <li><strong>Withdraw public-website analytics consent</strong> using Analytics settings, then Reject analytics.</li>
         <li><strong>Delete on-device data</strong> by deleting the app from your iPhone.</li>
         <li><strong>Opt out of transactional emails</strong> by deleting your account (we have no marketing list to unsubscribe from).</li>
       </ul>

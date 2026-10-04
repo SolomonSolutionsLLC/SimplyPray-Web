@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
-"""Check local links and basic document structure in the static site."""
+"""Check local links, document structure, and canonical URL consistency."""
 
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 import json
 import sys
+import xml.etree.ElementTree as ET
 
 
 ROOT = Path(__file__).resolve().parents[1]
+SITE_URL = "https://www.simplypray.io"
 
 
 class Page(HTMLParser):
@@ -17,6 +19,7 @@ class Page(HTMLParser):
         self.ids = set()
         self.links = []
         self.has_title = False
+        self.canonicals = []
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -24,6 +27,8 @@ class Page(HTMLParser):
             self.ids.add(attrs["id"])
         if tag == "title":
             self.has_title = True
+        if tag == "link" and "canonical" in attrs.get("rel", "").split():
+            self.canonicals.append(attrs.get("href"))
         for name in ("href", "src"):
             if attrs.get(name):
                 self.links.append(attrs[name])
@@ -46,6 +51,44 @@ def main():
 
     config = json.loads((ROOT / "vercel.json").read_text(encoding="utf-8"))
     rewrites = {entry["source"]: entry["destination"] for entry in config.get("rewrites", [])}
+
+    expected_urls = set()
+    for path, page in pages.items():
+        route = "/" if path.name == "index.html" else f"/{path.stem}"
+        canonical = SITE_URL + route
+        expected_urls.add(canonical)
+        if page.canonicals != [canonical]:
+            errors.append(f"{path.name}: expected one self-canonical URL: {canonical}")
+
+    try:
+        sitemap = ET.parse(ROOT / "sitemap.xml")
+        sitemap_urls = [
+            loc.text for loc in sitemap.findall("{*}url/{*}loc")
+        ]
+        if len(sitemap_urls) != len(set(sitemap_urls)):
+            errors.append("sitemap.xml: duplicate URLs")
+        if set(sitemap_urls) != expected_urls:
+            errors.append("sitemap.xml: URLs must match the canonical HTML page URLs")
+    except (ET.ParseError, OSError) as error:
+        errors.append(f"sitemap.xml: {error}")
+
+    robots = (ROOT / "robots.txt").read_text(encoding="utf-8")
+    sitemap_directives = [
+        line.split(":", 1)[1].strip()
+        for line in robots.splitlines()
+        if line.lower().startswith("sitemap:")
+    ]
+    if sitemap_directives != [f"{SITE_URL}/sitemap.xml"]:
+        errors.append("robots.txt: sitemap must use the canonical www host")
+
+    apex_redirect = {
+        "source": "/:path*",
+        "has": [{"type": "host", "value": "simplypray.io"}],
+        "destination": f"{SITE_URL}/:path*",
+        "permanent": True,
+    }
+    if apex_redirect not in config.get("redirects", []):
+        errors.append("vercel.json: missing permanent, apex-only redirect to www")
 
     for path, page in pages.items():
         for link in page.links:
@@ -75,7 +118,7 @@ def main():
     if errors:
         print(f"Site integrity failed: {len(errors)} error(s)", file=sys.stderr)
         return 1
-    print(f"Site integrity passed: {len(pages)} HTML pages, local URLs and anchors valid")
+    print(f"Site integrity passed: {len(pages)} HTML pages, local URLs, anchors, and SEO URLs valid")
     return 0
 
 

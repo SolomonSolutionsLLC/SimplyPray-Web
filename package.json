@@ -1,5 +1,9 @@
 {
   "name": "simplypray-web",
   "private": true,
-  "description": "SimplyPray marketing site — static HTML served at simplypray.io"
+  "description": "SimplyPray marketing site \u2014 static HTML served at simplypray.io",
+  "scripts": {
+    "test": "node --test tests/public-analytics.test.cjs && python3 scripts/check_site.py",
+    "test:browser": "node tests/public-analytics.browser.cjs"
+  }
 }
