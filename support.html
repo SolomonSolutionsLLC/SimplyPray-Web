@@ -275,8 +275,8 @@
             <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="faq-a">
-            <p>Open the app, tap the <strong>account icon</strong> (person symbol), then <strong>Delete Account</strong>. This permanently deletes your account and all server-side data. It cannot be undone.</p>
-            <p>Your on-device prayer data (prayers, journal, tags) is stored locally and is not affected by account deletion — it is removed only when you delete the app.</p>
+            <p>Open the app, tap the <strong>account icon</strong> (person symbol), then <strong>Delete Account</strong>. Follow the confirmation prompts carefully. Account deletion cannot be undone.</p>
+            <p>After your account is deleted, the app also clears that account’s local prayer data on this device. Deleting your account does not replace cancelling a paid subscription; manage that separately with your billing provider.</p>
           </div>
         </div>
 
@@ -286,8 +286,8 @@
             <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="faq-a">
-            <p>Your prayers, journal entries, answered-prayer log, and tags are stored entirely on your iPhone using SwiftData. They are never uploaded to our servers.</p>
-            <p>The app works fully offline. No iCloud sync is active at launch — your data lives on the device you installed the app on.</p>
+            <p>Your personal prayer lists, Thanksgiving entries, answered prayers, and tags are stored on your device. If you choose to share a list, that shared list and its requests are stored in the cloud so members can access them.</p>
+            <p>Personal prayer data is available offline. Shared lists need an internet connection. SimplyPray does not currently sync personal prayer data between devices.</p>
           </div>
         </div>
 
@@ -297,7 +297,7 @@
             <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="faq-a">
-            <p>On the sign-in screen, tap <strong>Forgot password?</strong> and enter your email address. You will receive a reset link by email. Check your spam folder if it does not arrive within a couple of minutes.</p>
+            <p>On the sign-in screen, tap <strong>Forgot password?</strong> and enter your email address. You will receive a reset link by email. Check your spam folder if you do not see it.</p>
             <p>If you are still stuck, email us at <a href="mailto:joshua@solomonsolutions.tech">joshua@solomonsolutions.tech</a>.</p>
           </div>
         </div>
@@ -341,7 +341,8 @@
             <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="faq-a">
-            <p>Sign out of the app and sign back in — this refreshes your subscription status. If the issue persists after a few minutes, email us at <a href="mailto:joshua@solomonsolutions.tech">joshua@solomonsolutions.tech</a> with your account email and we will sort it out promptly.</p>
+            <p>Check that you are signed in to the SimplyPray account used for your purchase. For an App Store purchase, use <strong>Restore Purchases</strong> if that option is shown on the subscription purchase screen.</p>
+            <p>If access is still missing, email <a href="mailto:joshua@solomonsolutions.tech">joshua@solomonsolutions.tech</a> with your account email, purchase date, and where you subscribed. Do not send passwords or payment card details.</p>
           </div>
         </div>
 
@@ -359,7 +360,30 @@
             <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="faq-a">
-            <p>On any prayer row in Supplication or Thanksgiving, tap the <strong>sparkle-hands icon</strong> (labelled "Answered") to move the prayer to your answered-prayer archive. It becomes part of your permanent thanksgiving record.</p>
+            <p>Open <strong>Lists</strong> and expand a personal prayer list. Swipe right on a prayer request and tap <strong>Answered</strong>. Add an optional note, then confirm <strong>Mark Answered</strong>. You can also open the request and choose <strong>Mark as Answered</strong>.</p>
+            <p>The request appears in <strong>Answered Prayers &amp; Praise</strong> on Home, and the app creates a linked Thanksgiving entry.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-q-text">How do I restore an archived item?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>Open <strong>More</strong>, then <strong>Archived Items</strong>. Find the item and tap <strong>Restore</strong>. You can filter the list to find prayer requests, Thanksgiving entries, or answered prayers.</p>
+            <p>Restoring an archived answered prayer returns it to your praise history. To make it an active request again, use <strong>Return to Prayer List</strong> in Answered Prayers &amp; Praise.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span class="faq-q-text">How do I return an answered prayer to active prayer?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="faq-a">
+            <p>On Home, open <strong>Answered Prayers &amp; Praise</strong>. Swipe on the answered prayer to reveal its options, then choose <strong>Return to Prayer List</strong>.</p>
+            <p>Before confirming, choose whether to keep its linked Thanksgiving entry. If you do not keep it, that entry moves to <strong>Archived Items</strong>, where it can be restored.</p>
           </div>
         </div>
 
@@ -369,7 +393,7 @@
             <svg class="faq-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
           </button>
           <div class="faq-a">
-            <p>Yes. Your private prayer data is stored on your device. You can add, edit, and pray through all your requests without an internet connection. An internet connection is only required to sign in, manage your subscription, or use shared group lists.</p>
+            <p>Yes. You can add, edit, and pray through your personal prayer requests on your device without an internet connection. Shared lists, account sign-in, and subscription management need an internet connection.</p>
           </div>
         </div>
 
@@ -382,13 +406,12 @@
       <p style="font-size:15px;line-height:1.75;color:var(--ink-mid);font-weight:300;margin-bottom:16px;">If you are testing SimplyPray through TestFlight, thank you. Here is how to send feedback:</p>
 
       <div class="beta-card">
-        <h3>Sending feedback on iOS 18+</h3>
-        <p>Apple moved the "Send Beta Feedback" option in iOS 18. The two reliable paths:</p>
+        <h3>Sending beta feedback</h3>
+        <p>Use the TestFlight app to send feedback about your beta build:</p>
         <ol>
-          <li><strong>Inside the TestFlight app</strong> &rarr; tap SimplyPray &rarr; <strong>Send Beta Feedback</strong>. You can attach screenshots from your library or write a comment. This is the recommended path.</li>
-          <li><strong>Settings &rarr; TestFlight &rarr; Send Beta Feedback</strong> &mdash; if this toggle is off, the share-screenshot prompt will not appear. Flip it on.</li>
+          <li>Open <strong>TestFlight</strong> and tap <strong>SimplyPray</strong>.</li>
+          <li>Tap <strong>Send Beta Feedback</strong>, then add your comments and any helpful screenshots.</li>
         </ol>
-        <p>Nothing in SimplyPray itself blocks feedback — this is a change Apple made in iOS 18.</p>
         <p>You can also email feedback directly to <a href="mailto:joshua@solomonsolutions.tech" style="color:var(--gold);font-weight:500;">joshua@solomonsolutions.tech</a> with screenshots attached.</p>
       </div>
     </div>
