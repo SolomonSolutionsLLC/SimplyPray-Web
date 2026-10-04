@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abuse &amp; Safety Policy — SimplyPray</title>
+  <meta name="description" content="SimplyPray abuse and safety policy. Report concerns to SolomonSolutions LLC staff and learn how reports are reviewed." />
+  <link rel="canonical" href="https://www.simplypray.io/abuse" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:          #F8F4EF;
+      --bg-dark:     #EDE8DF;
+      --green-deep:  #2F5C51;
+      --green-mid:   #3A6F63;
+      --green-light: #CFE7DD;
+      --green-pale:  #EBF5F1;
+      --gold:        #B8935A;
+      --gold-light:  #F2E8D6;
+      --ink:         #1D2B27;
+      --ink-mid:     #4A5C57;
+      --ink-soft:    #7A8C87;
+      --white:       #FFFFFF;
+      --shadow-xs:   0 2px 10px rgba(47,92,81,.07);
+      --shadow-sm:   0 4px 20px rgba(47,92,81,.10);
+      --r-sm: 12px;
+      --r-md: 20px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Nav ──────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 20px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(248,244,239,.88);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 rgba(47,92,81,.08);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 22px; font-weight: 700; color: var(--green-deep);
+    }
+    .nav-cta {
+      background: var(--green-deep); color: white;
+      padding: 10px 24px; border-radius: 999px;
+      font-size: 14px; font-weight: 500;
+      transition: background .2s, transform .15s;
+    }
+    .nav-cta:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+    /* ── Page layout ──────────────────────────────── */
+    .page-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 120px 48px 80px;
+    }
+
+    /* ── Header ───────────────────────────────────── */
+    .page-header {
+      margin-bottom: 52px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--bg-dark);
+    }
+    .page-label {
+      display: inline-block;
+      font-size: 12px; font-weight: 600; letter-spacing: 1.4px;
+      text-transform: uppercase; color: var(--green-mid);
+      margin-bottom: 16px;
+    }
+    .page-header h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(38px, 5vw, 56px);
+      font-weight: 600; line-height: 1.06; letter-spacing: -1.5px;
+      color: var(--ink); margin-bottom: 16px;
+    }
+    .page-header p {
+      font-size: 16px; color: var(--ink-mid);
+      font-weight: 300; line-height: 1.7; max-width: 560px;
+    }
+    .effective-date {
+      margin-top: 16px;
+      font-size: 13px; color: var(--ink-soft);
+    }
+
+    /* ── Highlight box ────────────────────────────── */
+    .highlight-box {
+      background: var(--green-pale);
+      border: 1px solid var(--green-light);
+      border-left: 3px solid var(--green-deep);
+      border-radius: var(--r-sm);
+      padding: 20px 24px;
+      margin-bottom: 48px;
+    }
+    .highlight-box p {
+      font-size: 15px; line-height: 1.7; color: var(--green-deep); font-weight: 400;
+    }
+
+    /* ── Content ──────────────────────────────────── */
+    .section { margin-bottom: 48px; }
+    .section h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 26px; font-weight: 700; color: var(--ink);
+      margin-bottom: 16px; letter-spacing: -.3px;
+    }
+    .section h3 {
+      font-size: 15px; font-weight: 600; color: var(--ink);
+      margin-top: 24px; margin-bottom: 8px;
+    }
+    .section p {
+      font-size: 15px; line-height: 1.75; color: var(--ink-mid);
+      font-weight: 300; margin-bottom: 12px;
+    }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul, .section ol {
+      padding-left: 20px; margin-bottom: 12px;
+    }
+    .section li {
+      font-size: 15px; line-height: 1.75; color: var(--ink-mid);
+      font-weight: 300; margin-bottom: 6px;
+    }
+    .section a {
+      color: var(--green-mid); font-weight: 500;
+      text-decoration: underline; text-decoration-color: rgba(58,111,99,.3);
+    }
+    .section a:hover { color: var(--green-deep); text-decoration-color: var(--green-deep); }
+
+    /* ── Data table ───────────────────────────────── */
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      margin: 16px 0 12px; font-size: 14px;
+    }
+    .data-table th {
+      text-align: left; padding: 10px 14px;
+      background: var(--bg-dark); color: var(--ink);
+      font-weight: 600; font-size: 12px; letter-spacing: .4px;
+      border-bottom: 1px solid rgba(47,92,81,.10);
+    }
+    .data-table th:first-child { border-radius: var(--r-sm) 0 0 0; }
+    .data-table th:last-child  { border-radius: 0 var(--r-sm) 0 0; }
+    .data-table td {
+      padding: 10px 14px; border-bottom: 1px solid rgba(47,92,81,.07);
+      color: var(--ink-mid); font-weight: 300; line-height: 1.5;
+      vertical-align: top;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* ── Divider ──────────────────────────────────── */
+    .divider { height: 1px; background: var(--bg-dark); margin: 48px 0; }
+
+    /* ── Footer ───────────────────────────────────── */
+    footer {
+      padding: 28px 48px;
+      border-top: 1px solid var(--bg-dark);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; font-weight: 700; color: var(--green-deep); }
+    .footer-mid { font-size: 13px; color: var(--ink-soft); text-align: center; }
+    .footer-mid a { color: var(--green-mid); font-weight: 500; }
+    .footer-right { font-size: 13px; color: var(--ink-soft); }
+
+    /* ── Responsive ───────────────────────────────── */
+    @media (max-width: 960px) {
+      nav { padding: 16px 24px; }
+      .page-wrap { padding: 100px 32px 60px; }
+      footer { flex-direction: column; gap: 10px; text-align: center; padding: 24px; }
+    }
+    @media (max-width: 600px) {
+      .page-wrap { padding: 90px 20px 52px; }
+      .data-table { font-size: 13px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/analytics/public-analytics.css" />
+  <script defer src="/assets/analytics/public-analytics.js"></script>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="/" class="nav-logo">SimplyPray</a>
+    <a href="https://apps.apple.com/app/id6772402646" class="nav-cta">Get the App</a>
+  </nav>
+
+  <main class="page-wrap">
+    <div class="page-header">
+      <div class="page-label">Community safety</div>
+      <h1>Abuse &amp; Safety Policy</h1>
+      <p>List administrators handle routine reports. SolomonSolutions LLC staff handle support and escalations.</p>
+      <p class="effective-date">Policy version: October 3, 2026</p>
+    </div>
+    <section class="section">
+      <h2>1. Who is responsible</h2>
+      <p>SimplyPray is a trade name of SolomonSolutions LLC, which operates the service. Shared list owners are the list administrators and handle routine reports about their lists. SolomonSolutions LLC staff handle support, escalations, and service-wide enforcement. This policy applies to shared prayer requests, lists, invitations, and other interactions through SimplyPray.</p>
+    </section>
+    <section class="section">
+      <h2>2. No tolerance for abuse</h2>
+      <p>Do not post or share threats, harassment, bullying, hate speech, discriminatory attacks, sexually explicit material, child exploitation, encouragement of violence or self-harm, scams, spam, impersonation, or unlawful content. Do not disclose another person’s private or sensitive information without permission. Do not use prayer requests to shame, intimidate, exploit, or target someone. Respectful prayer and discussion of difficult circumstances are welcome; using religious language does not excuse abuse.</p>
+    </section>
+    <section class="section">
+      <h2>3. How to report</h2>
+      <p>Use Report Post on a shared request to choose a reason and explain your concern. Routine reports go to the list administrator. Choose Send directly to SimplyPray staff for a serious concern or when local handling is unsuitable. Reports about an administrator go directly to staff. You can review your reports and escalate them in Safety &amp; Reports, including when an administrator has not responded or you disagree with the resolution. You may also report without an account by emailing privacy@simplypray.io with the subject “SimplyPray abuse report” and the relevant list or request identifier. Include only necessary details; do not send passwords, payment details, unrelated private prayers, or illegal images. An email draft is not submitted until you send it.</p>
+    </section>
+    <section class="section">
+      <h2>4. Review and enforcement</h2>
+      <p>Shared content is screened automatically before posting. Acceptable new posts appear immediately; screening may ask you to revise a post. Screening can make mistakes and does not detect every violation. Difficult experiences may be discussed respectfully; contact your list administrator or privacy@simplypray.io if screening appears mistaken. List administrators review routine reports promptly, remove inappropriate shared posts, and record a resolution. Escalate credible threats, child safety concerns, serious privacy violations, repeated abuse, unresolved concerns, or concerns involving an administrator to SolomonSolutions LLC. Staff review escalations promptly and may remove shared content or suspend shared-service access. We do not promise immediate responses or disclose another person’s confidential account information.</p>
+    </section>
+    <section class="section">
+      <h2>5. Report privacy</h2>
+      <p>Reports include the selected shared request and list identifiers, the reporter’s account identifier, the reported author’s account identifier, and the reason and explanation provided. Routine reports are accessible to authorized list administrators; escalations are handled by SolomonSolutions staff. Reporters can see their own reports. Relevant information may be provided to authorized service providers or authorities when necessary or legally required. We cannot guarantee anonymity. Private prayers and journals are not attached automatically. See the Privacy Policy for broader data practices.</p>
+    </section>
+    <section class="section">
+      <h2>6. Blocking users</h2>
+      <p>Use Block User on a shared request to hide that author’s shared posts and restrict invitations between you. Blocking takes effect without waiting for a report review. Manage or undo your blocks in Safety &amp; Reports. Blocking is personal to your account; list removal affects everyone on the list, and SolomonSolutions staff may suspend shared-service access when warranted.</p>
+    </section>
+    <section class="section">
+      <h2>7. Questions and review requests</h2>
+      <p>If you believe a moderation decision was mistaken, email privacy@simplypray.io with the relevant identifier and your explanation. SolomonSolutions LLC staff will review the available information. Submit reports in good faith; deliberately false reports or retaliation against a reporter are prohibited.</p>
+    </section>
+    <section class="section">
+      <h2>8. Immediate danger</h2>
+      <p>SimplyPray support is not an emergency service and is not monitored continuously. If someone is in immediate danger, contact local emergency services. Do not wait for a support response.</p>
+    </section>
+    <section class="section">
+      <h2>9. Policy updates</h2>
+      <p>SolomonSolutions LLC may update this policy as SimplyPray changes. The current version is available in the app and on the SimplyPray website. Version: October 3, 2026.</p>
+    </section>
+    <section class="section" id="report">
+      <h2>Contact staff</h2>
+      <p><a href="mailto:privacy@simplypray.io?subject=SimplyPray%20abuse%20report">Email an abuse report</a> to privacy@simplypray.io. Review and send the message in your email app.</p>
+      <p><a href="/privacy">Privacy Policy</a> &middot; <a href="/support">Support</a> &nbsp;&middot;&nbsp; <a href="/abuse">Abuse &amp; Safety</a></p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">SimplyPray</div>
+    <p class="footer-mid">A <a href="https://solomonsolutions.tech">Solomon Solutions</a> product. &nbsp;<a href="/privacy">Privacy</a> &nbsp;&middot;&nbsp; <a href="/support">Support</a> &nbsp;&middot;&nbsp; <a href="/abuse">Abuse &amp; Safety</a></p>
+    <p class="footer-right">&copy; 2026 Solomon Solutions LLC</p>
+  </footer>
+
+</body>
+</html>
