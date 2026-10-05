@@ -1,0 +1,141 @@
+SimplyPray Privacy Policy
+
+Effective date: October 5, 2026
+
+1 Scope and who we are
+
+Solomon Solutions LLC, a Colorado limited liability company doing business as SimplyPray ("SimplyPray," "we," "us," or "our"), provides personal and church devotional tools. This Policy describes our handling of personal information through our SimplyPray app, related websites, account and sharing services, and communications. Our initial app offering is for users in the United States through Apple’s App Store.
+
+Private devotional records stay on your device unless you share or send them through an online feature. We also process information for accounts, purchases, shared prayer lists, church participation, websites and support. Joining a church does not give it access to your private records. Churches and other recipients are responsible for their independent use of information you share with them.
+
+2 Private devotional records on your device
+
+Your private devotional records, including prayers, confession and thanksgiving entries, journals, tags and devotional activity, are stored on your device. SimplyPray does not keep a cloud copy of these records unless you separately share or send information through an online feature. Private devotional features can be used offline; account, purchase and sharing functions may require an internet connection.
+
+Device-provider backups or transfers may include your app data, depending on your settings. The device provider’s settings and policies govern those services. If your private records are lost, SimplyPray cannot restore them from our servers.
+
+The app keeps a local devotional activity log, including event information and tag names. Events older than approximately 90 days are pruned when the app runs its cleanup routine. This is not a retention limit for all prayers, journals, saved tags, streaks or device settings. The log is not sent to a third-party analytics service.
+
+Your private records are stored in a separate on-device profile for your account. Signing out does not delete them. Account deletion and copies on other devices or in backups are explained in Section 11. Protect your device and review its sharing, transfer and backup settings.
+
+3 Information handled by online services
+
+Account information. We collect your email address, display name, account identifier and authentication information when you create or manage an account. Our authentication provider handles account authentication, passwords and tokens. If you choose third-party sign-in where offered, the sign-in provider and our authentication service process information needed to authenticate and connect your account. We do not need your private devotional records to create an account.
+
+Purchases and access. We and our subscription providers process account identifiers, subscription and purchase information, transaction identifiers and, where needed, your email address to provide and manage paid or church-sponsored access. The app marketplace processes purchases under its own terms; we do not receive your full payment-card number. Website or church billing, where offered, identifies the billing provider and purchase terms at checkout.
+
+Shared content and membership. If you use sharing or church features, we process the list name and description, prayer request title and text, status and moderation information, submitting user identifier, timestamps, membership and role information, invitations and related settings. Inviting someone by email sends that address and invitation information to our services even if the recipient does not yet have an account.
+
+Church activity. When you are an active church member, app activity can update an activity date held by our service. Church administrators receive a yes/no indicator of whether activity was recorded within the past 60 days, rather than an exact last-active timestamp. This indicates app activity, not the text of private prayers or proof that you completed a prayer session.
+
+Support and communications. We receive information you send us, including your email address, message and any attachments. Please omit private devotional or third-party details that are unnecessary to resolve your question. If you voluntarily send such information, it will be handled through the support channel rather than remaining only on your device.
+
+Website and newsletter information. Our websites and embedded services receive technical request information, such as IP address and browser or device information. Newsletter signup collects your email address and first name when supplied through our newsletter service. The website loads externally served fonts, which requires your browser to send technical request information to the font provider. Hosting, email and network-delivery services also process information needed to deliver the service. If you accept optional analytics on our public website, the analytics provider also receives the visit information described in Section 9.
+
+4 How we use information
+
+We use information to create and secure accounts; authenticate users; provide and administer subscriptions and church-sponsored access; deliver invitations and shared content to its intended audience; administer memberships and moderation; respond to support and privacy requests; maintain service reliability and security; prevent misuse; and meet legal obligations. We use church membership activity information to support administration of church participation.
+
+When you request newsletters, launch updates or other optional email resources, we use your contact information for those communications. We use technical request information to operate and secure websites and services. Our iOS app and account web app do not use third-party analytics services. We do not use advertising pixels or third-party crash-reporting services in our app, web app or marketing site. The public marketing website offers optional website analytics to help us understand visits, only after you accept analytics as described in Section 9. We do not use private devotional records for advertising or send them through this website analytics integration. Local logging, church activity and provider operational processing remain separate activities.
+
+We do not sell personal information, share it for cross-context behavioral advertising, or use it for targeted advertising. We do not use shared prayer content to build advertising profiles. Where law requires consent for a particular use or disclosure of sensitive information, we obtain that consent separately; accepting general terms or this Policy does not replace required consent.
+
+5 Sharing choices and other people’s information
+
+Shared requests are stored on our server and may be read by authorized participants, administrators and service personnel. Church administrators can view member names, email addresses, join dates and a yes/no indicator of app activity within the past 60 days, and download the roster. The indicator does not show an exact last-active time or prove that you prayed. Administrators can review published, pending and retained requests as their permissions allow. They cannot access your private on-device records unless you share or send them. The church appoints its privacy contact and authorized list administrators.
+
+History access depends on the list’s settings and your role. Church lists default to showing ordinary members requests posted since their current membership began; ordinary shared lists default to including earlier active and answered requests. An owner may change the history setting. Owners have broader access, and authors can view their own requests. If a list is public, anyone on the internet can read its active and answered requests without membership or a SimplyPray account. Public material may be copied or indexed outside our control.
+
+List audiences can change when membership, visibility or history settings change. Invitation links can be forwarded and are subject to expiration and use limits. A person with a usable invitation may join under its settings; open-to-join lists may also allow joining separately from an invitation. Review the list’s visibility and membership before posting. Do not treat shared content as confidential, privileged or accessible only to a fixed audience.
+
+Before sharing information about another person, obtain any permission required by law and limit the information to what is appropriate for the intended audience. Use general descriptions or omit identifying details for sensitive matters. Another person’s health, religious beliefs or family situation can be sensitive even if included in a prayer request.
+
+Recipients may copy, save, forward or capture content outside SimplyPray. Removing a post or account cannot retrieve those independent copies. A church may have its own legal responsibilities and privacy practices for information it receives.
+
+6 Review and moderation of shared content
+
+Shared requests are stored as readable text and are not end-to-end encrypted. Access rules and hosting safeguards protect them. Authorized personnel and providers may access them for service operation, support, security, moderation or legal compliance. Church administrator access is described in Section 5. Authorized church administrators may remove prayer requests from their church lists, subject to applicable law. Rights in submitted content are governed by applicable law. We do not promise continuous monitoring or emergency response. Report concerns to privacy@simplypray.io without unnecessary sensitive details.
+
+7 Service providers and other disclosures
+
+We use providers for authentication, data storage, subscriptions and payments, hosting and network delivery, communications, support, security and optional website analytics. Each provider receives only the information needed for its role.
+
+Authentication and database providers process account details, shared requests, memberships and invitations. Subscription and payment providers process account, purchase and billing information. The app marketplace handles its purchases under its own terms; any website checkout identifies its payment provider. Sign-in providers receive authentication information when you choose their sign-in method.
+
+Email and newsletter providers process recipient addresses, messages and signup information. Hosting, network-delivery and font providers receive technical information needed to deliver resources. Optional analytics providers receive the information described in Section 9 only after you accept analytics. We will provide a current list of providers, their functions and processing locations upon a data-processing information request to privacy@simplypray.io. We also provide any disclosure, notice or choice required by law.
+
+Providers acting on our behalf receive information for their assigned functions under appropriate contractual restrictions. Some providers also use information for their own legal, security or platform purposes under their own privacy policies.
+
+We may disclose information when reasonably necessary to comply with law or valid legal process; protect rights, safety and security; investigate misuse; or enforce agreements. If we participate in a merger, acquisition, financing, reorganization or sale of assets, relevant information may be disclosed subject to appropriate safeguards and transferred as part of that transaction. We will provide notice or obtain consent for material changes in use when required by law. We may also disclose information at your direction or with your consent.
+
+8 Email and notification choices
+
+You can unsubscribe from optional promotional or newsletter emails using the unsubscribe link or by contacting us. We may still send necessary account, security, purchase or requested service messages. We do not require account deletion to stop optional marketing emails. You can manage local reminder notifications in the app and in your device settings; notification permissions do not authorize us to publish your private records.
+
+9 Cookies and measurement
+
+Our websites and embedded services may use cookies or comparable storage for authentication, security and service operation. Embedded forms, hosting providers and externally served fonts can receive technical request information independently of your analytics choice. The app’s local activity log is separate from website analytics, subscription processing and the church activity indicator.
+
+Optional website analytics. On the home, privacy and support pages at www.simplypray.io, website analytics is enabled only after you choose Accept analytics. Rejecting keeps it off. Global Privacy Control and Do Not Track browser preferences also keep this analytics integration off. It is not included in the iOS app, the account web app at app.simplypray.io, or ACTS preview pages.
+
+If you accept, the analytics provider receives fixed public-page names and addresses, basic visit and device information, and pseudonymous identifiers stored in analytics cookies. The connection also exposes your IP address to the analytics provider for processing. This integration does not send URL query strings, fragments, referring-page addresses, form entries, email addresses, account IDs, prayer requests, journals or shared-list content. We do not use it for advertising or remarketing.
+
+You can change or withdraw your choice through Analytics settings on those pages. Your browser choice and this integration’s analytics cookies last up to 180 days without automatic renewal. These cookies are limited to the public website host and are not shared with the account web app. Rejecting after accepting disables analytics and clears this integration’s cookies; it does not erase information already sent to the analytics provider. If your browser prevents saving your new choice or removing an old acceptance, clear this site’s stored data before reloading or leaving the page. Browser storage limits are separate from the analytics provider’s retention of information already received.
+
+10 Retention
+
+We retain online account and shared information while needed to provide the service, subject to deletion requests and applicable law. Retention depends on the type and sensitivity of information, legal obligations and specifically justified security or dispute-related needs. Private records and device-provider-managed copies are subject to the device limitations in Section 2.
+
+Some billing and church audit records may remain after account deletion for lawful financial, security, legal or dispute-related purposes. These records may still identify you even when the direct link to your account is removed. We limit the information retained, access to it and how long it is kept according to the applicable purpose.
+
+Some information may remain temporarily in protected backups until those backups expire or the applicable deletion process completes. Backup copies are restricted to recovery and other justified purposes, and applicable deletion requirements must be honored when restoring data. Independent marketplace and payment providers may retain transaction records to meet their own legal obligations. Such records are separate from information our service providers process on our behalf.
+
+11 Account and content deletion
+
+You can initiate account deletion in the app’s account settings while online, or contact privacy@simplypray.io for assistance. We may reasonably verify your identity before acting. The server deletion removes your account, the shared requests you submitted and associated memberships, invitations and access grants, subject to the retained records described in Section 10. If the server request fails, local deletion does not proceed and you can retry.
+
+We handle account-deletion requests and instruct providers processing personal information on our behalf as required by applicable law, subject to lawful retention exceptions. You do not need to submit a separate request to each of those providers. We provide responses, extension notices and explanations of retained information to the extent applicable law requires. Deleting your SimplyPray account does not cancel an Apple subscription; cancel it separately through your Apple subscription settings.
+
+Shared lists and other people’s requests may remain after your account is deleted. Ordinary shared lists follow their ownership controls; church lists remain under church-authorized administration. A church’s wish to preserve history does not override your applicable privacy or deletion rights.
+
+To leave church membership or sponsorship, contact your church administrator or help@simplypray.io. Leaving an ordinary shared list is a separate action. Leaving does not automatically delete earlier posts. Church-membership access ends, but public access, your access as the author and independent recipient copies may remain. For help deleting a request, including after you lose access, contact privacy@simplypray.io. Canceling a subscription, signing out, uninstalling and deleting an account are separate actions.
+
+After server deletion succeeds, the app clears the deleted account’s private records and associated devotional progress on the device where deletion is initiated, and cancels its scheduled reminders. It does not remotely erase every device or independently managed backup. If you request deletion by email or from another device, remove local app data and manage backups on your other devices as appropriate.
+
+12 Children and teens
+
+SimplyPray is intended for people age 13 and older. If you are under the age of legal majority where you live, a parent or legal guardian must review and agree to the Terms and authorize your use. We do not knowingly permit children under 13 to create accounts or knowingly collect their personal information through the online service without legally required authorization. If you believe an under-13 child has supplied information, contact us so we can investigate and take appropriate action, including deletion when required.
+
+Church participation does not remove these requirements. Church administrators must not invite children who are ineligible to use the service or share children’s sensitive information without the necessary authority and permissions. We remain responsible for our own legal obligations. Teens and guardians should carefully consider who can see shared requests and avoid unnecessary identifying details.
+
+13 Privacy requests and rights
+
+Depending on where you live and applicable law, you may have rights to access or obtain a copy of your personal information; correct inaccuracies; request deletion; withdraw consent; restrict certain processing; or opt out of sale, targeted advertising or certain profiling. We do not make decisions producing legal or similarly significant effects through automated profiling. We will not unlawfully discriminate against you for exercising privacy rights, although information necessary to provide a feature may be required to use it.
+
+All SimplyPray privacy inquiries should be sent to privacy@simplypray.io. Solomon Solutions staff will follow up in a timely manner. For a request to exercise privacy rights, use the subject “Privacy request.” We will verify requests proportionately, respond within the time required by applicable law, and explain a denial or lawful extension. Where applicable, an authorized agent may submit a request with evidence of authority. If you may appeal a denial, email the same address with the subject “Privacy appeal”; we will review the decision and explain any further complaint rights. You may also contact the appropriate government privacy authority. Withdrawing consent does not invalidate earlier lawful processing.
+
+14 Sensitive information and healthcare restrictions
+
+Prayer and church information may reveal religious beliefs, health matters, relationships and other sensitive facts. Share only what you have authority to share. SimplyPray is for personal and church devotional use. It is not offered as a HIPAA-compliant healthcare or medical-record service, and we do not offer business associate agreements. Do not use it to maintain or transmit protected health information on behalf of a HIPAA covered entity or business associate, or perform their regulated functions.
+
+A personal prayer mentioning health is not automatically prohibited by this restriction or covered by HIPAA. Information we receive remains subject to this Policy and applicable privacy law, including laws protecting consumer health information. This restriction does not waive privacy rights or legal duties.
+
+15 Security and processing locations
+
+We use reasonable technical and organizational safeguards appropriate to the information and service. Online access controls are intended to restrict account and shared information to authorized users and service personnel. Shared features require server processing; we do not promise end-to-end encryption or that no service operator can access information received by the service. No method of storage or transmission is completely secure. Use a secure device, protect account credentials and notify us promptly of suspected misuse.
+
+We operate from the United States. Providers may process information in the United States or other countries where they operate, subject to applicable contractual and legal safeguards.
+
+16 Changes to this Policy
+
+We may update this Policy as the service or law changes. We will post the revised Policy with its effective date and provide additional notice of material changes when appropriate or required, such as an in-app notice or email. We will obtain consent when the law requires it before materially different processing. Continued use does not replace a legally required consent.
+
+17 Contact
+
+Solomon Solutions LLC d/b/a SimplyPray
+Mailing address: 470 Gordon Dr, Castle Rock CO 80104
+Privacy, abuse and security: privacy@simplypray.io
+Support and billing: help@simplypray.io
+General inquiries and legal notices: hello@simplypray.io
+
+All SimplyPray privacy inquiries should be sent to privacy@simplypray.io. Solomon Solutions staff will follow up in a timely manner.

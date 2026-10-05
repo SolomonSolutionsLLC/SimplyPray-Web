@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Individual EULA and Terms of Service — SimplyPray</title>
+  <meta name="description" content="SimplyPray Individual End User License Agreement and Terms of Service, effective October 5, 2026." />
+  <link rel="canonical" href="https://www.simplypray.io/terms" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:          #F8F4EF;
+      --bg-dark:     #EDE8DF;
+      --green-deep:  #2F5C51;
+      --green-mid:   #3A6F63;
+      --green-light: #CFE7DD;
+      --green-pale:  #EBF5F1;
+      --gold:        #B8935A;
+      --gold-light:  #F2E8D6;
+      --ink:         #1D2B27;
+      --ink-mid:     #4A5C57;
+      --ink-soft:    #7A8C87;
+      --white:       #FFFFFF;
+      --shadow-xs:   0 2px 10px rgba(47,92,81,.07);
+      --shadow-sm:   0 4px 20px rgba(47,92,81,.10);
+      --r-sm: 12px;
+      --r-md: 20px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── Nav ──────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 20px 48px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(248,244,239,.88);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 rgba(47,92,81,.08);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 22px; font-weight: 700; color: var(--green-deep);
+    }
+    .nav-cta {
+      background: var(--green-deep); color: white;
+      padding: 10px 24px; border-radius: 999px;
+      font-size: 14px; font-weight: 500;
+      transition: background .2s, transform .15s;
+    }
+    .nav-cta:hover { background: var(--green-mid); transform: translateY(-1px); }
+
+    /* ── Page layout ──────────────────────────────── */
+    .page-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 120px 48px 80px;
+    }
+
+    /* ── Header ───────────────────────────────────── */
+    .page-header {
+      margin-bottom: 52px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--bg-dark);
+    }
+    .page-label {
+      display: inline-block;
+      font-size: 12px; font-weight: 600; letter-spacing: 1.4px;
+      text-transform: uppercase; color: var(--green-mid);
+      margin-bottom: 16px;
+    }
+    .page-header h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(38px, 5vw, 56px);
+      font-weight: 600; line-height: 1.06; letter-spacing: -1.5px;
+      color: var(--ink); margin-bottom: 16px;
+    }
+    .page-header p {
+      font-size: 16px; color: var(--ink-mid);
+      font-weight: 300; line-height: 1.7; max-width: 560px;
+    }
+    .effective-date {
+      margin-top: 16px;
+      font-size: 13px; color: var(--ink-soft);
+    }
+
+    /* ── Highlight box ────────────────────────────── */
+    .highlight-box {
+      background: var(--green-pale);
+      border: 1px solid var(--green-light);
+      border-left: 3px solid var(--green-deep);
+      border-radius: var(--r-sm);
+      padding: 20px 24px;
+      margin-bottom: 48px;
+    }
+    .highlight-box p {
+      font-size: 15px; line-height: 1.7; color: var(--green-deep); font-weight: 400;
+    }
+
+    /* ── Content ──────────────────────────────────── */
+    .section { margin-bottom: 48px; }
+    .section h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 26px; font-weight: 700; color: var(--ink);
+      margin-bottom: 16px; letter-spacing: -.3px;
+    }
+    .section h3 {
+      font-size: 15px; font-weight: 600; color: var(--ink);
+      margin-top: 24px; margin-bottom: 8px;
+    }
+    .section p {
+      font-size: 15px; line-height: 1.75; color: var(--ink-mid);
+      font-weight: 300; margin-bottom: 12px;
+    }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul, .section ol {
+      padding-left: 20px; margin-bottom: 12px;
+    }
+    .section li {
+      font-size: 15px; line-height: 1.75; color: var(--ink-mid);
+      font-weight: 300; margin-bottom: 6px;
+    }
+    .section a {
+      color: var(--green-mid); font-weight: 500;
+      text-decoration: underline; text-decoration-color: rgba(58,111,99,.3);
+    }
+    .section a:hover { color: var(--green-deep); text-decoration-color: var(--green-deep); }
+
+    /* ── Data table ───────────────────────────────── */
+    .data-table {
+      width: 100%; border-collapse: collapse;
+      margin: 16px 0 12px; font-size: 14px;
+    }
+    .data-table th {
+      text-align: left; padding: 10px 14px;
+      background: var(--bg-dark); color: var(--ink);
+      font-weight: 600; font-size: 12px; letter-spacing: .4px;
+      border-bottom: 1px solid rgba(47,92,81,.10);
+    }
+    .data-table th:first-child { border-radius: var(--r-sm) 0 0 0; }
+    .data-table th:last-child  { border-radius: 0 var(--r-sm) 0 0; }
+    .data-table td {
+      padding: 10px 14px; border-bottom: 1px solid rgba(47,92,81,.07);
+      color: var(--ink-mid); font-weight: 300; line-height: 1.5;
+      vertical-align: top;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* ── Divider ──────────────────────────────────── */
+    .divider { height: 1px; background: var(--bg-dark); margin: 48px 0; }
+
+    /* ── Footer ───────────────────────────────────── */
+    footer {
+      padding: 28px 48px;
+      border-top: 1px solid var(--bg-dark);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .footer-logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; font-weight: 700; color: var(--green-deep); }
+    .footer-mid { font-size: 13px; color: var(--ink-soft); text-align: center; }
+    .footer-mid a { color: var(--green-mid); font-weight: 500; }
+    .footer-right { font-size: 13px; color: var(--ink-soft); }
+
+    /* ── Responsive ───────────────────────────────── */
+    @media (max-width: 960px) {
+      nav { padding: 16px 24px; }
+      .page-wrap { padding: 100px 32px 60px; }
+      footer { flex-direction: column; gap: 10px; text-align: center; padding: 24px; }
+    }
+    @media (max-width: 600px) {
+      .page-wrap { padding: 90px 20px 52px; }
+      .data-table { font-size: 13px; }
+      .data-table th, .data-table td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="/" class="nav-logo">SimplyPray</a>
+    <a href="https://apps.apple.com/app/id6772402646" class="nav-cta">Get the App</a>
+  </nav>
+
+  <main class="page-wrap">
+    <div class="page-header">
+      <div class="page-label">Legal</div>
+      <h1>SimplyPray Individual End User License Agreement and Terms of Service</h1>
+      <p class="effective-date">Effective date: October 5, 2026</p>
+    </div>
+
+    <section class="section" aria-labelledby="terms-section-1">
+      <h2 id="terms-section-1">1 Agreement and scope</h2>
+      <p>These Terms are an agreement between you and Solomon Solutions LLC, a Colorado limited liability company doing business as SimplyPray ("Company," "we," "us," or "our"), for the SimplyPray app and related account, devotional and sharing services (the "Service"). They cover individual use, including individuals participating in a church, and individual purchases when offered through Apple’s App Store or our website. A church’s separate purchase or administration agreement does not replace these Terms or eliminate individual privacy rights.</p>
+      <p>By affirmatively accepting these Terms, you agree to be bound by them. If you do not agree, do not create an account or use the Service. Our Privacy Policy, available at <a href="https://app.simplypray.io/privacy">https://app.simplypray.io/privacy</a>, explains information handling. It is incorporated for that purpose; accepting these Terms does not substitute for any separate consent required by privacy law.</p>
+      <p>SimplyPray supports Christian prayer, devotional practice and communication. Nothing in these Terms waives or limits rights, exemptions, defenses or protections available under the First Amendment or other applicable law to the Company or people using SimplyPray in communicating, associating or operating in furtherance of religious convictions. This reservation does not expand authorized data uses or disclosures or exclude duties that cannot lawfully be waived.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-2">
+      <h2 id="terms-section-2">2 Eligibility and guardian agreement</h2>
+      <p>You must be at least 13 to use SimplyPray. If you have not reached the age of legal majority where you live, your parent or legal guardian must review and agree to these Terms and authorize and supervise your use. By agreeing for a minor, the parent or guardian agrees to these Terms for that use and represents that they have authority to do so. A minor may not purchase a subscription without the authorization required by Apple and applicable law.</p>
+      <p>Church administrators may invite only eligible users and must obtain any permissions required for their own activities. A church invitation does not replace a required parent or guardian agreement or transfer our legal obligations to the church. You must not use the Service where doing so is prohibited by applicable law.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-3">
+      <h2 id="terms-section-3">3 Service and appropriate use</h2>
+      <p>SimplyPray provides devotional tools for personal and church use, including private records and, where available, shared prayer lists and church participation. Feature availability may depend on the app version, account, subscription or sponsorship. Private features may work offline; account, sharing and purchase functions may require an internet connection.</p>
+      <p>We may improve or change the Service and discontinue features for legitimate operational, security or business reasons. We will give reasonable notice of a material reduction to a paid service when practicable and honor any remedies required by law. These Terms do not authorize us to take away nonwaivable consumer rights or to charge you for a new paid plan without your authorization.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-4">
+      <h2 id="terms-section-4">4 License and restrictions</h2>
+      <p>Subject to these Terms and applicable Apple Usage Rules, we grant you a limited, nonexclusive, nontransferable license to use the app on Apple-branded products you own or control for your personal devotional activities and authorized church participation. Access and use through Family Sharing, volume purchasing or Legacy Contacts is permitted to the extent applicable Apple Usage Rules allow it. Your subscription benefits remain subject to the applicable product’s eligibility and sharing rules.</p>
+      <p>Except as applicable law expressly permits, you may not copy or distribute the app beyond this license; sell, rent, sublicense or commercially exploit it as a separate service; reverse engineer or attempt to extract source code; bypass access controls or purchase requirements; or remove proprietary notices. This does not restrict rights under applicable open-source licenses or rights that cannot lawfully be restricted. Your license ends when these Terms are validly terminated.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-5">
+      <h2 id="terms-section-5">5 Accounts and device responsibility</h2>
+      <p>You must provide accurate account information and keep your credentials secure. Do not share an account in a way that exposes another person’s private content or permits unauthorized access. Notify us promptly of suspected unauthorized use. You are responsible for activity you authorize and for your own misuse; you are not automatically responsible for every unauthorized act regardless of fault.</p>
+      <p>Your private devotional records stay in a separate account profile on your device unless you share or send them through an online feature. SimplyPray cannot restore lost private records from its servers. Signing out does not delete them. Successful in-app account deletion removes them from the device you are using; copies may remain on other devices or in backups. Protect your device and manage its backups. The Privacy Policy explains storage and deletion. These responsibilities do not limit our legal duties.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-6">
+      <h2 id="terms-section-6">6 Church participation and shared lists</h2>
+      <p>Church administrators can view member names, email addresses, join dates and a yes/no indicator of app activity within the past 60 days, and download the roster. The indicator does not show an exact last-active time or prove that you prayed. Administrators can review published, pending and retained requests as their permissions allow. They cannot access your private on-device records unless you share or send them. The church appoints its privacy contact and authorized list administrators. The Privacy Policy explains these sharing practices.</p>
+      <p>History access depends on the list’s settings and your role. Church lists default to requests posted since current membership began; ordinary shared lists default to earlier active and answered history. Owners may change the history setting and have broader access; authors can see their own requests. Anyone on the internet can read active and answered requests on a public list. Invitation links can be forwarded and have expiration and use limits; open joining may exist separately. Consider the audience before sharing sensitive information.</p>
+      <p>Rights in submitted content are governed by applicable law. Authorized church administrators may remove prayer requests from their church lists, subject to applicable law. A church’s use of information it receives is subject to its own legal responsibilities.</p>
+      <p>To leave church membership or sponsorship, contact your church administrator or <a href="mailto:help@simplypray.io">help@simplypray.io</a>. Leaving an ordinary shared list is a separate action and does not automatically delete earlier posts. Church-membership access ends, but public access, your access as the author and independent recipient copies may remain. For deletion assistance, including after you leave, contact <a href="mailto:privacy@simplypray.io">privacy@simplypray.io</a>. Account deletion removes your requests, subject to lawful retention; shared lists and other members’ content may remain. Church lists remain under church-authorized administration.</p>
+      <p>When church sponsorship ends, access returns to your independently active personal subscription or the free level. No replacement trial is guaranteed unless offered. Church sponsorship does not cancel an existing Apple subscription; see Section 10. We will not enroll or charge you for a new individual paid plan without your authorization.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-7">
+      <h2 id="terms-section-7">7 Your content and limited permission to operate the Service</h2>
+      <p>For content you submit to our online services, you permit us and our service providers to process it as reasonably necessary to provide the features you request, deliver it to the audience you select, maintain security, handle support and moderation, and comply with law. This permission does not authorize selling your prayer content, using it in advertising or training a general-purpose AI model on it.</p>
+      <p>For private records that remain solely on your device, your permission is limited to the app’s local processing necessary to provide its features; it does not authorize us to retrieve them. The online-content permission ends when the content is deleted from our active services, except for limited backup, legal or security retention described in the Privacy Policy. This does not grant new rights to independent copies already lawfully received by others.</p>
+      <p>You represent that you have the rights and legally required permissions to submit content and direct its sharing. Do not submit unlawful threats, harassment, exploitation, sexual abuse material, infringement, impersonation, scams, malware, or another person’s private or sensitive information without appropriate authority. Do not post identifying information about someone in a vulnerable situation when doing so could foreseeably expose them to harm.</p>
+      <p>We may remove or restrict shared content, investigate reports and suspend access when reasonably needed to enforce these Terms, protect users or comply with law. We do not promise continuous monitoring. Send content or safety reports to <a href="mailto:privacy@simplypray.io">privacy@simplypray.io</a> with sufficient information to locate the issue and without unnecessary sensitive details. We will assess reports and take appropriate action.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-8">
+      <h2 id="terms-section-8">8 Devotional purpose and healthcare restrictions</h2>
+      <p>SimplyPray provides devotional tools, not medical, mental-health, legal or emergency services. Content from the Company or other users is not professional advice, diagnosis or treatment. Do not delay seeking qualified professional help because of content in the Service. The Service is not monitored for emergencies. In the United States, call 911 for an immediate emergency or call or text 988 for the Suicide &amp; Crisis Lifeline.</p>
+      <p>SimplyPray is not offered as a HIPAA-compliant healthcare service, patient-record system or clinical communication tool, and we do not enter into business associate agreements. Do not use it to create, receive, maintain or transmit protected health information on behalf of a HIPAA covered entity or business associate, perform their regulated duties, provide clinical care or manage patient records.</p>
+      <p>A personal or church prayer mentioning health is not automatically prohibited by this restriction or covered by HIPAA. You must have authority to share another person’s information and follow applicable privacy law. This restriction does not waive anyone’s rights or legal duties.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-9">
+      <h2 id="terms-section-9">9 Privacy and consent</h2>
+      <p>The Privacy Policy explains device storage, online information, sharing, providers, retention and deletion. Review it before sharing sensitive information. Optional website analytics require a separate choice. We provide any additional notice or obtain consent required by law. Accepting these Terms does not authorize a church to consent for every adult member or access private records.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-10">
+      <h2 id="terms-section-10">10 Purchases and subscriptions</h2>
+      <p>When a paid offering is available, the purchase screen identifies the product, price, billing period, included features and any trial or introductory offer. Apple processes App Store purchases under your Apple account and its terms. A website checkout, if offered, identifies its payment provider and applicable purchase terms. We receive information needed to administer your entitlement through the applicable platform and subscription services. Purchase channels and offers may differ.</p>
+      <p>An auto-renewing subscription continues for successive billing periods unless canceled through Apple before renewal. Payment is charged to your Apple account as described in Apple’s purchase flow; renewal charges may occur during the 24 hours before the current period ends. Manage or cancel a subscription in your Apple account subscription settings. If you do not want a free or discounted trial to renew, cancel at least 24 hours before it ends. Any unused free-trial portion may be forfeited when you purchase a subscription, as disclosed by Apple.</p>
+      <p>Trial and introductory offers follow the eligibility, duration and price shown at purchase. Apple’s notice and consent requirements govern Apple subscription price changes; these Terms do not independently authorize a price increase.</p>
+      <p>Deleting your SimplyPray account does not cancel your Apple subscription. Cancel it separately in your Apple subscription settings. Uninstalling the app or leaving a church also does not cancel it. Cancellation generally stops the next renewal and leaves subscription entitlement through the paid period, subject to refunds and Apple’s rules; it does not keep a deleted SimplyPray account open. You may request any refund available through Apple’s refund process. We do not limit mandatory refund or consumer rights. Contact us for entitlement or restore-purchase problems. We cannot change Apple account settings for you.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-11">
+      <h2 id="terms-section-11">11 Company and third party intellectual property</h2>
+      <p>The app, its original materials, design and branding belong to the Company or its licensors, apart from your content and other separately owned materials. Scripture translations and other third-party materials are subject to their applicable notices and licenses. We claim no exclusive rights in public-domain texts. No rights are granted except as expressly stated in these Terms or applicable third-party licenses.</p>
+      <p>Send an infringement notice to <a href="mailto:privacy@simplypray.io">privacy@simplypray.io</a> identifying the protected work, the disputed material and its location, your contact information, your authority to complain, and the basis for your claim. We may remove allegedly infringing material and restrict repeat infringers where appropriate.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-12">
+      <h2 id="terms-section-12">12 Prohibited conduct</h2>
+      <p>Do not attack or disrupt the Service, attempt unauthorized access, probe systems without authorization, collect user information without permission, scrape content in violation of these Terms or others’ rights, send unsolicited bulk messages, evade moderation or access restrictions, or use the Service for illegal activity. Do not use it to establish a healthcare workflow prohibited by Section 8. Use of automated tools must comply with applicable law and any authorization we provide.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-13">
+      <h2 id="terms-section-13">13 Disclaimers and statutory rights</h2>
+      <p>TO THE EXTENT PERMITTED BY LAW, THE SERVICE IS PROVIDED “AS IS” AND “AS AVAILABLE,” WITHOUT IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE OR NON-INFRINGEMENT. WE DO NOT PROMISE UNINTERRUPTED OR ERROR-FREE OPERATION, THAT EVERY ITEM OF USER CONTENT IS ACCURATE OR SAFE, OR THAT EVERY DATA LOSS CAN BE RECOVERED.</p>
+      <p>These disclaimers do not exclude express commitments in these Terms, applicable statutory guarantees, or any warranty or remedy that cannot lawfully be excluded. They do not excuse our obligations under privacy, security or consumer-protection law. Apple-specific warranty responsibilities are addressed in Section 18.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-14">
+      <h2 id="terms-section-14">14 Limits of liability</h2>
+      <p>TO THE EXTENT PERMITTED BY LAW, THE COMPANY AND ITS PERSONNEL WILL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY OR PUNITIVE DAMAGES, INCLUDING LOST PROFITS, LOST BUSINESS OPPORTUNITIES OR INDIRECT LOSS OF DATA, ARISING FROM THE SERVICE OR THESE TERMS, EVEN IF ADVISED OF THE POSSIBILITY.</p>
+      <p>TO THE EXTENT PERMITTED BY LAW, THE TOTAL AGGREGATE LIABILITY OF THE COMPANY AND ITS PERSONNEL FOR CLAIMS ARISING FROM THE SERVICE OR THESE TERMS WILL NOT EXCEED US$100. THIS IS AN AGGREGATE CAP, NOT A SEPARATE CAP PER CLAIM, AND APPLIES TO PAID, FREE AND CHURCH-SPONSORED USE.</p>
+      <p>These exclusions and limits do not limit refunds expressly required by these Terms, fraud, intentional misconduct or willful and wanton conduct. Gross negligence, personal injury, statutory remedies and other liabilities remain unrestricted to the extent applicable law prohibits limiting them. Nothing restricts a regulator’s authority or rights and remedies that cannot lawfully be waived. Any exclusion or limit applies only to the extent lawful.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-15">
+      <h2 id="terms-section-15">15 Limited indemnity for third party claims</h2>
+      <p>To the extent permitted by law, you will indemnify the Company against damages and reasonable defense costs finally awarded or included in a settlement you approve arising from a third-party claim caused by your unlawful use of the Service, your knowing material breach of these Terms, or your submission of content that infringes that third party’s rights. This does not cover losses caused by the Company’s own breach, negligence or misconduct, and does not create an obligation unenforceable against a minor.</p>
+      <p>We must promptly notify you of the claim, provide reasonable cooperation at your expense, and allow you reasonable control of the defense with qualified counsel. You may not settle a claim in a way that admits fault by us, imposes nonmonetary obligations on us or fails to release us without our written consent, not unreasonably withheld. We may participate through our own counsel at our expense. A failure to give prompt notice reduces your duty only to the extent it materially prejudices the defense.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-16">
+      <h2 id="terms-section-16">16 Suspension and termination</h2>
+      <p>You may stop using SimplyPray and request deletion of your SimplyPray account through the app’s account settings while online, or contact us for help. No separate support request is needed after you initiate deletion in the app. Deleting your SimplyPray account does not cancel a subscription purchased through Apple. You must cancel that subscription separately through your Apple subscription settings, as explained in Section 10. We may suspend or end access for a material breach, a legal requirement, nonpayment or a material safety or security risk. When practicable, we will explain the reason and give you a reasonable opportunity to correct a breach. Immediate action may be needed to protect users or comply with law. Contact us if you believe an action was mistaken.</p>
+      <p>Termination ends the app license and affected access. We handle deletion, provider instructions and lawful retention under the Privacy Policy and applicable law. You do not need to contact providers acting on our behalf separately. We provide legally required responses and notices. Payment providers may retain transaction records for their own legal obligations. Accrued payment obligations, intellectual-property protections, dispute provisions and lawful liability terms continue as needed. Express refund rights and mandatory consumer remedies remain available.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-17">
+      <h2 id="terms-section-17">17 Governing law and dispute resolution</h2>
+      <p>17.1 Resolving disputes. You and the Company will first try in good faith to resolve disputes about these Terms or SimplyPray. Send dispute notices to <a href="mailto:hello@simplypray.io">hello@simplypray.io</a>. We may contact you at your account email. If the dispute remains unresolved, either party may start binding arbitration. For disputes covered by arbitration, an arbitrator decides the dispute instead of a judge or jury.</p>
+      <p>17.2 Exceptions. Either party may bring an eligible claim in small claims court. You may also report concerns to government agencies. This section does not prevent urgent court relief, filings needed to preserve a claim, or court proceedings for claims or remedies that applicable law excludes from arbitration.</p>
+      <p>17.3 Costs and rights. Each party pays its own legal costs unless Section 15 or applicable law provides otherwise. Arbitration fees and procedures must comply with applicable law and preserve rights and remedies that cannot legally be waived.</p>
+      <p>17.4 Applicable law and courts. Colorado law governs these Terms, while preserving mandatory protections available where you live. The Federal Arbitration Act applies where applicable. Permitted court proceedings may be brought in Colorado, or elsewhere when required by law or permitted for an eligible small claims case. A court with jurisdiction may enforce an arbitration award.</p>
+      <p>17.5 Remaining terms and changes. If part of this section cannot be enforced, the rest remains effective to the extent permitted by law. Changes apply only going forward and require any legally required notice and consent. They do not change an existing dispute or override rights under previously accepted terms without a legally effective agreement.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-18">
+      <h2 id="terms-section-18">18 Terms required for Apple users</h2>
+      <p>18.1 Parties and license. These Terms are between you and the Company, not Apple. The Company is solely responsible for the app and its content. The license in Section 4 is subject to the applicable Apple Media Services Terms and Conditions and Usage Rules; these Terms do not impose usage rules less restrictive than Apple’s applicable rules.</p>
+      <p>18.2 Support and warranties. The Company is solely responsible for maintenance and support required by these Terms or applicable law. Apple has no obligation to furnish maintenance or support. If the app fails to conform to an applicable warranty, you may notify Apple, and Apple will refund the app’s purchase price to you. To the maximum extent permitted by law, Apple has no other warranty obligation regarding the app; other claims, losses, liabilities, damages, costs or expenses attributable to a warranty failure are the Company’s responsibility to the extent required by law.</p>
+      <p>18.3 Product and intellectual-property claims. The Company, not Apple, is responsible for addressing claims relating to the app or your possession or use of it, including product-liability claims, failure to conform to legal or regulatory requirements, and consumer-protection, privacy or similar claims. If a third party claims that the app or your possession or use infringes intellectual-property rights, the Company, not Apple, is responsible for investigation, defense, settlement and discharge of that claim. These Terms do not limit that responsibility beyond what applicable law permits.</p>
+      <p>18.4 Legal compliance and third-party terms. You represent that you are not located in a country subject to a U.S. government embargo or designated by the U.S. government as a “terrorist supporting” country, and are not on a U.S. government list of prohibited or restricted parties. You must comply with applicable third-party terms when using the app, such as your wireless data-service agreement. SimplyPray is currently offered only in the United States.</p>
+      <p>18.5 Beneficiaries and contact. Apple and its subsidiaries are third-party beneficiaries of these Terms. Upon your acceptance, Apple has the right, and is deemed to have accepted the right, to enforce these Terms against you as a third-party beneficiary. The Company’s name, address, telephone and email for questions, complaints and claims appear in Section 21.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-19">
+      <h2 id="terms-section-19">19 Changes to these Terms</h2>
+      <p>We may revise these Terms prospectively by providing written notice identifying the changes and their effective date. Material changes require reasonable advance notice. You may reject a material change by notifying us before it takes effect and terminating the affected service, with a prorated refund of prepaid unused fees. For an Apple purchase, use Apple’s refund process; contact <a href="mailto:help@simplypray.io">help@simplypray.io</a> if that process does not provide a refund owed under this paragraph. Continued use after the effective date constitutes acceptance except where applicable law requires express consent. We will provide or obtain any notice or consent required by law. Section 10 governs Apple subscription price changes and cancellation; Section 17 governs changes to dispute provisions.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-20">
+      <h2 id="terms-section-20">20 General provisions</h2>
+      <p>These Terms and the documents expressly incorporated into them form the agreement for your individual use. Apple’s platform and purchase terms govern its own services. A separate church agreement governs the church’s arrangement with us and does not silently amend an individual’s rights here. If a provision is unenforceable, the remainder remains effective to the extent lawful, subject to Section 17’s specific rule. Failure to enforce a provision is not a waiver.</p>
+      <p>You may not assign this agreement except as applicable law or Apple’s rules permit. We may assign it in connection with a merger, reorganization or transfer of the Service, subject to your legal rights and our privacy obligations. There are no third-party beneficiaries except those expressly identified. We may provide service notices through the app, your account email or another lawful method. Contact details in Section 21 apply to notices to us.</p>
+    </section>
+
+    <section class="section" aria-labelledby="terms-section-21">
+      <h2 id="terms-section-21">21 Company contact</h2>
+      <p>Solomon Solutions LLC d/b/a SimplyPray<br />
+        Mailing address: 470 Gordon Dr, Castle Rock CO 80104<br />
+        General inquiries and legal notices: <a href="mailto:hello@simplypray.io">hello@simplypray.io</a><br />
+        Support and billing: <a href="mailto:help@simplypray.io">help@simplypray.io</a><br />
+        Privacy, abuse and security: <a href="mailto:privacy@simplypray.io">privacy@simplypray.io</a><br />
+        Telephone: 406-260-5767</p>
+      <p>All SimplyPray privacy inquiries should be sent to <a href="mailto:privacy@simplypray.io">privacy@simplypray.io</a>. Solomon Solutions staff will follow up in a timely manner.</p>
+    </section>
+
+  </main><!-- /.page-wrap -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">SimplyPray</div>
+    <p class="footer-mid">A <a href="https://solomonsolutions.tech">Solomon Solutions</a> product. &nbsp;<a href="/privacy">Privacy</a> &nbsp;&middot;&nbsp; <a href="/terms">Terms</a> &nbsp;&middot;&nbsp; <a href="/support">Support</a> &nbsp;&middot;&nbsp; <a href="/abuse">Abuse &amp; Safety</a></p>
+    <p class="footer-right">&copy; 2026 Solomon Solutions LLC</p>
+  </footer>
+
+</body>
+</html>
