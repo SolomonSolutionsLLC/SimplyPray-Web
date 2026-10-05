@@ -1,0 +1,25 @@
+{
+  "source_message_id": "1a10ca5d6cc26ec8",
+  "source_sent_at": "2026-10-05T15:19:14Z",
+  "canonical_convention": "Exact nonempty DOCX paragraphs separated by one blank line; source line breaks retained; UTF8 without BOM; LF endings; exactly one final LF. No text amendments.",
+  "policies": [
+    {
+      "policy_kind": "privacy",
+      "version": "2026-10-05",
+      "effective_date": "2026-10-05",
+      "content_type": "text/plain",
+      "content_file": "privacy-2026-10-05.txt",
+      "content_sha256": "f92f0890ec18f68f9fc90d71060a2851c13c3a63ed09fccd8460053ebe809a27",
+      "original_docx_sha256": "93363edde9e0f08ad20a39fb2541c34cbd1699d0f437981bbb2e8285e08caa5b"
+    },
+    {
+      "policy_kind": "terms",
+      "version": "2026-10-05",
+      "effective_date": "2026-10-05",
+      "content_type": "text/plain",
+      "content_file": "terms-2026-10-05.txt",
+      "content_sha256": "4c1ef5c34e7792db19c2d8932819397d6532589fc27ae274c625b9e25b615e00",
+      "original_docx_sha256": "9906c94798a70b4a3f281d3612fb645dc4ba5c9a8e591354973ee6e7350d6dd2"
+    }
+  ]
+}
