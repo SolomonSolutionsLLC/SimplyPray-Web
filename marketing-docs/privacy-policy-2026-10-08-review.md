@@ -1,3 +1,9 @@
+> This Privacy-only handoff is superseded for website rollout by
+> `website-code-alignment-2026-10-08.md`. The combined website candidate includes
+> both the corrected October 8 Privacy and Individual Terms. Coordinate with
+> App PRs #70 and #72; do not follow the older instruction to preserve old Terms
+> after the new Terms have been approved.
+
 # October 8 privacy policy review package
 
 This is the candidate privacy policy dated October 8, 2026. It is not a hosted
