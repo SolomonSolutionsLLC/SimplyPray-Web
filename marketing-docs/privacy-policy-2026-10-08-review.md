@@ -63,3 +63,16 @@ Source checks: `20261006160230_removed_request_retention_release.sql`,
 [Google Analytics data retention](https://support.google.com/analytics/answer/7667196),
 [RevenueCat customer deletion](https://www.revenuecat.com/docs/dashboard-and-metrics/customer-profile).
 Provider documentation explains capabilities, not SimplyPray's actual settings.
+
+## Local validation, October 8, 2026
+
+- Website `npm test`: 48 passed; integrity checks passed for 9 HTML pages.
+- Backend `npm run verify:full`: typecheck, lint, 824 tests in 70 files and build passed.
+- Backend `PATH=/opt/homebrew/opt/libpq/bin:$PATH npm run db:test`: 57 SQL files passed
+  on the disposable local stack, including removed-request retention, policy history,
+  safety/account erasure and provider cleanup boundaries. No hosted SQL was run.
+- Website and backend canonical Privacy text match byte-for-byte, including the
+  October 8 date, UTF-8 hash, byte count and final newline. `git diff --check` passed.
+
+These checks validate source behavior and package consistency. Live retention settings,
+provider activation, provider completion and production job execution remain unverified.
