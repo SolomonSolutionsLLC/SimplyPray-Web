@@ -8,10 +8,12 @@
       "has": [{ "type": "host", "value": "simplypray.io" }],
       "destination": "https://www.simplypray.io/:path*",
       "permanent": true
-    }
+    },
+    { "source": "/eula", "destination": "/terms", "permanent": true }
   ],
   "rewrites": [
     { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/terms", "destination": "/terms.html" },
     { "source": "/support", "destination": "/support.html" },
     { "source": "/abuse", "destination": "/abuse.html" }
   ]
