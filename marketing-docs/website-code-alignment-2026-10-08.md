@@ -49,7 +49,9 @@ from SimplyPray's server. Prayer screenshots are fictional/demonstration data.
 
 ## Personal sharing: source discrepancy and required correction
 
-The confirmed product rule is **Personal has no shared lists**. Joshua owns the
+The confirmed product rule is **Personal cannot create new shared lists**. Existing
+memberships, content, joins and reads follow their existing access rules; do not
+introduce a blanket join prohibition or read-only downgrade. Joshua owns the
 backend correction. This website change does not change permissions or migrations.
 Fetched source still differs from that intended rule:
 
@@ -67,10 +69,24 @@ Fetched source still differs from that intended rule:
 The capability table is configurable at runtime. No live hosted configuration
 or released app behavior was queried here. Before publishing, Joshua must verify
 his backend correction and the actual intended iOS build, including the offline
-fallback and beta/launch flags. Verify Personal cannot create/join/collaborate on
-shared lists as intended, Community still can, downgrade handling agrees with
+fallback and beta/launch flags. Verify Personal cannot create new shared lists
+without an independent grant, Community still can, downgrade handling agrees with
 copy, and private church access remains separately constrained. The new copy
 avoids promising a blanket read-only downgrade or continuing church access.
+
+## October 12 release checkpoint
+
+App pricing composition is released through App77 (`24754c3`), followed by the
+default-off next-renewal downgrade in App78 (`cd5560b`). The pending hosted sharing
+migration `20261011010000` remains absent; observed Personal capability is still
+two/true while all-free is enabled and entitlement source remains legacy. No
+hosted sharing permission change is authorized by this website source update.
+The intended native inventory is main `9df46c44` / archive 118, which does not prove
+App Store submission or released device behavior. Retention migrations are live
+and October 11/12 03:15 UTC purge runs succeeded. Provider cleanup and payment
+activation remain held. Historical source/validation references above are not
+new live verification. Exact paired legal text, effective date, notice, bundle
+activation and coordinated Web publication still require scoped approval.
 
 ## Publication coordination
 
