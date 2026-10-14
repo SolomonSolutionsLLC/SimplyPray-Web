@@ -15,6 +15,7 @@
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/terms", "destination": "/terms.html" },
     { "source": "/support", "destination": "/support.html" },
+    { "source": "/faq", "destination": "/faq.html" },
     { "source": "/abuse", "destination": "/abuse.html" }
   ]
 }
