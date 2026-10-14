@@ -36,6 +36,56 @@ class Page(HTMLParser):
             self.links.extend(item.strip().split()[0] for item in attrs["srcset"].split(","))
 
 
+
+class LegalText(HTMLParser):
+    """Visible title, date and policy paragraphs, excluding download/navigation UI."""
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.in_main = False
+        self.section_depth = 0
+        self.block = None
+        self.text = []
+        self.blocks = []
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if tag == "main":
+            self.in_main = True
+        if self.in_main and tag == "section":
+            self.section_depth += 1
+        if self.in_main and (tag == "h1" or
+                (tag in ("h2", "p") and self.section_depth) or
+                (tag == "p" and "effective-date" in attrs.get("class", "").split())):
+            self.block = tag
+            self.text = []
+        if self.block and tag == "br":
+            self.text.append(" ")
+
+    def handle_data(self, data):
+        if self.block:
+            self.text.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == self.block:
+            self.blocks.append(" ".join("".join(self.text).split()))
+            self.block = None
+        if self.in_main and tag == "section":
+            self.section_depth -= 1
+        if tag == "main":
+            self.in_main = False
+
+
+def check_legal_text(errors):
+    for name in ("privacy", "terms"):
+        asset = ROOT / "assets" / "legal" / f"{name}-2026-10-08.txt"
+        expected = [" ".join(block.split()) for block in
+                    asset.read_text(encoding="utf-8").strip().split("\n\n")]
+        page = LegalText()
+        page.feed((ROOT / f"{name}.html").read_text(encoding="utf-8"))
+        if " ".join(page.blocks) != " ".join(expected):
+            errors.append(f"{name}.html: visible legal text must match {asset.name}, including title/date")
+
+
 def main():
     pages = {}
     errors = []
@@ -112,6 +162,8 @@ def main():
                 errors.append(f"{path.name}: broken local URL {link}")
             elif parsed.fragment and destination in pages and parsed.fragment not in pages[destination].ids:
                 errors.append(f"{path.name}: missing anchor {link}")
+
+    check_legal_text(errors)
 
     for error in errors:
         print(error, file=sys.stderr)
