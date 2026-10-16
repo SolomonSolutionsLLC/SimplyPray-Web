@@ -1,0 +1,22 @@
+{
+  "status": "Review candidates only; not published, activated, executed, or evidence that sync is available",
+  "proposed_effective_date": "2026-10-16",
+  "policies": [
+    {
+      "kind": "privacy",
+      "version": "2026-10-16",
+      "proposed_effective_date": "2026-10-16",
+      "content_sha256": "832a301f246005c56216a5e29c5838207dea93c2727a10458e24558f6148d50d",
+      "content_bytes": 33768,
+      "content_file": "privacy-2026-10-16.txt"
+    },
+    {
+      "kind": "terms",
+      "version": "2026-10-16",
+      "proposed_effective_date": "2026-10-16",
+      "content_sha256": "e091108e58559e2cd0cd721fa72c6f40ccc57b2da7fae1b42fed091b951586eb",
+      "content_bytes": 30164,
+      "content_file": "terms-2026-10-16.txt"
+    }
+  ]
+}

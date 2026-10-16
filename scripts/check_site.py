@@ -77,7 +77,7 @@ class LegalText(HTMLParser):
 
 def check_legal_text(errors):
     for name in ("privacy", "terms"):
-        asset = ROOT / "assets" / "legal" / f"{name}-2026-10-08.txt"
+        asset = ROOT / "assets" / "legal" / f"{name}-2026-10-16.txt"
         expected = [" ".join(block.split()) for block in
                     asset.read_text(encoding="utf-8").strip().split("\n\n")]
         page = LegalText()
