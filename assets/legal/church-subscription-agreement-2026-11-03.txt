@@ -1,0 +1,149 @@
+SimplyPray Church Subscription Agreement
+
+Effective November 3, 2026
+
+1 Parties and agreement
+
+This Agreement is between Solomon Solutions LLC d/b/a SimplyPray (Company) and the church or religious organization identified in the Subscription Contract (Church). It governs the Church’s organizational subscription through supported Apple and Android apps and related web services (Service). Each signer represents authority to bind their party.
+
+The Subscription Contract, this Agreement, and the Church Data Processing Agreement (DPA) form the parties’ contract. The Subscription Contract controls expressly agreed commercial terms; the DPA controls conflicts concerning Church Personal Data. Purchase-order terms do not amend this contract.
+
+Individual users must separately accept the individual Terms. The Church’s signature does not provide consent on every member’s behalf or grant access to unshared private devotional records.
+
+2 Religious rights
+
+SimplyPray supports Christian prayer and devotional practice. Nothing in this Agreement or the DPA waives rights, exemptions, defenses, or protections available to the Company, churches, or users under the First Amendment or other applicable law, including religious exercise, expression, and association. This provision does not expand permitted data uses or waive duties that cannot lawfully be waived.
+
+3 Subscription and ownership
+
+During the subscription term, the Church may use the purchased features for its own devotional and ministry activities and sponsor eligible members within the Subscription Contract’s limits. This right is limited, nonexclusive, and nontransferable. The Church may appoint authorized administrators but may not resell the Service, provide access outside the purchased scope, bypass limits, or permit unauthorized access. The Church does not own members’ accounts.
+
+The Company will provide the purchased features. Features may differ by platform and version. Guaranteed support response times, service levels, custom development, and migration services are included only if expressly purchased. The Company may improve the Service and will give reasonable advance notice of a material reduction in purchased functionality. The Church may terminate the affected service if materially equivalent functionality cannot be provided.
+
+The software, branding, and Company materials belong to the Company or its licensors. Church and user content remain subject to their owners’ rights. The Company may process submitted content only as needed to provide the Service, support authorized sharing, maintain security, address misuse, perform the DPA, and comply with law. This permission does not authorize selling prayer content, using it for advertising, or training general-purpose AI models on it.
+
+4 Church responsibilities
+
+The Church is responsible for its lawful instructions, required notices and permissions, and information it submits, shares, exports, or retains. It must obtain and document any legally required consent, respect individuals’ privacy rights, and cooperate with requests concerning Church Personal Data. The DPA governs the Company’s processing duties. Neither document transfers responsibility for the Company’s independent processing or unlawful conduct to the Church.
+
+The Church must designate an administrator as its privacy contact and promptly send requests needing Company action to privacy@simplypray.io. It must not instruct unlawful processing or deny a legally required deletion merely to preserve church history. General agreement acceptance does not replace separately required consent.
+
+5 Administrators and sharing
+
+The Church must secure administrator accounts, limit permissions to authorized duties, promptly remove departed administrators, and report suspected unauthorized access. It is responsible for designating replacement administrators. Membership duration alone does not confer administrative authority. The Company remains responsible for the authorization controls it provides.
+
+Before participation, the Church must explain that authorized administrators can see member names, emails, join dates, a yes/no indicator of app activity within the past 60 days, and permitted church-list content, and can export roster information. The indicator does not show exact activity times or prove that a member prayed. The Church must protect and lawfully handle its exported or independently retained copies.
+
+Church lists are private to eligible active church participation; ordinary personal shared lists have separate audiences. Shared requests are not end-to-end encrypted. Sponsorship does not grant access to unshared private devotional records or enable personal sync. Optional iCloud Sync, where offered, is a separate individual choice on supported Apple devices; Android does not currently provide personal cloud sync. The Privacy Policy and Church Join Notice explain member visibility and sharing.
+
+6 Eligibility and acceptable use
+
+Users must be at least 13, with parent or guardian agreement where required by the individual Terms. Church invitations do not replace that agreement. The Church must not create under-13 accounts or bypass eligibility, assent, or consent controls.
+
+The Church must take reasonable steps to prevent unlawful, infringing, threatening, harassing, hateful, sexually explicit, exploitative, fraudulent, or otherwise abusive use. It must instruct administrators and sponsored users to respect privacy and obtain required permissions for information about others. The Abuse & Safety Policy applies (https://www.simplypray.io/abuse).
+
+The Church must reasonably moderate its lists and promptly refer concerns needing Company action. The Company may investigate reports, remove content, or restrict access to address misuse, security risks, or legal requirements. Neither party promises continuous monitoring.
+
+7 Devotional purpose
+
+The Service provides devotional technology, not emergency response, clinical care, professional counseling, or regulated healthcare services. Providing it does not make the Company clergy, a counselor, or a fiduciary or itself create a legally privileged communication. The Church retains responsibility for its ministry relationships and reporting duties. The Company retains duties imposed directly on it.
+
+The Service is not offered as HIPAA compliant, and the Company does not provide a business associate agreement. It must not be used for regulated healthcare processing on behalf of a covered entity or business associate. Ordinary prayer mentioning health remains permitted, subject to applicable privacy requirements and any required notices or consent.
+
+8 Fees and sponsorship
+
+Prices, covered size tier, member limits, billing periods, taxes, payment arrangements, and any renewal authorization are stated in the Subscription Contract or accepted checkout. Fees are payable in advance unless agreed otherwise. Additional charges require agreement. The Church must provide valid exemption documentation for any claimed tax exemption, promptly raise good-faith billing disputes, and pay undisputed amounts when due.
+
+Church sponsorship does not cancel, pause, or refund an individual’s personal Apple, Google Play, or website-billed subscription. The Church must communicate this to sponsored members. When sponsorship ends, access depends on other qualifying coverage; otherwise, prayer-feature access ends while applicable account and privacy functions remain available. Members are not automatically enrolled in a new paid plan.
+
+9 Renewal cancellation and refunds
+
+The initial term and any authorized automatic renewal are specified in the Subscription Contract or accepted checkout. The Church must cancel at least 30 days before renewal to avoid the next charge. Cancellation may be sent to hello@simplypray.io or submitted through available billing controls. Cancellation stops renewal; the current paid term continues.
+
+Fees are nonrefundable except as required by applicable law. A reduction in sponsored users does not retroactively reduce fees. Changes to purchased limits follow the Subscription Contract.
+
+The Company will give at least 30 days’ notice of a renewal price increase and allow cancellation without the increased charge, notwithstanding the ordinary cancellation deadline where necessary. Additional notice, consent, reminders, and cancellation rights required by law apply. An increase is deferred if legally required notice cannot be met.
+
+10 Suspension and termination
+
+Either party may terminate for an uncured material breach after written notice and a reasonable opportunity to cure where cure is possible. A breach incapable of cure may result in termination on written notice. The Company may suspend affected access sooner when reasonably necessary for serious misuse, a material security threat, unlawful processing, or legal requirements, with notice where legally and practically possible. Restrictions will be proportionate; access will be restored when the grounds are resolved. The Church may contest a restriction through the contract contact.
+
+The Company may terminate for convenience on at least 30 days’ written notice or any longer period required by law. Termination does not extinguish accrued payment obligations. Refunds are governed solely by Section 9.
+
+Ending sponsorship does not itself delete individual accounts or private records or cancel personal subscriptions. Church data deletion and any legally required return follow the DPA. No extended export access or Company-assisted full export service is included except as required by law. Church-controlled lists must not be transferred outside lawful Church instructions solely because an administrator deletes an account.
+
+11 Confidentiality and warranties
+
+Each party will protect the other’s nonpublic information that is identified as confidential or reasonably understood to be confidential, use it only to perform this contract, and disclose it only to authorized people and providers who need it and are bound by appropriate duties. Independently developed, lawfully unrestricted, or publicly available information is excluded. Compelled disclosure is permitted with notice where legally allowed. Personal information remains subject to the DPA and law.
+
+EXCEPT FOR EXPRESS CONTRACTUAL COMMITMENTS AND RIGHTS THAT CANNOT LAWFULLY BE WAIVED, THE SERVICE IS PROVIDED AS IS AND AS AVAILABLE. TO THE FULLEST EXTENT PERMITTED BY LAW, THE COMPANY DISCLAIMS EXPRESS AND IMPLIED WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NONINFRINGEMENT. IT DOES NOT GUARANTEE UNINTERRUPTED SERVICE, PERFECT SECURITY, THE ACCURACY OR SAFETY OF USER CONTENT, OR RECOVERY OF LOST DATA. This disclaimer does not override the DPA or mandatory law.
+
+12 Third party claims and indemnity
+
+To the extent permitted by law, the Church will defend and indemnify the Company against third-party claims caused by the Church’s unlawful collection, disclosure, or instructions; missing legally required notices or permissions; infringement by Church-supplied content; or material breach by the Church or its authorized administrators. This covers reasonable defense costs and damages finally awarded or settled with approval. It excludes loss caused by Company breach, negligence, or misconduct and independent member conduct for which the Church is not responsible. Fines are covered only where lawful. Section 13 applies.
+
+The Company must promptly notify the Church, permit a defense through qualified counsel, and reasonably cooperate at Church expense. Delay reduces the duty only to the extent materially prejudicial. Settlements imposing admissions or nonmonetary duties on the Company, or lacking its full release, require its written consent, not unreasonably withheld. The Company may participate through its own counsel at its own expense.
+
+13 Limits of liability
+
+TO THE EXTENT PERMITTED BY LAW, NEITHER PARTY IS LIABLE TO THE OTHER FOR INDIRECT, SPECIAL, CONSEQUENTIAL, EXEMPLARY OR PUNITIVE DAMAGES OR LOST PROFITS ARISING FROM THIS CONTRACT. THE COMPANY’S TOTAL LIABILITY TO THE CHURCH UNDER THIS AGREEMENT AND THE DPA TOGETHER WILL NOT EXCEED US$100. THE CHURCH’S TOTAL LIABILITY TO THE COMPANY UNDER BOTH DOCUMENTS WILL NOT EXCEED THE GREATER OF $1,000 OR THE CHURCH’S FEES PAID OR PAYABLE FOR THE SERVICE DURING THE TWELVE MONTHS BEFORE THE EVENT GIVING RISE TO THE CLAIM. EACH PARTY’S CAP IS AGGREGATE ACROSS BOTH DOCUMENTS, NOT A SEPARATE CAP PER CLAIM OR DOCUMENT.
+
+The damages exclusion does not exclude amounts payable to third parties under Section 12 or reasonable direct costs of responding to a breach of the DPA, but those amounts remain subject to the applicable cap. The caps do not limit agreed fees owed, refunds required by applicable law, fraud, intentional misconduct, willful and wanton conduct, or liability that applicable law prohibits limiting. Gross negligence and other statutory liabilities remain uncapped to the extent law requires. No provision limits an individual’s nonwaivable privacy rights or a regulator’s authority.
+
+14 Notices disputes and general terms
+
+Notices go to the contacts in the Subscription Contract; privacy and security notices follow the DPA. Each party must keep its contacts current. Electronic notices are effective on confirmed receipt or the next business day after transmission without a delivery-failure message, unless law requires otherwise. Urgent security notices must also use an agreed escalation method where available.
+
+The parties will first try in good faith to negotiate disputes concerning this Agreement, the DPA, or the Service. Unresolved disputes are subject to binding arbitration, which either party may initiate, except where prohibited by law. Either party may instead bring a qualifying small-claims case. Arbitration replaces resolution by a judge or jury, subject to mandatory exceptions. This provision does not bind individual users who are not parties or restrict regulatory complaints, nonwaivable rights, urgent provisional relief, or filings needed to preserve a claim.
+
+Colorado law governs, subject to nonwaivable applicable law. The Federal Arbitration Act applies where applicable. Colorado courts may hear permitted proceedings, subject to a legally required forum or an eligible small-claims case. A court with jurisdiction may enter judgment on an award. Each party bears its legal costs except as indemnity or applicable law provides.
+
+The Company may revise this Agreement and the DPA prospectively by written notice identifying changes and their effective date, with reasonable advance notice of material changes. The Church may reject a material change by written notice terminating the affected subscription before it takes effect. Continued use constitutes acceptance except where express consent is required. Changes do not alter separately negotiated commercial terms unless the Subscription Contract permits or amend individual agreements. Section 9 governs refunds and renewal prices. DPA changes must remain within lawful instructions and required authorizations.
+
+The parties are independent contractors. Neither may bind the other. Assignment requires consent except to a successor assuming these obligations in a merger or transfer of substantially all relevant assets, with notice and subject to privacy law. Unenforceable provisions are severed where lawful; nonenforcement is not waiver. This contract supersedes prior proposals on its subject. Reliable electronic signatures and counterparts are permitted. Ownership, accrued payment, confidentiality, indemnity, liability, dispute, and continuing DPA duties survive as applicable.
+
+Contract details and acceptance
+
+Church legal name and address: __________________________________________
+
+Authorized signer and title: _____________________________________________
+
+Subscription Contract reference and date: _________________________________
+
+Covered entities and purchased limits: As stated in the Subscription Contract.
+
+Church contract and billing email: _______________________________________
+
+Church administrator and privacy contact: _________________________________
+
+Church urgent security contact: _________________________________________
+
+DPA version and date: __________________________________________________
+
+Privacy Policy and individual Terms versions and locations: _________________
+
+Agreed amendments: ___________________________________________________
+
+Company: Solomon Solutions LLC d/b/a SimplyPray
+
+470 Gordon Dr, Castle Rock, CO 80104
+
+Contract notices: hello@simplypray.io
+
+Support and billing: help@simplypray.io
+
+Privacy and security: privacy@simplypray.io
+
+By signing, each party accepts this Agreement and the identified DPA. The Church acknowledges administrator visibility and exports described in Section 5 and the separate treatment of members’ personal subscriptions. Recurring charges require express authorization in the Subscription Contract or accepted checkout. The Church’s signature does not accept individual agreements on members’ behalf.
+
+For the Church
+
+Signature: __________________________  Date: __________________
+
+Printed name and title: ________________________________________
+
+For Solomon Solutions LLC
+
+Signature: __________________________  Date: __________________
+
+Printed name and title: ________________________________________
