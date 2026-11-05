@@ -1,0 +1,73 @@
+SimplyPray Privacy Policy
+
+Effective November 3, 2026
+
+Who we are
+
+Solomon Solutions LLC, doing business as SimplyPray ("we," "us," or "our"), provides SimplyPray’s Apple and Android apps and related websites and services ("Service"). This Privacy Policy explains how we collect, use, share, and retain personal information and how you may exercise your privacy rights. Contact privacy@simplypray.io with privacy questions or requests.
+
+Information we process
+
+We collect information you provide for accounts, subscriptions, sharing, church participation, and support, including contact details, account identifiers, purchase records, submitted content, memberships, invitations, and communications. We also process agreement-acceptance records, safety reports, and technical information needed to operate and secure the Service. Information may come from you, your church, other users, and service providers. Prayer content may reveal religious beliefs, health information, or other sensitive matters.
+
+Private prayers and other devotional records remain on your device unless you choose to submit or share them or separately enable optional iCloud Sync, where offered on supported Apple devices. We do not receive records stored only on your device. Android does not currently provide personal cloud sync.
+
+How we use information
+
+We use personal information to provide and secure the Service, manage accounts and subscriptions, deliver content you choose to share, administer church participation, respond to requests, address misuse, and comply with law. We do not sell personal information, use prayer content for advertising, or train general-purpose AI models on it.
+
+Using SimplyPray or accepting this Policy does not replace any separate consent required by applicable law.
+
+Providers and other disclosures
+
+We use providers for authentication, hosting, storage, payments, subscription administration, communications, security, and optional website analytics. They receive information needed for their functions. Apple provides optional iCloud Sync where offered. Providers may process information in the United States or other countries.
+
+We may also disclose information at your direction, to comply with law, protect rights and safety, or complete a business transfer subject to applicable safeguards.
+
+Sharing and church participation
+
+When you choose to share a request, we store the selected content online and make it available to the list’s permitted audience. Sharing does not expose your unshared private records. Public content can be read by anyone. Authorized personnel and providers may access shared content as needed to operate and secure the Service, provide support, review abuse, and comply with law. Shared requests are not end-to-end encrypted.
+
+Church administrators may see member names, emails, join dates, a yes/no indicator of app activity within the past 60 days, and authorized church-list content. They may export roster information. Church participation does not expose unshared private devotional records. Recipients may retain or redistribute copies.
+
+Analytics and communications
+
+Optional website analytics requires your consent and receives visit, device, IP-address, and cookie information, but not prayer content, account IDs, or form entries. You may withdraw consent through the website’s cookie settings. The browser choice and analytics cookies last up to 180 days; withdrawal does not erase information already received.
+
+Where purchases are offered, RevenueCat separately processes purchase information, account identifiers, and technical information for subscription administration and reporting, including Apple device identifiers and subscription-screen interactions where applicable.
+
+You may unsubscribe from optional emails. Necessary account, billing, and security messages may continue.
+
+Retention and deletion
+
+We retain personal information as needed to provide the Service, maintain security, resolve disputes, and meet legal obligations. Retention depends on the type of information, account status, operational need, and applicable legal requirements.
+
+You may request account deletion in the app or at privacy@simplypray.io. We may verify your identity. Account deletion removes your account and associated information held by us, including your submitted shared requests, subject to lawful retention. Provider deletion and removal from backups may require additional time or manual follow-up. Contact privacy@simplypray.io for help with an outstanding deletion request. We handle requests within applicable legal requirements.
+
+Private records stored only on your device are not received by us. On Android, those records remain on your device after account deletion. Copies held by recipients or on other devices may also remain. Where optional iCloud Sync is offered, deleting synced information may require access to the original iCloud account and a connected device. Turning off sync does not delete existing copies.
+
+Account deletion does not cancel subscriptions.
+
+Security
+
+We use reasonable safeguards designed to protect personal information. No system is completely secure, and we cannot guarantee against unauthorized access, disclosure, alteration, or loss. You are responsible for protecting your devices and account credentials. We provide security-incident notices as required by applicable law.
+
+Children
+
+SimplyPray is intended for users age 13 and older. Users below legal adulthood require parent or guardian agreement as described in our Terms. If you believe a child under 13 has provided personal information, contact privacy@simplypray.io so we can investigate and delete it where required by law.
+
+Your privacy rights
+
+Depending on applicable law, you may request access, correction, deletion, or a copy of your personal information, withdraw consent, or exercise other privacy rights. Email privacy@simplypray.io to submit a request or appeal a denial. You may contact us even if you do not have an account, including about invitations, church roster information, or shared requests concerning you. We review requests for correction or removal, subject to applicable law. We may verify your identity and will respond within legally required periods. You may also contact the appropriate privacy authority.
+
+Changes and contact
+
+We may update this Privacy Policy and will provide notice of material changes and obtain consent where required by law.
+
+Solomon Solutions LLC d/b/a SimplyPray
+
+470 Gordon Dr, Castle Rock, CO 80104
+
+Privacy: privacy@simplypray.io
+
+Support: help@simplypray.io

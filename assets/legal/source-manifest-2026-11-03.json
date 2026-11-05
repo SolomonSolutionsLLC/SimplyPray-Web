@@ -1,0 +1,70 @@
+{
+  "package": "SimplyPray November 3 Apple and Android policies",
+  "status": "Prepared for Joshua review; not published or activated",
+  "document_effective_date": "2026-11-03",
+  "normalization": "Dropbox extracted body text; blank lines between extracted paragraphs, LF, final LF; standalone extracted page-footer marker 'Page' excluded from Terms. No substantive wording changed.",
+  "documents": [
+    {
+      "kind": "privacy",
+      "version": "2026-11-03",
+      "content_file": "privacy-2026-11-03.txt",
+      "content_type": "text/plain",
+      "source_dropbox_id": "id:zwJ3hxQQp6EAAAAAAACOfg",
+      "source_path": "/SimplyPray/Legal Files/SimplyPray Individual Agreements/2026-11-03 v2 SimplyPray Privacy Policy.docx",
+      "source_modified": "2026-11-03T19:46:01Z",
+      "source_url": "https://www.dropbox.com/scl/fi/vg683ednogzbm8pazxr5w",
+      "content_sha256": "80b5c2b393a6f81ac596da87dbf2e968ea5e0974aa3ae702ccf4482c7e0af1d0",
+      "content_bytes": 6585
+    },
+    {
+      "kind": "terms",
+      "version": "2026-11-03",
+      "content_file": "terms-2026-11-03.txt",
+      "content_type": "text/plain",
+      "source_dropbox_id": "id:zwJ3hxQQp6EAAAAAAACOfQ",
+      "source_path": "/SimplyPray/Legal Files/SimplyPray Individual Agreements/2026-11-03 SimplyPray Individual EULA and Terms.docx",
+      "source_modified": "2026-11-03T19:30:29Z",
+      "source_url": "https://www.dropbox.com/scl/fi/f9i924u4tvwhb42nkkk2m",
+      "content_sha256": "f113c66b30d507c9a1152bbe5c37862520cdaef8b49fbebb7d2b41cb283dfaa5",
+      "content_bytes": 8355
+    },
+    {
+      "kind": "church-data-processing-agreement",
+      "version": "2026-11-03",
+      "content_file": "church-data-processing-agreement-2026-11-03.txt",
+      "content_type": "text/plain",
+      "source_dropbox_id": "id:zwJ3hxQQp6EAAAAAAACOgA",
+      "source_path": "/SimplyPray/Legal Files/Church Agreements/2026-11-03 SimplyPray Church Data Processing Agreement.docx",
+      "source_modified": "2026-11-03T21:50:03Z",
+      "source_url": "https://www.dropbox.com/scl/fi/nlnzpwkv51mbsoqwqw481",
+      "content_sha256": "1bf33c9a1c3329bd6922a2ba1eabc5550707a964ce6955e367b3f0689f05b48b",
+      "content_bytes": 13186
+    },
+    {
+      "kind": "church-subscription-agreement",
+      "version": "2026-11-03",
+      "content_file": "church-subscription-agreement-2026-11-03.txt",
+      "content_type": "text/plain",
+      "source_dropbox_id": "id:zwJ3hxQQp6EAAAAAAACOfw",
+      "source_path": "/SimplyPray/Legal Files/Church Agreements/2026-11-03 SimplyPray Church Subscription Agreement.docx",
+      "source_modified": "2026-11-03T21:50:00Z",
+      "source_url": "https://www.dropbox.com/scl/fi/53dzfws2scvuws64ulw2w",
+      "content_sha256": "1477f92d080f091357aa706e0c517fdc41548642d41047923292dd64c89172c4",
+      "content_bytes": 17440
+    },
+    {
+      "kind": "church-join-notice",
+      "version": "2026-11-03",
+      "content_file": "church-join-notice-2026-11-03.txt",
+      "content_type": "text/plain",
+      "source_dropbox_id": "id:zwJ3hxQQp6EAAAAAAACOgQ",
+      "source_path": "/SimplyPray/Legal Files/Church Agreements/2026-11-03 SimplyPray Church Join Notice.docx",
+      "source_modified": "2026-11-03T21:50:05Z",
+      "source_url": "https://www.dropbox.com/scl/fi/gz0qpjt1hut1uc41yp8g0",
+      "content_sha256": "71534edb14158ec4b32ed47f10b3d2daf3c034abb205d478c3109dd251ce6e88",
+      "content_bytes": 2114
+    }
+  ],
+  "canonical_repository": "SolomonSolutionsLLC/SimplyPray-App",
+  "canonical_package": "docs/policy/2026-11-03"
+}

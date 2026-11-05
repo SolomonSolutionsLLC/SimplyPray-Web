@@ -3,7 +3,7 @@
   "private": true,
   "description": "SimplyPray marketing site \u2014 static HTML served at simplypray.io",
   "scripts": {
-    "test": "node --test tests/public-analytics.test.cjs && python3 scripts/check_site.py",
+    "test": "python3 scripts/build_nov3_legal_pages.py --check && node --test tests/public-analytics.test.cjs && python3 scripts/check_site.py",
     "test:browser": "node tests/public-analytics.browser.cjs"
   }
 }

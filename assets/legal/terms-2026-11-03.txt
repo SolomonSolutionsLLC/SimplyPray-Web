@@ -1,0 +1,99 @@
+SimplyPray Individual End User License Agreement and Terms of Service
+
+Effective date: November 3, 2026
+
+1. Agreement and eligibility
+
+These Terms are between you and Solomon Solutions LLC, doing business as SimplyPray (“Company,” “we,” or “us”). They govern your individual use of SimplyPray’s Apple and Android apps and related web services (“Service”), including church-sponsored use.
+
+By affirmatively accepting these Terms, you agree to them. You must be at least 13. If you have not reached legal adulthood where you live, your parent or legal guardian must agree to these Terms and authorize your use and purchases. A church agreement does not replace these individual Terms.
+
+2. Religious rights
+
+SimplyPray supports Christian prayer and devotional practice. Nothing in these Terms waives rights, exemptions, defenses, or protections available to the Company, churches, or users under the First Amendment or other applicable law, including religious exercise, expression, and association. This provision does not expand permitted data uses or waive duties that cannot lawfully be waived.
+
+3. License and ownership
+
+We grant you a limited, nonexclusive, nontransferable license to use the Service on supported devices you own or control for personal devotional use and authorized church participation, subject to these Terms and applicable marketplace rules.
+
+The software, branding, and Company materials belong to us or our licensors. Third-party materials remain subject to their respective rights and licenses. You may not redistribute, resell, reverse engineer, bypass access controls, or disrupt the Service, except where applicable law or an applicable license permits.
+
+4. Accounts, content, and conduct
+
+Protect your account credentials and notify us of suspected unauthorized access. You are responsible for activity you authorize and your own misuse. You must have the rights and legally required permissions to submit or share content.
+
+Do not submit unlawful, infringing, threatening, harassing, hateful, sexually explicit, or exploitative content, or otherwise misuse the Service. We may remove content or suspend access to address violations, security risks, or legal requirements. You must also follow our Abuse & Safety Policy (https://www.simplypray.io/abuse).
+
+You retain your rights in your content. You grant us and our service providers permission to process it as necessary to provide the Service you request, maintain security, address misuse, and comply with law. This permission does not authorize selling prayer content, using it for advertising, or training general-purpose AI models on it.
+
+5. Privacy of shared information
+
+You are responsible for what you submit or share. Share another person’s private or sensitive information only as legally permitted and with any required permission or consent. Do not disclose nonpublic information received through the Service unless authorized or required by law.
+
+Our Privacy Policy (https://www.simplypray.io/privacy) explains how we handle personal information and describes your privacy rights. Accepting these Terms does not replace any separate consent required by law.
+
+6. Devotional purpose
+
+SimplyPray is for devotional use and does not provide medical, mental-health, legal, or emergency services. It is not monitored for emergencies and is not offered for regulated healthcare use.
+
+7. Subscriptions and refunds
+
+Prices, billing periods, renewal terms, and trial conditions are disclosed before purchase. Auto-renewing subscriptions continue until canceled through the purchasing provider: Apple, Google Play, or the website billing provider.
+
+Cancel before renewal to avoid further charges, subject to the provider’s terms. Deleting an account, uninstalling the app, or joining or leaving church sponsorship does not itself cancel a subscription. Church sponsorship does not authorize a new personal charge.
+
+Payments are nonrefundable except as required by applicable law or marketplace rules, or as otherwise expressly offered by us. Price changes are subject to applicable notice and consent requirements. Contact help@simplypray.io for billing assistance.
+
+8. Warranties and liability
+
+TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, THE SERVICE IS PROVIDED “AS IS” AND “AS AVAILABLE,” WITHOUT IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, OR NON-INFRINGEMENT. WE DO NOT GUARANTEE UNINTERRUPTED SERVICE, THE ACCURACY OR SAFETY OF USER CONTENT, OR RECOVERY OF LOST DATA.
+
+THE COMPANY AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS WILL NOT BE LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES ARISING FROM THE SERVICE OR THESE TERMS, EVEN IF ADVISED OF THEIR POSSIBILITY.
+
+THEIR COMBINED TOTAL LIABILITY TO YOU FOR ALL CLAIMS ARISING FROM THE SERVICE OR THESE TERMS WILL NOT EXCEED THE GREATER OF US$100 OR THE AMOUNTS YOU PAID OR WERE OBLIGATED TO PAY FOR THE SERVICE DURING THE SIX MONTHS PRECEDING THE EVENT GIVING RISE TO THE CLAIM. THIS IS ONE AGGREGATE LIMIT, NOT A SEPARATE LIMIT FOR EACH CLAIM OR PERSON, REGARDLESS OF THE LEGAL THEORY ASSERTED.
+
+These disclaimers and limits apply only to the extent permitted by applicable law. They do not limit fraud, intentional misconduct, willful and wanton conduct, expressly required refunds, or rights and remedies that cannot lawfully be limited.
+
+9. Indemnity
+
+To the extent permitted by applicable law, you agree to indemnify and hold harmless the Company and its officers, directors, employees, and agents against third-party claims, damages, and reasonable attorneys’ fees to the extent caused by your unlawful use, violation of these Terms, or infringement of another person’s rights.
+
+10. Termination and disputes
+
+You may stop using the Service and request account deletion at any time. We may suspend or terminate access for violations of these Terms, nonpayment, security risks, or legal requirements. Termination does not cancel subscriptions or eliminate obligations that survive termination.
+
+You and the Company agree to resolve disputes arising from these Terms or the Service through binding arbitration, except where prohibited by applicable law.
+
+Colorado law governs, subject to mandatory protections where you live. The Federal Arbitration Act applies where applicable.
+
+11. Additional Apple terms
+
+For the Apple app, this agreement is with the Company, not Apple. The Company is responsible for the app and its content. The license covers Apple-branded products you own or control under Apple’s Usage Rules, including permitted Family Sharing and volume purchasing.
+
+The Company provides required support and warranties; Apple has no support obligation. For failure to meet an applicable warranty, notify Apple for a refund of the app purchase price. To the extent lawful, Apple has no further warranty obligation; other resulting claims and losses are the Company’s responsibility.
+
+The Company, not Apple, handles product-liability, regulatory, consumer-protection, privacy, and intellectual-property claims, including investigation, defense, settlement, and discharge of infringement claims.
+
+You represent that you are not in a U.S.-embargoed or designated terrorist-supporting country or on a U.S. prohibited-party list. You must comply with applicable third-party terms.
+
+Apple and its subsidiaries are third-party beneficiaries entitled to enforce these Terms upon acceptance. Company contact details appear below.
+
+12. Changes and general terms
+
+We may revise these Terms prospectively, provide notice of material changes, and require acceptance before continued use. If you disagree, you may stop using the Service and cancel any subscription.
+
+These Terms form the agreement for your individual use of SimplyPray. Separate church agreements do not replace your individual rights. If a provision is unenforceable, the remaining provisions continue where lawful. Failure to enforce a provision is not a waiver. Ownership, payment obligations already incurred, indemnity, liability limits, and dispute provisions survive termination as applicable.
+
+13. Contact
+
+Solomon Solutions LLC d/b/a SimplyPray
+
+470 Gordon Dr, Castle Rock, CO 80104
+
+406-260-5767
+
+Legal: hello@simplypray.io
+
+Support and billing: help@simplypray.io
+
+Privacy and safety: privacy@simplypray.io

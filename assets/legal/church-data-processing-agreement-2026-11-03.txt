@@ -1,0 +1,91 @@
+SimplyPray Church Data Processing Agreement
+
+Effective November 3, 2026
+
+1 Parties scope and roles
+
+This DPA is between Solomon Solutions LLC d/b/a SimplyPray (Company) and the Church identified in the accompanying Church Subscription Agreement (Subscription Agreement). It governs Company processing of personal information on the Church’s behalf (Church Personal Data) for as long as that processing continues. It controls conflicts concerning that processing.
+
+For activities whose purposes and essential means the Church determines, the Church is controller or the analogous responsible entity and the Company is processor or service provider where those terms apply. Actual activities and applicable privacy, security, breach-notification, and consumer-health-data law (Applicable Law) determine their roles. Neither party transfers duties law assigns directly to it.
+
+Independent account administration, individual purchases, Company billing, and Company security or legal activities are separately governed by the Privacy Policy where the Company determines their purposes. This does not authorize unrelated reuse of Church prayer content. Unshared private devotional records kept only on individual devices, or privately synced through optional iCloud for personal use, are outside Church-directed processing. Sponsorship does not authorize access to or activation of that sync. The Service covers supported Apple and Android apps and related web services; optional personal iCloud Sync is limited to supported Apple devices and does not provide Android personal cloud sync.
+
+2 Religious rights
+
+SimplyPray supports Christian prayer and devotional practice. Nothing in this DPA or the Subscription Agreement waives rights, exemptions, defenses, or protections available to the Company, churches, or users under the First Amendment or other applicable law, including religious exercise, expression, and association. This provision does not expand permitted data uses or waive duties that cannot lawfully be waived.
+
+3 Processing instructions and permissions
+
+The Church instructs the Company to perform the processing described in the Schedule through authorized Service choices and authenticated written instructions consistent with this DPA. Individual submissions form instructions only where the individual is entitled to make them. The Church must provide required notices and permissions, document legally required consent, and appoint an administrator as privacy contact. It must explain administrator visibility and exports before participation and handle requests involving its own copies.
+
+The Company will process Church Personal Data only to deliver the instructed Service, provide related support and security, perform this DPA, or meet a binding legal requirement. It will not sell the data, use it for targeted advertising, train general-purpose AI models on it, or combine it with unrelated customer data for independent commercial profiling. Processing must stay within applicable processor restrictions.
+
+The Company will promptly flag instructions it believes unlawful and may suspend affected processing pending resolution. It will notify the Church before legally compelled processing outside instructions unless prohibited, and limit that processing to what is required. Changes in purpose, data, audience, or providers require lawful instructions and any required notice or consent. General agreement acceptance does not replace separately required consent.
+
+This DPA is not a HIPAA business associate agreement. Ordinary health-related prayer is permitted subject to Applicable Law. Any required additional consumer-health notice, consent, or restriction must be in place before affected processing. The Company will follow binding instructions and provide assistance required by Applicable Law within the nature of its processing and capabilities.
+
+4 Confidentiality security and providers
+
+The Company will bind authorized personnel to required confidentiality duties and maintain administrative, technical, and organizational safeguards appropriate to the processing and risk, as required by Applicable Law. The Church must protect its accounts, administrator permissions, devices, exports, and other retained copies. Neither party is responsible for the other’s independent safeguards; each remains responsible for its own systems and obligations. Shared requests are not end-to-end encrypted, and authorized Company or provider access is limited to permitted functions.
+
+The Church generally authorizes providers needed for the instructed processing, subject to Applicable Law. The Company will bind subprocessors to written protective obligations required under this DPA and law and remains responsible to the Church for their performance. It will provide a current provider list on request and any legally required advance notice, authorization, and opportunity to object to additions or replacements.
+
+The Company will maintain a provider register identifying legal entities, functions, data access, processing and backup countries, and processing contracts and transfer safeguards. The Church may request that information at privacy@simplypray.io. Providers acting independently for payment, platform, or individual services are not automatically Church subprocessors. Prayer content must not be sent to newsletter or font services.
+
+No U.S.-only storage restriction is promised without express agreement and verification. The Company will arrange any legally required transfer safeguard before a restricted transfer. This DPA does not itself supply international standard contractual clauses.
+
+5 Requests incidents and compliance
+
+The parties will cooperate on lawful privacy requests using proportionate verification. The Company will promptly notify the Church of requests requiring its instructions and may respond directly where law requires or for independently controlled information. The Church must provide timely lawful instructions, including relevant consent withdrawals. Assistance, assessments, information, and audits required by Applicable Law will be provided, taking account of the processing and available information. Reasonable confidentiality, notice, and security arrangements must not prevent compliance. Additional assistance and lawful charges require separate agreement and must not delay mandatory duties.
+
+A Security Incident is confirmed unauthorized access, acquisition, use, disclosure, alteration, loss, or destruction of Church Personal Data in Company or subprocessor control. Unsuccessful attempts without compromise are excluded from this definition.
+
+The Company will notify the Church’s security contact without undue delay and within any shorter legally required period, without waiting for a complete investigation. Notice will identify known circumstances, affected data and people where known, likely consequences, response measures, and a contact, with material updates as information becomes available. It will take reasonable containment and remediation measures, preserve relevant evidence, and cooperate with the Church’s response.
+
+Each party makes notices required of it and coordinates where permitted; neither may delay mandatory notice. Costs follow legal responsibility and the Subscription Agreement. The Company will not charge the Church for remediating its own breach. Notice is not an admission of fault.
+
+6 Return deletion and retention
+
+Following termination or a lawful deletion instruction, the Company will delete Church Personal Data or return it where required by Applicable Law, coordinate any required return with deletion, and meet applicable deadlines. It will instruct and check completion by Company-directed subprocessors and further recipients as legally required. Required deletion confirmations and information about retained data will be provided. No extended export-access period or Company-assisted full export service is included beyond legal requirements.
+
+Retention is limited to lawful purposes and periods appropriate to the data, account status, security, disputes, and mandatory recordkeeping. Necessary financial, safety, and compliance records must be minimized, protected, and deleted or deidentified when their lawful purpose ends. Billing retention does not justify indefinite retention of identifiable prayer content.
+
+Removal from a list is distinct from permanent deletion. Removed requests have a 30-day review and restoration cutoff; after that they cannot be read or restored through the Service. Scheduled daily cleanup deletes them from live storage, even if physical cleanup follows the access cutoff. Earlier legally required deletion applies. Any binding preservation duty must use restricted legal-hold handling rather than extend ordinary access.
+
+Protected backup copies may remain only as permitted by Applicable Law and as reasonably needed for recovery or binding preservation. They will not be used for ordinary operations; deletion instructions must be reapplied after restoration before ordinary use resumes. Legal holds must document the duty, affected data, restrictions, and review date and end when the duty expires.
+
+Ending sponsorship or a Church relationship does not authorize deletion of unrelated individual accounts, private devotional records, or independent entitlements. Individual account deletion includes removal of the author’s shared requests, subject to lawful retention. Church administrators remain responsible for authorized Church list control and their exported copies. Account deletion does not recall recipient copies.
+
+Live deletion and provider cleanup are separate. Provider cleanup may remain queued or held for ownership checks, billing-history handling, or provider errors; the Company remains responsible for legally required follow-up, completion checks, and notices. Independent providers may retain their own required records. Account deletion and sponsorship do not cancel personal Apple, Google Play, or website subscriptions.
+
+7 Agreement contacts and acceptance
+
+The Subscription Agreement’s indemnity, dispute, and liability provisions apply, including each party’s aggregate cap across both agreements and mandatory exceptions. Amendments follow its Section 14, including notice and the Church’s right to reject a material change by terminating the affected subscription before it takes effect. Its Section 9 governs refunds. Privacy Policy updates alone do not amend this DPA or authorize processing outside lawful instructions.
+
+This DPA is accepted by express incorporation of its identified version in a signed Subscription Agreement or by separate written acceptance by both parties’ authorized representatives. Individual agreement acceptance does not execute it for the Church. Confidentiality, protection, deletion, and other necessary duties continue while relevant data is retained. Contacts must be kept current.
+
+Schedule Processing particulars and contacts
+
+Purpose and duration: Church subscription administration, sponsored memberships, private church prayer lists, invitations, authorized communications, support, moderation, roster exports, and deletion, during service and applicable lawful retention periods.
+
+Operations: Receiving authorized submissions; storing, organizing, displaying, transmitting, administering access, exporting through available features, providing legally required return, and deleting data.
+
+People: Administrators, members, invitees, and people mentioned in authorized requests, potentially including children. Account users must be at least 13, with required guardian agreement under the individual Terms.
+
+Data: Names, emails, identifiers, membership and roles, join and activity information, the administrator-visible 60-day yes/no activity indicator, invitations, grants, list names and descriptions, request text and status, and moderation and Church audit records. Content may reveal religion, health, family circumstances, or other sensitive information.
+
+Audience: Church lists are private to eligible active church participation. Access to earlier, answered, pending, and removed requests depends on permissions and history settings. Company personnel and providers receive access only for permitted functions. Public pages and separate per-list invitations are not Church list features. Personal shared lists have separate settings. The Church must explain administrator visibility, roster exports, and applicable history settings before participation.
+
+Provider functions: Hosting, database, authentication, message delivery, and Church-sponsored entitlement administration. The current provider register and location information are available on request under Section 4.
+
+Church legal name: ___________________________________________________
+
+Subscription Agreement reference and date: ______________________________
+
+Church administrator and privacy contact: _______________________________
+
+Church urgent security contact: _______________________________________
+
+Agreed processing or retention amendments: _____________________________
+
+Company privacy, instructions, and security contact: privacy@simplypray.io

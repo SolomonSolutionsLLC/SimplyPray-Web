@@ -1,0 +1,31 @@
+SimplyPray Church Join Notice
+
+Effective November 3, 2026
+
+Join your church on SimplyPray
+
+{Church Name} is sponsoring your SimplyPray Community access.
+
+Authorized church administrators can see your name, email, join date, and a yes/no indication of app activity within the past 60 days. This does not show your exact activity time or prove that you prayed. They can download this roster information.
+
+Church administrators and other eligible members can see church-list requests as their permissions and history settings allow. Church lists are private to authorized church participation. Shared requests are stored online and are not end-to-end encrypted; authorized Company personnel and providers may access them for permitted service purposes.
+
+Joining does not share your private prayers, journal, personal lists, or private devotional records. Optional iCloud Sync, where offered on supported Apple devices, is your separate choice and gives the church no access to the private copy. Android does not currently provide personal cloud sync.
+
+Joining does not cancel, pause, or refund an existing Apple, Google Play, or website-billed subscription. Cancel unwanted renewals separately through the purchasing provider.
+
+Contact your church administrator to leave or manage sponsorship. Leaving ends membership-based church access but does not itself delete your account, private records, previously shared requests, or exported copies. Other qualifying coverage may preserve access to personal features. For deletion assistance or privacy questions, email privacy@simplypray.io.
+
+By selecting Join, you request church-sponsored participation and acknowledge the administrator visibility and sharing described here. This does not replace separate acceptance of the individual Terms or any separately required consent, or sign the Church’s contracts on its behalf.
+
+Primary button: Join {Church Name}
+
+Secondary button: Not now
+
+Individual Terms: https://www.simplypray.io/terms
+
+Privacy Policy: https://www.simplypray.io/privacy
+
+Support: help@simplypray.io
+
+SimplyPray is provided by Solomon Solutions LLC.
